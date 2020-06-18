@@ -47,3 +47,27 @@ html {
 .js-focus-visible :focus:not([data-focus-visible-added]) {
   @apply outline-none;
 }
+
+.header_link__desktop {
+  @apply ml-8 font-medium text-white transition duration-150 ease-in-out;
+}
+
+.header_link__desktop:hover {
+  @apply text-gray-900;
+}
+
+.header_link__desktop:focus {
+  @apply outline-none text-gray-900;
+}
+
+.header_link__mobile {
+  @apply block px-3 py-2 rounded-md text-base font-medium text-gray-700 transition duration-150 ease-in-out;
+}
+
+.header_link__mobile:hover {
+  @apply text-gray-900 bg-gray-100;
+}
+
+.header_link__mobile:focus {
+  @apply outline-none text-gray-900 bg-gray-100;
+}
