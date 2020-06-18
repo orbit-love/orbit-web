@@ -3,7 +3,11 @@ module.exports = {
     enabled: false,
   },
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        bottom: '0px 2px 0px rgba(0, 0, 0, 0.15)',
+      },
+    },
     colors: {
       purple: {
         100: '#EBE7FE',
