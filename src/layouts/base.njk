@@ -10,12 +10,13 @@
 <body class="text-gray-900 leading-normal">
     <div hidden>{% svgsprite %}</div>
     <a href="#content" class="sr-only">skip to main content</a>
-    <div role="document" class="min-h-screen flex flex-col">
+    <div role="document" class="min-h-screen flex flex-col" x-data="{ showModal: false }" @keydown.escape="showModal = false" @togglemodal="showModal = $event.detail.value">
         <main class="flex-grow w-full" id="content" tabindex="-1">
             {{ content | safe }}
         </main>
+      {% include "early-access-form.njk" %}
     </div>
-    <script src="{{ '/assets/main.js' | url }}"></script> 
+    <script src="{{ '/assets/main.js' | url }}"></script>
     <!-- LAST BUILD: {{ build.env}} {{ build.timestamp | dateToISO }} -->
 </body>
 </html>
