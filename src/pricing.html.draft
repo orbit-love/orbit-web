@@ -1,0 +1,32 @@
+---
+layout: page
+title: Orbit — Pricing
+eleventyNavigation:
+  key: Pricing
+---
+
+<div class="slanted-top max-w-full bg-purple-400">
+  <div class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto">
+    <h1 class="mb-6 text-white text-4xl font-bold text-center leading-tight">
+      Pricing
+    </h1>
+    <p class="mb-10 text-white text-xl text-center">
+      Orbit is currently in early access. To give us a try, request
+      access, or get invited by a current user.
+    </p>
+  </div>
+</div>
+
+<div class="max-w-screen-xl mx-auto pt-10 mb-20 text-center">
+  <p class="text-2xl font-bold">Try Solo and Team for 30 days for free.</p>
+  <hr class="w-10 mt-4 mb-10 border-2 border-purple-400 mx-auto" />
+  <p class="text-2xl font-bold">Free for Open Source maintainers</p>
+  <hr class="w-10 mt-4 mb-10 border-2 border-purple-400 mx-auto" />
+  <p class="max-w-screen-sm mx-auto text-center text-gray-600">
+    Do you maintain an open source project? Email
+    <a href="mailto:maintainers@orbit.love" class="underline text-purple-500">
+      maintainers@orbit.love</a>
+    to get complimentary access to Orbit Team for up to 3 users and
+    5,000 community members.
+  </p>
+</div>
