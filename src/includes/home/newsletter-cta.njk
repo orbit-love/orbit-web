@@ -1,0 +1,21 @@
+<div class="max-w-screen-sm mx-auto">
+  <form x-data="{email: "", error: ""}" class="my-6" @submit.prevent="submit($event)">
+        <div class="px-4 sm:flex sm:justify-center">
+          <input id="newsletter_cta" x-model="email" type="email" required="" placeholder="Join our mailing list" class="block sm:max-w-xs w-full px-4 py-3 text-base leading-6 appearance-none border border-gray-100 bg-white rounded placeholder-gray-500 shadow-bottom focus:outline-none focus:shadow-outline-purple focus:border-purple-300">
+          <button
+            class="mt-4 relative sm:mt-0 sm:h-auto sm:ml-4 block w-full sm:w-auto border border-transparent px-6 py-3 text-base leading-6 font-semibold leading-snug bg-purple-500 text-white rounded-md shadow-md hover:bg-purple-600 focus:outline-none focus:shadow-outline-purple focus:border-purple-300 transition ease-in-out duration-150"
+            :class="{ 'opacity-50 pointer-events-none': submitting, 'hover:bg-gray-600': !submitting }"
+            :disabled="submitting"
+           >
+            <span :class="{ 'opacity-0': submitting }">Subscribe</span>
+            <span style="" x-show="true" class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0" :class="{ 'opacity-0': !submitting }">
+              <svg class="h-8 w-8 spin" viewBox="0 0 24 24">
+                <path class="text-gray-600" fill="currentColor" d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-2a7 7 0 110-14 7 7 0 010 14z"></path>
+                <path class="text-gray-400" fill="currentColor" d="M12 3a9 9 0 010 18v-2a7 7 0 000-14V3z"></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+        <p x-show="error" x-text="error" style="display: none;" class="lg:absolute mt-4 text-white max-w-xl font-medium"></p>
+      </form>
+</div>
