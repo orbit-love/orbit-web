@@ -1,5 +1,5 @@
 <div class="max-w-screen-sm mx-auto">
-  <form x-data="{email: "", error: ""}" class="my-6" @submit.prevent="submit($event)">
+  <form x-data="{email: '', error: ''}" class="my-6" @submit.prevent="submit($event)">
         <div class="px-4 sm:flex sm:justify-center">
           <input id="newsletter_cta" x-model="email" type="email" required="" placeholder="Join our mailing list" class="block sm:max-w-xs w-full px-4 py-3 text-base leading-6 appearance-none border border-gray-100 bg-white rounded placeholder-gray-500 shadow-bottom focus:outline-none focus:shadow-outline-purple focus:border-purple-300">
           <button
