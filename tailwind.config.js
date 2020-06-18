@@ -31,6 +31,7 @@ module.exports = {
         800: '#2C3035',
         900: '#1E2124',
       },
+      aubergine: '#2a123f',
       white: '#FFF',
     },
   },

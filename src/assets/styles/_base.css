@@ -93,16 +93,22 @@ body {
   padding-left: 45px;
 }
 
-#use_case_right {
+#use_case_left {
+  border-radius: 7px 0px 0px 7px;
   border-top: 1px solid #d3d6da;
-  @media (min-width: 640px) {
-    border-top: unset;
-    border-left: 1px solid #d3d6da;
-  }
+  border-left: 1px solid #d3d6da;
+  border-bottom: 1px solid #d3d6da;
+  box-shadow: 0px 3px 0 rgba(108, 77, 246, 0.15);
+}
+
+#use_case_right {
+  border-radius: 0px 7px 7px 0px;
+  border: 1px solid #d3d6da;
+  box-shadow: 3px 3px 0 rgba(108, 77, 246, 0.15);
 }
 
 /**
- * Hero slant 
+ * Slant variables
  */
 
 :root {
@@ -111,6 +117,10 @@ body {
   --skew-padding: calc(var(--content-width) * var(--magic-number));
   --skew-margin: calc(2 * var(--content-width) * var(--magic-number));
 }
+
+/**
+ * Hero slant 
+ */
 
 #hero {
   position: relative;
@@ -139,4 +149,33 @@ body {
   bottom: 0;
   transform: skewY(-3deg);
   transform-origin: 100%;
+}
+
+/**
+ * Orbit Model slant (using clip-path so that the background image isn’t distorted)
+ */
+
+.clip-path {
+  position: relative;
+  margin-top: calc((var(--skew-padding) * -1) - 2px);
+  background-image: url('images/orbit-observatory-header.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: calc(
+      (var(--skew-padding) * 2) - (var(--skew-padding) - var(--skew-padding))
+    )
+    0 4em;
+  clip-path: polygon(
+    0% calc(var(--skew-padding) * 2),
+    100% 0%,
+    100% 100%,
+    0% 100%
+  );
+  -webkit-clip-path: polygon(
+    0% calc(var(--skew-padding) * 2),
+    100% 0%,
+    100% 100%,
+    0% 100%
+  );
+  border-bottom: 1px solid #2a123f;
 }
