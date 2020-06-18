@@ -35,7 +35,7 @@ html {
  * 
  */
 [x-cloak] {
-  @apply hidden;
+  display: none !important;
 }
 
 /**

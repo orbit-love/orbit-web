@@ -10,7 +10,7 @@
 <body class="text-gray-900 leading-normal">
     <div hidden>{% svgsprite %}</div>
     <a href="#content" class="sr-only">skip to main content</a>
-    <div role="document" class="min-h-screen flex flex-col" x-data="{ showModal: false }" @keydown.escape="showModal = false" @togglemodal="showModal = $event.detail.value">
+    <div role="document" class="min-h-screen flex flex-col" x-data="{ showModal: false }" @keydown.escape="showModal = false" @togglemodal="showModal = $event.detail.value" x-cloak>
         <main class="flex-grow w-full" id="content" tabindex="-1">
             {{ content | safe }}
         </main>
