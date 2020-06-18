@@ -93,6 +93,14 @@ body {
   padding-left: 45px;
 }
 
+#use_case_right {
+  border-top: 1px solid #d3d6da;
+  @media (min-width: 640px) {
+    border-top: unset;
+    border-left: 1px solid #d3d6da;
+  }
+}
+
 /**
  * Hero slant 
  */
