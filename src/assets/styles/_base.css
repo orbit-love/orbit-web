@@ -131,13 +131,13 @@ body {
  * Hero slant 
  */
 
-#hero {
+.slanted-top {
   position: relative;
   margin-bottom: var(--skew-margin);
   padding-bottom: var(--skew-padding);
 }
-#hero:before,
-#hero:after {
+.slanted-top:before,
+.slanted-top:after {
   position: absolute;
   background: inherit;
   content: '';
@@ -148,13 +148,13 @@ body {
   z-index: -1;
 }
 
-#hero:before {
+.slanted-top:before {
   top: 0;
   transform: skewY(0deg);
   transform-origin: 0% 0;
 }
 
-#hero:after {
+.slanted-top:after {
   bottom: 0;
   transform: skewY(-3deg);
   transform-origin: 100%;
