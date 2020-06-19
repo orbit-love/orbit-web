@@ -182,11 +182,6 @@ body {
   margin-top: var(--skew-margin);
   padding-top: var(--skew-padding);
   background: unset;
-  height: 170px;
-
-  @media (min-width: 640px) {
-    height: 350px;
-  }
 }
 .screenshot-slanted:before,
 .screenshot-slanted:after {
@@ -210,6 +205,22 @@ body {
   bottom: 0;
   transform: skewY(0deg);
   transform-origin: 100%;
+}
+
+#single_view_block {
+  height: 170px;
+
+  @media (min-width: 640px) {
+    height: 350px;
+  }
+}
+
+#for_builders_block {
+  height: 550px;
+
+  @media (min-width: 640px) {
+    height: 340px;
+  }
 }
 
 /**
