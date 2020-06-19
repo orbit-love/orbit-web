@@ -115,6 +115,22 @@ body {
     border-radius: 0px 7px 7px 0px;
   }
 }
+#solutions_header_link > div {
+  border-top: 10px solid #281d5c;
+  top: 0px;
+}
+
+#solutions_header_link:focus-within > div {
+  display: flex;
+}
+
+#solutions_header_link:hover > div {
+  display: flex;
+}
+
+#solutions_header_link > a:focus + div {
+  display: flex;
+}
 
 /**
  * Slant variables
