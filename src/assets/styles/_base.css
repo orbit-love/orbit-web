@@ -115,9 +115,10 @@ body {
     border-radius: 0px 7px 7px 0px;
   }
 }
+
 #solutions_header_link > div {
   border-top: 10px solid #281d5c;
-  top: 0px;
+  top: -2px;
 }
 
 #solutions_header_link:focus-within > div {
