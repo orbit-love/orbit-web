@@ -75,15 +75,16 @@ body {
 }
 
 .header_link__desktop {
-  @apply ml-8 font-medium text-white transition duration-150 ease-in-out;
+  @apply ml-8 font-medium text-white border-none pb-1 transition duration-150 ease-in-out;
 }
 
 .header_link__desktop:hover {
-  @apply text-gray-900;
+  border-bottom: 2px solid white;
 }
 
 .header_link__desktop:focus {
-  @apply outline-none text-gray-900;
+  @apply outline-none;
+  border-bottom: 2px solid white;
 }
 
 .header_link__mobile {
