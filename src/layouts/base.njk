@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="{{ meta.lang }}" class="bg-white antialiased">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title or meta.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/main.css' | url }}">   
+    <link rel="stylesheet" href="{{ '/assets/main.css' | url }}" />
     {% include "meta.njk" %}
-</head>
-<body class="text-gray-900 leading-normal">
+  </head>
+  <body class="text-gray-900 leading-normal">
     <div hidden>{% svgsprite %}</div>
     <a href="#content" class="sr-only">skip to main content</a>
-    <div role="document" class="min-h-screen flex flex-col" x-data="{ showModal: false }" @keydown.escape="showModal = false" @togglemodal="showModal = $event.detail.value" x-cloak>
-        <main class="flex-grow w-full" id="content" tabindex="-1">
-            {{ content | safe }}
-        </main>
+    <div
+      role="document"
+      class="min-h-screen flex flex-col"
+      x-data="{ showModal: false }"
+      @keydown.escape="showModal = false"
+      @togglemodal="showModal = $event.detail.value"
+      x-cloak
+    >
+      <main class="flex-grow w-full" id="content" tabindex="-1">
+        {{ content | safe }}
+      </main>
       {% include "early-access-form.njk" %}
     </div>
     <script src="{{ '/assets/main.js' | url }}"></script>
     <!-- LAST BUILD: {{ build.env}} {{ build.timestamp | dateToISO }} -->
-</body>
+  </body>
 </html>

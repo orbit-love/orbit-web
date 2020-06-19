@@ -6,13 +6,15 @@ eleventyNavigation:
 ---
 
 <div class="slanted-top max-w-full bg-purple-400">
-  <div class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto items-center justify-center">
+  <div
+    class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto items-center justify-center"
+  >
     <h1 class="mb-6 text-white text-4xl font-bold text-center leading-tight">
       Grow your community and show ROI.
     </h1>
     <p class="mb-10 text-white text-xl text-center">
-      Orbit helps Developer Relations and Community Teams deliver a
-      stellar member experience—and prove it. 
+      Orbit helps Developer Relations and Community Teams deliver a stellar
+      member experience—and prove it.
     </p>
     <div class="mb-6 rounded">
       <button
@@ -33,11 +35,8 @@ eleventyNavigation:
   </div>
 </div>
 
-{% include "for-devrels/feed.njk" %}
-
-{% include "newsletter-cta.njk" %}
-
-{% include "for-devrels/view.njk" %}
+{% include "for-devrels/feed.njk" %} {% include "newsletter-cta.njk" %} {%
+include "for-devrels/view.njk" %}
 <div class="clearfix"></div>
 
 {% include "for-devrels/metrics.njk" %}
@@ -47,7 +46,8 @@ eleventyNavigation:
   <div class="mb-6 mt-6 rounded">
     <button
       @click="showModal = true"
-      class="cursor-pointer px-5 py-3 shadow-bottom border border-transparent text-base leading-6 font-bold rounded text-white bg-purple-500 hover:text-gray-100 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+      class="cursor-pointer px-5 py-3 shadow-bottom border border-transparent text-base leading-6 font-bold rounded text-white bg-purple-500 hover:text-gray-100 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
+    >
       Request access
     </button>
   </div>

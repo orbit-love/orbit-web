@@ -11,8 +11,8 @@ eleventyNavigation:
       Pricing
     </h1>
     <p class="mb-10 text-white text-xl text-center">
-      Orbit is currently in early access. To give us a try, request
-      access, or get invited by a current user.
+      Orbit is currently in early access. To give us a try, request access, or
+      get invited by a current user.
     </p>
   </div>
 </div>
@@ -25,8 +25,9 @@ eleventyNavigation:
   <p class="max-w-screen-sm mx-auto text-center text-gray-600">
     Do you maintain an open source project? Email
     <a href="mailto:maintainers@orbit.love" class="underline text-purple-500">
-      maintainers@orbit.love</a>
-    to get complimentary access to Orbit Team for up to 3 users and
-    5,000 community members.
+      maintainers@orbit.love</a
+    >
+    to get complimentary access to Orbit Team for up to 3 users and 5,000
+    community members.
   </p>
 </div>
