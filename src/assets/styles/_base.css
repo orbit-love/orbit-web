@@ -61,6 +61,19 @@ body {
  * Tailwind components styles 
  */
 
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
 .header_link__desktop {
   @apply ml-8 font-medium text-white transition duration-150 ease-in-out;
 }
