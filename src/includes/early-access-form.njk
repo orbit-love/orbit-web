@@ -27,9 +27,9 @@
     </p>
 
     <form
-      x-data="{name: '', company: '', url: '', email: '', error: '', submitting: false}"
+      x-data="earlyAccessForm()"
       class="my-6"
-      @submit.prevent="submit($event)"
+      @submit.prevent="requestEarlyAccess($event)"
     >
       <div class="px-4 max-w-xs mx-auto flex flex-col items-start">
         <input
@@ -52,9 +52,8 @@
           class="block w-full px-4 py-3 mt-2 text-base text-sm leading-6 appearance-none border border-gray-100 bg-white rounded placeholder-gray-500 shadow-bottom focus:outline-none focus:shadow-outline-purple focus:border-purple-300"
         />
         <input
-          x-model="url"
+          x-model="projectUrl"
           type="url"
-          required=""
           placeholder="Project URL (if you’re a maintainer)"
           class="block w-full px-4 py-3 mt-2 text-base text-sm leading-6 appearance-none border border-gray-100 bg-white rounded placeholder-gray-500 shadow-bottom focus:outline-none focus:shadow-outline-purple focus:border-purple-300"
         />
@@ -93,11 +92,49 @@
         </div>
       </div>
       <p
-        x-show="error"
-        x-text="error"
-        style="display: none;"
-        class="lg:absolute mt-4 text-white max-w-xl font-medium"
+        x-show="message"
+        x-text="message"
+        class="lg:absolute mt-4 text-purple-600 max-w-xl font-medium"
       ></p>
     </form>
   </div>
 </div>
+
+<script>
+  function earlyAccessForm() {
+    return {
+      name: '',
+      company: '',
+      email: '',
+      projectUrl: '',
+      message: '',
+      submitting: false,
+      async requestEarlyAccess() {
+        this.message = ''
+        this.submitting = true
+        try {
+          await fetch("/api/subscribe", {
+            method: 'POST',
+            body: JSON.stringify({
+              name: this.name,
+              company: this.company,
+              email: this.email,
+              projectUrl: this.projectUrl,
+              source: "early-access-form",
+              sourceUrl: typeof document !== 'undefined' && document.location.href,
+              originalReferrer: "",
+              originalLandingPage: "",
+              referrer: document.referrer,
+            }),
+          })
+          this.submitting = false
+          this.message = "Thanks! We’ll be in touch soon."
+        } catch (err) {
+          console.error(err);
+          this.submitting = false;
+          this.message = "There was an error while subscribing."
+        }
+      }
+    }
+  }
+</script>

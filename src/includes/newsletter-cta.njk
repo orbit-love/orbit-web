@@ -8,7 +8,7 @@
       <input
         id="newsletter_cta"
         x-model="email"
-        {# type="email" #}
+        type="email"
         required=""
         placeholder="Join our mailing list"
         class="block sm:max-w-xs w-full px-4 py-3 text-base leading-6 appearance-none border border-gray-100 bg-white rounded placeholder-gray-500 shadow-bottom focus:outline-none focus:shadow-outline-purple focus:border-purple-300"
@@ -56,14 +56,10 @@
       submitting: false,
       async subscribe() {
         this.message = ''
-        if(!this.looksLikeAnEmail()) {
-          this.message = "Please enter a valid email."
-          return
-        }
         this.submitting = true
         try {
           await fetch("/api/subscribe", {
-            method: 'PUT',
+            method: 'POST',
             body: JSON.stringify({
               email: this.email,
               source: "subscribe-form",
@@ -80,11 +76,6 @@
           this.submitting = false;
           this.message = "There was an error while subscribing."
         }
-      },
-      looksLikeAnEmail() {
-        // source: https://emailregex.com/
-        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          .test(this.email)
       }
     }
   }
