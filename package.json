@@ -50,6 +50,8 @@
   "dependencies": {
     "@tailwindcss/ui": "^0.3.0",
     "alpinejs": "^2.3.5",
-    "focus-visible": "^5.1.0"
+    "focus-visible": "^5.1.0",
+    "airtable": "^0.7.1",
+    "email-validator": "^2.0.4"
   }
 }
