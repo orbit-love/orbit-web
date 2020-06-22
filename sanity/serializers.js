@@ -64,7 +64,20 @@ module.exports = {
           )
       }
     },
-    code: ({ node }) => {},
+    code: ({ node }) => {
+      return h(
+        'div',
+        {},
+        h(
+          'pre',
+          {
+            className:
+              'whitespace-pre-wrap my-6 mx-auto p-4 bg-gray-600 text-white rounded-sm',
+          },
+          h('code', {}, node.code)
+        )
+      )
+    },
     image: ({ node }) => {
       const image = h('img', {
         src: Sanity.urlFor(Sanity.client, node)
