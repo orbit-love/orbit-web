@@ -18,7 +18,7 @@ eleventyNavigation:
     </p>
     <div class="mb-6 rounded">
       <button
-        class="cursor-pointer px-5 py-3 shadow-bottom border border-transparent text-base leading-6 font-bold rounded text-purple-500 bg-white hover:text-purple-600 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
+        class="cursor-pointer px-8 py-3 shadow-bottom text-base leading-6 font-bold rounded text-purple-500 bg-white hover:text-purple-600 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
         @click="showModal = true"
       >
         Request access
@@ -29,22 +29,23 @@ eleventyNavigation:
 
 <div class="pt-10">
   <div class="mb-16 flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto">
-    <p class="text-gray-600 text-3xl text-center leading-tight">
+    <p class="text-gray-600 text-4xl text-center leading-tight">
       Turn code into community.
     </p>
   </div>
 </div>
 
-{% include "for-maintainers/profiles.njk" %} {% include "newsletter-cta.njk" %}
-{% include "for-maintainers/builders.njk" %} {% include
-"for-devrels/metrics.njk" %}
+{% include "for-maintainers/profiles.njk" %}
+{% include "newsletter-cta.njk" %}
+{% include "for-maintainers/builders.njk" %}
+{% include "for-devrels/metrics.njk" %}
 
 <div class="max-w-screen-md mx-auto mt-10 sm:mt-0 mb-20 text-center">
   <p class="text-2xl font-bold">Ready to try it?</p>
   <div class="mb-6 mt-6 rounded">
     <button
       @click="showModal = true"
-      class="cursor-pointer px-5 py-3 shadow-bottom border border-transparent text-base leading-6 font-bold rounded text-white bg-purple-500 hover:text-gray-100 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
+      class="cursor-pointer px-8 py-3 shadow-bottom text-base leading-6 font-bold rounded text-white bg-purple-500 hover:text-gray-100 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
     >
       Request access
     </button>

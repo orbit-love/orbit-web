@@ -58,6 +58,10 @@ body {
     sans-serif;
 }
 
+h1 {
+  text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15);
+}
+
 /**
  * Tailwind components styles 
  */
@@ -77,6 +81,7 @@ body {
 
 .header_link__desktop {
   @apply ml-8 font-medium text-white border-none pb-1 transition duration-150 ease-in-out;
+  border-bottom: 2px solid transparent;
 }
 
 .header_link__desktop:hover {
