@@ -1,4 +1,5 @@
 const blocksToHtml = require('@sanity/block-content-to-html')
+const fetch = require('node-fetch')
 const h = blocksToHtml.h
 const Sanity = require('./sanityClient')
 
@@ -103,7 +104,8 @@ module.exports = {
 
       return content
     },
-    //   instagram: (props) => ``,
+    instagram: ({ node }) =>
+      h('div', { 'data-url': node.url, className: 'instagram my-6' }),
     twitter: ({ node }) => h('div', { id: node.id, className: 'tweet my-6' }),
   },
 }
