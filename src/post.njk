@@ -25,9 +25,12 @@ permalink: blog/{{ post.slug.current }}/
     </p>
   </div>
   {% if post.mainImage %}
-    <div class="relative overflow-visible max-w-screen-sm px-4 md:px-0 mx-auto">
-      <img class="float-left mb-4" src="{{ post.mainImage | sanityUrlFor(1920) }}" />
-    </div>
+  <div class="relative overflow-visible max-w-screen-sm px-4 md:px-0 mx-auto">
+    <img
+      class="float-left mb-4"
+      src="{{ post.mainImage | sanityUrlFor(1920) }}"
+    />
+  </div>
   {% endif %}
 </div>
 
@@ -38,3 +41,37 @@ permalink: blog/{{ post.slug.current }}/
 {% include "newsletter-cta.njk" %}
 
 <div class="mb-10"></div>
+
+<script>
+  window.twttr = (function (d, s, id) {
+    var js,
+      fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {}
+    if (d.getElementById(id)) return t
+    js = d.createElement(s)
+    js.id = id
+    js.src = 'https://platform.twitter.com/widgets.js'
+    fjs.parentNode.insertBefore(js, fjs)
+
+    t._e = []
+    t.ready = function (f) {
+      t._e.push(f)
+    }
+
+    return t
+  })(document, 'script', 'twitter-wjs')
+</script>
+
+<script>
+  twttr.ready(function (twttr) {
+    Array.from(document.getElementsByClassName('tweet')).forEach((tweet) => {
+      const id = tweet.getAttribute('id')
+      twttr.widgets.createTweet(id, tweet, {
+        conversation: 'none', // or all
+        cards: 'hidden', // or visible
+        linkColor: '#cc0000', // default is blue
+        theme: 'light', // or dark
+      })
+    })
+  })
+</script>

@@ -104,6 +104,6 @@ module.exports = {
       return content
     },
     //   instagram: (props) => ``,
-    twitter: (props) => ``,
+    twitter: ({ node }) => h('div', { id: node.id, className: 'tweet my-6' }),
   },
 }
