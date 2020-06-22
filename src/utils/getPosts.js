@@ -1,6 +1,6 @@
 const BlocksToMarkdown = require('@sanity/block-content-to-html')
 const groq = require('groq')
-const client = require('./sanityClient.js')
+const Sanity = require('./sanityClient.js')
 const serializers = require('./serializers')
 
 function generatePost(post) {
@@ -9,7 +9,7 @@ function generatePost(post) {
     body: BlocksToMarkdown({
       blocks: post.body,
       serializers,
-      ...client.config(),
+      ...Sanity.client.config(),
     }),
   }
 }
@@ -33,7 +33,9 @@ async function getPosts() {
   const order = `| order(publishedAt desc)`
   const query = [filter, projection, order].join(' ')
   // const query = [filter, order].join(' ')
-  const docs = await client.fetch(query).catch((err) => console.error(err))
+  const docs = await Sanity.client
+    .fetch(query)
+    .catch((err) => console.error(err))
   const preparePosts = docs.map(generatePost)
   return preparePosts
 }
