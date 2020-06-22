@@ -24,6 +24,11 @@ permalink: blog/{{ post.slug.current }}/
       {{ post.description }}
     </p>
   </div>
+  {% if post.mainImage %}
+    <div class="relative overflow-visible max-w-screen-sm px-4 md:px-0 mx-auto">
+      <img class="float-left mb-4" src={{ post.mainImage | sanityUrlFor }} />
+    </div>
+  {% endif %}
 </div>
 
 <div class="max-w-screen-sm mx-auto my-10">

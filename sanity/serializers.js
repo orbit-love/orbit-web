@@ -64,7 +64,7 @@ module.exports = {
           )
       }
     },
-    code: (props) => ``,
+    code: ({ node }) => {},
     image: ({ node }) => {
       const image = h('img', {
         src: Sanity.urlFor(Sanity.client, node)

@@ -1,5 +1,6 @@
 const { DateTime } = require('luxon')
 const markdownIt = require('markdown-it')
+const Sanity = require('../sanity/sanityClient')
 
 module.exports = {
   dateToFormat: function (date, format) {
@@ -38,5 +39,9 @@ module.exports = {
       linkify: true,
     })
     return md.render(value)
+  },
+
+  sanityUrlFor: function (node) {
+    return Sanity.urlFor(Sanity.client, node).width(1920).url()
   },
 }
