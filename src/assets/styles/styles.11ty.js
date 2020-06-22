@@ -11,6 +11,7 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
   // content relative to /dist
   content: [
     './src/assets/js/**/*.js',
+    './sanity/serializers.js',
     './src/**/*.njk',
     './src/**/*.md',
     './src/**/*.html',
