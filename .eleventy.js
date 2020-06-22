@@ -2,6 +2,7 @@ const fs = require('fs')
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginNavigation = require('@11ty/eleventy-navigation')
 const markdownIt = require('markdown-it')
+let markdownItAnchor = require('markdown-it-anchor')
 
 const filters = require('./utils/filters')
 const transforms = require('./utils/transforms')
@@ -81,7 +82,6 @@ module.exports = function (eleventyConfig) {
       html: true,
       breaks: true,
       linkify: true,
-      typographer: true,
     })
   )
 

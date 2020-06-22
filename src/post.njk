@@ -13,7 +13,23 @@ eleventyNavigation:
 permalink: blog/{{ post.slug.current }}/
 ---
 
-<h1>{{ post.title }}</h1>
-<p>{{post.url}}</p>
+<div class="slanted-top max-w-full bg-purple-400">
+  <div
+    class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto items-center justify-center"
+  >
+    <h1 class="mb-6 text-white text-4xl font-bold text-center leading-tight">
+      {{ post.title }}
+    </h1>
+    <p class="mb-10 text-white text-xl text-center">
+      {{ post.description }}
+    </p>
+  </div>
+</div>
 
-{# {{ post.body | markdownify | safe }} #}
+<div class="max-w-screen-sm mx-auto my-10">
+  {{ post.body | markdownify | safe }}
+</div>
+
+{% include "newsletter-cta.njk" %}
+
+<div class="mb-10"></div>

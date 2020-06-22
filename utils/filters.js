@@ -1,4 +1,5 @@
 const { DateTime } = require('luxon')
+const markdownIt = require('markdown-it')
 
 module.exports = {
   dateToFormat: function (date, format) {
@@ -28,5 +29,14 @@ module.exports = {
       chars.unshift(['&#', str[i].charCodeAt(), ';'].join(''))
     }
     return chars.join('')
+  },
+
+  markdownify: function (value) {
+    const md = new markdownIt({
+      html: true,
+      breaks: true,
+      linkify: true,
+    })
+    return md.render(value)
   },
 }
