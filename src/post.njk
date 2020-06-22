@@ -1,0 +1,19 @@
+---
+layout: page
+tags:
+  - blogPost
+pagination:
+  alias: post
+  data: posts
+  size: 1
+  addAllPagesToCollections: true
+title: Orbit — Blog
+eleventyNavigation:
+  key: Blog
+permalink: blog/{{ post.slug.current }}/
+---
+
+<h1>{{ post.title }}</h1>
+<p>{{post.url}}</p>
+
+{# {{ post.body | markdownify | safe }} #}

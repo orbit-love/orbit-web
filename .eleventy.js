@@ -129,6 +129,15 @@ module.exports = function (eleventyConfig) {
     },
   })
 
+  eleventyConfig.addCollection('blogPosts', function (collectionApi) {
+    // get blog posts sorted by publication date
+    return collectionApi.getFilteredByTags('blogPost').sort(function (a, b) {
+      return (
+        new Date(b.data.post.publishedAt) - new Date(a.data.post.publishedAt)
+      )
+    })
+  })
+
   return {
     dir: {
       input: 'src',

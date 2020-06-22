@@ -5,6 +5,16 @@ module.exports = {
     return DateTime.fromJSDate(date, { zone: 'utc' }).toFormat(String(format))
   },
 
+  stringDateToFormat: function (date, format) {
+    return DateTime.fromJSDate(new Date(date), { zone: 'utc' }).toFormat(
+      String(format)
+    )
+  },
+
+  toJSDate: function (date) {
+    return new Date(date)
+  },
+
   dateToISO: function (date) {
     return DateTime.fromJSDate(date, { zone: 'utc' }).toISO({
       includeOffset: false,
