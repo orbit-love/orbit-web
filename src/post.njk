@@ -30,7 +30,7 @@ permalink: blog/{{ post.slug.current }}/
   <div class="relative overflow-visible max-w-screen-sm px-4 md:px-0 mx-auto">
     <img
       class="float-left mb-4"
-      src="{{ post.mainImage | sanityUrlFor(1920) }}"
+      src="{{ post.mainImage | sanityUrlFor(640) }}"
     />
   </div>
   {% endif %}
