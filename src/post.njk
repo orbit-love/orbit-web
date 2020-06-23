@@ -7,10 +7,11 @@ pagination:
   data: posts
   size: 1
   addAllPagesToCollections: true
-title: Orbit Blog — {{ post.title }}
 eleventyNavigation:
   key: Blog
 permalink: blog/{{ post.slug.current }}/
+renderData:
+  title: Orbit Blog — {{ post.title }}
 ---
 
 <div class="slanted-top max-w-full bg-purple-400">
