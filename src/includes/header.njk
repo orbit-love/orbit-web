@@ -46,6 +46,7 @@
               <div class="-mr-2 flex items-center md:hidden">
                 <button
                   type="button"
+                  aria-label="Toggle mobile navigation menu"
                   @click="isOpen = !isOpen"
                   class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
                 >
@@ -93,13 +94,13 @@
               rel="noopener noreferrer"
               class="header_link__desktop"
             >Help</a>
-            <a href="https://github.com/orbit-love/" rel="noopener noreferrer" class="header_link__desktop"
+            <a alt="GitHub" href="https://github.com/orbit-love/" rel="noopener noreferrer" class="header_link__desktop"
               ><img
                 style="width: 20px; display: inline;"
                 src="/assets/images/GitHub-Mark-Light-32px.png"
             /></a>
 
-            <a href="https://twitter.com/OrbitModel/" rel="noopener noreferrer" class="header_link__desktop ml-4"
+            <a alt="Twitter" href="https://twitter.com/OrbitModel/" rel="noopener noreferrer" class="header_link__desktop ml-4"
               ><img
                 style="width: 22px; display: inline;"
                 src="/assets/images/Twitter-Mark-Light-32px.png"
@@ -168,6 +169,7 @@
               <div class="-mr-2">
                 <button
                   type="button"
+                  aria-label="Toggle mobile navigation menu"
                   @click="isOpen = !isOpen"
                   class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
                 >

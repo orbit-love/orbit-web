@@ -5,6 +5,7 @@
     @submit.prevent="subscribe($event)"
   >
     <div class="px-4 sm:flex sm:justify-center">
+      <label class="hidden" for="newsletter_cta">Join our mailing list</label>
       <input
         id="newsletter_cta"
         x-model="email"
@@ -15,6 +16,7 @@
       />
       <button
         class="mt-4 relative sm:mt-0 sm:h-auto sm:ml-4 block w-full sm:w-auto px-6 py-3 text-base leading-6 font-semibold leading-snug bg-purple-500 text-white rounded shadow-bottom hover:bg-purple-600 focus:outline-none focus:shadow-outline-purple focus:border-purple-300 transition ease-in-out duration-150"
+        aria-label="Subscribe to Orbit newsletter"
         :class="{ 'opacity-50 pointer-events-none': submitting, 'hover:bg-gray-600': !submitting }"
         :disabled="submitting"
       >

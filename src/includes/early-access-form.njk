@@ -32,26 +32,34 @@
       @submit.prevent="requestEarlyAccess($event)"
     >
       <div class="px-4 max-w-xs mx-auto flex flex-col items-start">
+        <label class="hidden" for="early_access_form_name">Name</label>
         <input
+          id="early_access_form_name"
           x-model="name"
           required=""
           placeholder="Your name"
           class="block w-full px-4 py-3 text-base text-sm leading-6 appearance-none border border-gray-100 bg-white rounded placeholder-gray-500 shadow-bottom focus:outline-none focus:shadow-outline-purple focus:border-purple-300"
         />
+        <label class="hidden" for="early_access_form_company">Company</label>
         <input
+          id="early_access_form_company"
           x-model="company"
           required=""
           placeholder="Company"
           class="block w-full px-4 py-3 mt-2 text-base text-sm leading-6 appearance-none border border-gray-100 bg-white rounded placeholder-gray-500 shadow-bottom focus:outline-none focus:shadow-outline-purple focus:border-purple-300"
         />
+        <label class="hidden" for="early_access_form_email">Email</label>
         <input
+          id="early_access_form_email"
           x-model="email"
           type="email"
           required=""
           placeholder="Email address"
           class="block w-full px-4 py-3 mt-2 text-base text-sm leading-6 appearance-none border border-gray-100 bg-white rounded placeholder-gray-500 shadow-bottom focus:outline-none focus:shadow-outline-purple focus:border-purple-300"
         />
+        <label class="hidden" for="early_access_form_project_url">Project URL (if you’re a maintainer)</label>
         <input
+          id="early_access_form_project_url"
           x-model="projectUrl"
           type="url"
           placeholder="Project URL (if you’re a maintainer)"
@@ -59,6 +67,7 @@
         />
         <div class="mt-4 flex flex-row items-center">
           <button
+            aria-label="Subscribe"
             class="relative block border border-transparent px-6 py-3 text-base leading-6 font-semibold leading-snug bg-purple-500 text-white rounded-md shadow-md hover:bg-purple-600 focus:outline-none focus:shadow-outline-purple focus:border-purple-300 transition ease-in-out duration-150"
             :class="{ 'opacity-50 pointer-events-none': submitting, 'hover:bg-gray-600': !submitting }"
             :disabled="submitting"

@@ -29,6 +29,7 @@ permalink: blog/{{ post.slug.current }}/
   {% if post.mainImage %}
   <div class="relative overflow-visible max-w-screen-sm px-4 md:px-0 mx-auto">
     <img
+      alt=""
       class="float-left mb-4"
       src="{{ post.mainImage | sanityUrlFor(640) }}"
     />
