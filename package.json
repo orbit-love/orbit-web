@@ -15,7 +15,7 @@
     "dev": "npm-run-all clean --parallel dev:* --print-label",
     "build:webpack": "webpack --mode production",
     "build:eleventy": "cross-env ELEVENTY_ENV=production eleventy",
-    "build": "run-s clean build:* --print-label",
+    "build": "run-s clean build:* --print-label && cp dist/404/index.html dist/404.html",
     "watch:webpack": "webpack --mode development --watch",
     "watch:eleventy": "cross-env ELEVENTY_ENV=development eleventy --serve",
     "watch": "npm-run-all clean --parallel watch:*",
