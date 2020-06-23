@@ -7,7 +7,7 @@ eleventyNavigation:
 
 <div class="slanted-top max-w-full bg-purple-400">
   <div class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto">
-    <h1 class="mb-6 text-white text-5xl font-bold text-center leading-tight">
+    <h1 class="mb-6 text-white text-4xl sm:text-5xl font-bold text-center leading-tight">
       Orbit Blog
     </h1>
   </div>
@@ -15,7 +15,7 @@ eleventyNavigation:
 
 {% set postslist = collections.blogPosts %}
 
-<div class="max-w-screen-sm mx-auto pt-10 mb-10">
+<div class="max-w-screen-sm mx-auto pt-10 px-4 sm:px-0 mb-10">
   {% for post in postslist %}
     {% set currentPost = post.data.post %}
       <div class="mb-6">
