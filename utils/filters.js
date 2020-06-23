@@ -13,6 +13,10 @@ module.exports = {
     )
   },
 
+  toJSDate: function (date) {
+    return new Date(date)
+  },
+
   dateToISO: function (date) {
     return DateTime.fromJSDate(date, { zone: 'utc' }).toISO({
       includeOffset: false,
