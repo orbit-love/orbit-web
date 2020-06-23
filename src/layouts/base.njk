@@ -16,7 +16,6 @@
       x-data="{ showModal: false }"
       @keydown.escape="showModal = false"
       @togglemodal="showModal = $event.detail.value"
-      x-cloak
     >
       <main class="flex-grow w-full">
         {{ content | safe }}
