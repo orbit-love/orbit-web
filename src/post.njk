@@ -23,7 +23,9 @@ permalink: blog/{{ post.slug.current }}/
     <p class="mb-10 text-white text-xl text-center">
       {{ post.description }}
     </p>
+    {% set authors = post.authors %} {% include "blog/authors.njk" %}
   </div>
+
   {% if post.mainImage %}
   <div class="relative overflow-visible max-w-screen-sm px-4 md:px-0 mx-auto">
     <img
@@ -34,7 +36,7 @@ permalink: blog/{{ post.slug.current }}/
   {% endif %}
 </div>
 
-<div class="max-w-screen-sm mx-auto my-10">
+<div class="max-w-screen-sm mx-auto my-10 pt-10">
   {{ post.body | markdownify | safe }}
 </div>
 

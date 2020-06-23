@@ -19,7 +19,7 @@ eleventyNavigation:
   {% for post in postslist %}
     {% set currentPost = post.data.post %}
       <div class="mb-6">
-        <h2 class="mb-2 text-xl text-gray-600 font-bold">{{currentPost.title}}</h2>
+        <a href="{{ post.url }}"><h2 class="mb-2 text-xl text-gray-600 font-bold">{{currentPost.title}}</h2></a>
         <p class="text-gray-500 mb-2 text-xs">
           Published {{currentPost.publishedAt | stringDateToFormat("MMMM d, y") }}
         </p>

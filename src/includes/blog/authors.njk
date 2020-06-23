@@ -1,0 +1,29 @@
+<div class="flex flex-row mb-10">
+  {% for author in authors %}
+    <div class="mr-2 border border-gray-200 rounded-full" style="padding: 3px;">
+      <img
+        src="{{ author.image | sanityUrlFor(48) }}"
+        srcSet="{{ author.image | sanityUrlFor(48) }} 1x, {{ author.image | sanityUrlFor(96) }} 2x, {{ author.image | sanityUrlFor(144) }} 3x"
+        class="h-9 w-9 rounded-full"
+      />
+    </div>
+  {% endfor %}
+  <div class="flex flex-col">
+    <p class="text-white">
+      {% for author in authors %}
+        {% if loop.length == 1 %}
+          {{author.name}}
+        {% else %}
+          {% if loop.first %}
+            {{author.name}}<!--
+          {% elif loop.last %}
+            --> and {{author.name}}.
+          {% else %}
+            -->, {{author.name}}<!--
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </p>
+    <p class="text-xs text-white">Published {{post.publishedAt | stringDateToFormat("MMMM d, y") }}</p>
+  </div>
+</div>
