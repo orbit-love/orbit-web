@@ -11,16 +11,16 @@ eleventyExcludeFromCollections: true
     <author>
         <name>{{ meta.title }}</name>
     </author>
-    {% if collections.posts %}
-    <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
+    {% if collections.blogPosts %}
+    <updated>{{ collections.blogPosts | rssLastUpdatedDate }}</updated>
     {% endif %}
     <id>{{ meta.url }}/</id>
-    {%- for post in collections.posts | reverse -%}
+    {%- for post in collections.blogPosts -%}
     {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(meta.url) }}{% endset %}
         <entry>
-            <title>{{ post.data.title }}</title>
+            <title>Orbit Blog — {{ post.data.post.title }}</title>
             <link href="{{ absolutePostUrl }}"/>
-            <updated>{{ post.date | rssDate }}</updated>
+            <updated>{{ post.data.post.publishedAt }}</updated>
             <id>{{ absolutePostUrl }}</id>
             <content type="html"><![CDATA[
                 {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | safe }}
