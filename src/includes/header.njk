@@ -67,9 +67,10 @@
             </div>
           </div>
           <div class="hidden md:block md:ml-10 md:pr-4">
-            <a href="/" class="header_link__desktop">Home</a>
+            <a href="/" class="header_link__desktop {% if page.url == '/' %}active border-white{% endif %}">Home</a>
             <div class="inline-flex flex-col" id="solutions_header_link">
-              <a href="#" class="ml-8 font-medium text-white border-none">Solutions</a>
+              {% set isSolutionPageRegExp = r/^\/solutions\//g %}
+              <a href="#" class="ml-8 font-medium text-white {% if isSolutionPageRegExp.test(page.url) %}active border-b-2 border-white{% endif %}">Solutions</a>
               <div class="hidden flex-col absolute rounded bg-purple-900">
                 <span class="mx-8 mb-3 text-white">Solutions</span>
                 <a
@@ -84,8 +85,9 @@
                 >
               </div>
             </div>
-            <a href="/blog/" class="header_link__desktop">Blog</a>
-            <a href="/about-us/" class="header_link__desktop">About Us</a>
+            {% set isBlogPageRegExp = r/^\/blog\//g %}
+            <a href="/blog/" class="header_link__desktop {% if isBlogPageRegExp.test(page.url) %}active border-white{% endif %}">Blog</a>
+            <a href="/about-us/" class="header_link__desktop {% if page.url == '/about-us/' %}active border-white{% endif %}">About Us</a>
             <a
               href="https://www.notion.so/orbitlove/Orbit-User-Guides-2ff38c037b764dc59cdf1ad128d312d5"
               rel="noopener noreferrer"
