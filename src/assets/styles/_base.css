@@ -193,8 +193,8 @@ h1 {
 
 .slanted-top:after {
   bottom: 0;
-  transform: skewY(-3deg);
-  transform-origin: 100%;
+  transform: skewY(3deg);
+  transform-origin: 0 100%;
 }
 
 .screenshot-slanted {
@@ -217,8 +217,8 @@ h1 {
 .screenshot-slanted:before {
   top: 0;
   bottom: 0;
-  transform: skewY(-3deg);
-  transform-origin: 100%;
+  transform: skewY(3deg);
+  transform-origin: 0 100%;
 }
 
 .screenshot-slanted:after {
@@ -255,14 +255,14 @@ h1 {
     )
     0 4em;
   clip-path: polygon(
-    0% calc(var(--skew-padding) * 2),
-    100% 0%,
+    0% 0%,
+    100% calc(var(--skew-padding) * 2),
     100% 100%,
     0% 100%
   );
   -webkit-clip-path: polygon(
-    0% calc(var(--skew-padding) * 2),
-    100% 0%,
+    0% 0%,
+    100% calc(var(--skew-padding) * 2),
     100% 100%,
     0% 100%
   );
