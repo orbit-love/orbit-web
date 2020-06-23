@@ -23,6 +23,9 @@ Built with the following technologies (thanks to this wonderful [Eleventy Starte
 # Clone the project
 git clone git@github.com:orbit-love/orbit-web-v2.git && cd orbit-web-v2
 
+# Connect to the Vercel project
+vercel
+
 # install the project dependencies
 yarn
 
