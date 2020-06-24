@@ -55,7 +55,7 @@ module.exports = {
             'blockquote',
             {
               className:
-                'bg-gray-100 rounded border-l-4 border-purple-400 mb-6 py-4 px-6',
+                'bg-gray-100 rounded border-l-4 border-purple-400 my-5 py-4 px-5',
             },
             h(
               'p',
@@ -94,9 +94,7 @@ module.exports = {
       const content = h(
         'div',
         {
-          className: `border border-gray-300 p-2 my-6 max-w-full ${
-            node.width ? 'mx-auto' : 'mx-0'
-          }`,
+          className: `p-2 my-6 max-w-full ${node.width ? 'mx-auto' : 'mx-0'}`,
           style: `width: ${node.width ? node.width + 'px' : '100%'}`,
         },
         link || image

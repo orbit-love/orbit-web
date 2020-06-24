@@ -25,6 +25,6 @@
         {% endif %}
       {% endfor %}
     </p>
-    <p class="text-xs text-white">Published {{post.publishedAt | stringDateToFormat("MMMM d, y") }}</p>
+    <p class="text-xs text-white">{{post.publishedAt | stringDateToFormat("MMMM d, y") }}</p>
   </div>
 </div>
