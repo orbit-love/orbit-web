@@ -5,23 +5,21 @@ endset -%} {# General #}
 
 {# Open Graph #}
 <meta property="og:site_name" content="{{ meta.title }}" />
-<meta property="og:title" content="{{ title or meta.title }}" />
+<meta property="og:title" content="{{ renderData.title or title or meta.title }}" />
 <meta
   property="og:description"
-  content="{{ description  or meta.description }}"
+  content="{{ renderData.description or description or meta.description }}"
 />
 <meta property="og:url" content="{{ absolutePageUrl }}" />
 <meta property="og:locale" content="{{ meta.locale }}" />
 <meta
   name="twitter:card"
-  content="{% if image -%}summary_large_image{% else %}summary{% endif %}"
+  content="{% if renderData.mainImage -%}summary_large_image{% else %}summary{% endif %}"
 />
-{%- if image -%}
 <meta
   property="og:image"
-  content="{{ image | url | absoluteUrl(build.url) }}"
+  content="{{ renderData.mainImage or image or '/assets/images/og_image.png' | url | absoluteUrl(build.url) }}"
 />
-{%- endif -%} {# Favicon #}
 <link
   rel="apple-touch-icon"
   sizes="180x180"
