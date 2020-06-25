@@ -136,20 +136,20 @@ h1 {
   }
 }
 
-#solutions_header_link > div {
+#product_header_link > div {
   border-top: 10px solid #281d5c;
   top: -2px;
 }
 
-#solutions_header_link:focus-within > div {
+#product_header_link:focus-within > div {
   display: flex;
 }
 
-#solutions_header_link:hover > div {
+#product_header_link:hover > div {
   display: flex;
 }
 
-#solutions_header_link > a:focus + div {
+#product_header_link > a:focus + div {
   display: flex;
 }
 
