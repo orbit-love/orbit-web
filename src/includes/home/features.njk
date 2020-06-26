@@ -1,4 +1,5 @@
 {% from "../macros/feature.njk" import feature %}
+{% from "../macros/buttons.njk" import request_access_button %}
 
 <div class="mt-10 flex flex-col items-center max-w-screen-md mx-auto">
   <p class="mb-6 text-4xl leading-tight text-center text-gray-600">
@@ -80,13 +81,7 @@
       </p>
     </div>
   </div>
-  <div class="mb-6 mt-10 rounded">
-    <button
-      @click="showModal = true"
-      aria-label="Open early access form"
-      class="cursor-pointer px-8 py-3 shadow-bottom text-base leading-6 font-bold rounded text-white bg-purple-500 hover:text-gray-100 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
-    >
-      Request access
-    </button>
+  <div class="mt-10">
+    {{ request_access_button() }}
   </div>
 </div>

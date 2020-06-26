@@ -1,4 +1,5 @@
 {% from "../macros/typography.njk" import tagline, title %}
+{% from "../macros/buttons.njk" import request_access_button %}
 
 <div class="slanted-top maw-w-full bg-purple-400">
   <div
@@ -12,15 +13,7 @@
         for delivering a stellar member experience.
       ")
     }}
-    <div class="mb-6 rounded">
-      <button
-        class="cursor-pointer px-8 py-3 shadow-bottom text-base leading-6 font-bold rounded text-purple-500 bg-white hover:text-purple-600 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
-        aria-label="Open early access form"
-        @click="showModal = true"
-      >
-        Request access
-      </button>
-    </div>
+    {{ request_access_button(inverted=true) }}
     <div
       class="mb-10 flex flex-row flex-wrap justify-center text-white font-medium"
     >

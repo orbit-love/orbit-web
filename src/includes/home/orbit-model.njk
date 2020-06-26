@@ -1,3 +1,5 @@
+{% from "../macros/buttons.njk" import request_access_button %}
+
 <div
   class="clip-path orbit-background w-full mt-10 sm:mt-36 pb-36 bg-aubergine"
 >
@@ -18,15 +20,5 @@
   </div>
 </div>
 <div class="w-full pt-10 pb-10 bg-aubergine flex flex-col items-center">
-  <div
-    class="px-8 py-3 rounded shadow-bottom bg-white hover:text-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
-  >
-    <button
-      class="text-base leading-6 font-bold text-aubergine"
-      aria-label="Open early access form"
-      @click="showModal = true"
-    >
-      Request access
-    </button>
-  </div>
+  {{ request_access_button(inverted=true, extra_classes="text-aubergine") }}
 </div>
