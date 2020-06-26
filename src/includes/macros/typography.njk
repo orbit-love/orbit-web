@@ -1,0 +1,11 @@
+{% macro title(text) %}
+  <h1 class="mb-6 text-white text-4xl sm:text-5xl font-bold text-center leading-tight">
+    {{ text | safe }}
+  </h1>
+{% endmacro %}
+
+{% macro tagline(text) %}
+  <p class="mb-10 text-white text-xl text-center">
+    {{ text | safe }}
+  </p>
+{% endmacro %}

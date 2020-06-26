@@ -5,18 +5,19 @@ description: Orbit helps deliver a stellar member experience—and prove it.
 eleventyNavigation:
   key: DevRel and Community Teams
 ---
+{% from "macros/typography.njk" import tagline, title %}
 
 <div class="slanted-top max-w-full bg-purple-400">
   <div
     class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto items-center justify-center"
   >
-    <h1 class="mb-6 text-white text-4xl sm:text-5xl font-bold text-center leading-tight">
-      Grow your community and show ROI.
-    </h1>
-    <p class="mb-10 text-white text-xl text-center">
-      Orbit helps Developer Relations and Community Teams deliver a stellar
-      member experience—and prove it.
-    </p>
+    {{ title("Grow your community and show ROI.") }}
+    {{ 
+      tagline("
+        Orbit helps Developer Relations and Community Teams deliver a stellar
+        member experience—and prove it.
+      ")
+    }}
     <div class="mb-6 rounded">
       <button
         class="cursor-pointer px-8 py-3 shadow-bottom text-base leading-6 font-bold rounded text-purple-500 bg-white hover:text-purple-600 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
