@@ -14,6 +14,9 @@ renderData:
   title: Orbit Blog — {{ post.title }}
   description: "{{ post.description }}"
   mainImage: "{{ post.mainImage | sanityUrlFor(640) }}"
+  socialImage: "{{ post.socialImage | sanityUrlFor }}"
+  socialImageWidth: "{{ post.socialImageWidth }}"
+  socialImageHeight: "{{ post.socialImageHeight }}"
 ---
 {% from "macros/typography.njk" import tagline, title %}
 

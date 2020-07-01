@@ -22,15 +22,15 @@ endset -%} {# General #}
 />
 <meta
   property="og:image"
-  content="{{ renderData.mainImage or image or '/assets/images/og_image.png' | url | absoluteUrl(build.url) }}"
+  content="{{ renderData.socialImage or image or '/assets/images/og_image.png' | url | absoluteUrl(build.url) }}"
 />
 <meta
   property="og:image:width"
-  content="640"
+  content="{{ renderData.socialImageWidth or 640 }}"
 />
 <meta
   property="og:image:height"
-  content="364"
+  content="{{ renderData.socialImageHeight or 640 }}""
 />
 <link
   rel="apple-touch-icon"

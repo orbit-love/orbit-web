@@ -42,6 +42,9 @@ module.exports = {
   },
 
   sanityUrlFor: function (node, width) {
-    return Sanity.urlFor(Sanity.client, node).width(width).url()
+    if (width) {
+      return Sanity.urlFor(Sanity.client, node).width(width).url()
+    }
+    return Sanity.urlFor(Sanity.client, node).url()
   },
 }
