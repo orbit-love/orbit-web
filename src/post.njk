@@ -41,7 +41,7 @@ renderData:
 </div>
 
 <div class="max-w-screen-sm mx-auto my-10 pt-10 px-4 sm:px-0">
-  {{ post.body | markdownify | safe }}
+  {{ post.body | safe }}
 </div>
 
 {% include "newsletter-cta.njk" %}
@@ -104,5 +104,5 @@ renderData:
   )
 </script>
 
-<script async src="/assets/scripts/prism.js"></script>
-<link href="/assets/styles/prism.css" rel="stylesheet" />
+<script async src="{{ '/prism.js' | url }}"></script>
+<link href="{{ '/prism.css' | url }}" rel="stylesheet"/>

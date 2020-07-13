@@ -66,6 +66,12 @@ module.exports = function (eleventyConfig) {
    * @link https://www.11ty.io/docs/copy/
    */
   eleventyConfig.addPassthroughCopy({ 'src/assets/scripts/sw.js': 'sw.js' })
+  eleventyConfig.addPassthroughCopy({
+    'src/assets/scripts/prism.js': 'prism.js',
+  })
+  eleventyConfig.addPassthroughCopy({
+    'src/assets/styles/prism.css': 'prism.css',
+  })
   eleventyConfig.addPassthroughCopy('src/assets/images')
   eleventyConfig.addPassthroughCopy('src/assets/fonts')
   eleventyConfig.addPassthroughCopy('src/site.webmanifest')

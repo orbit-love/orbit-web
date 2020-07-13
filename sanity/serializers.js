@@ -67,16 +67,12 @@ module.exports = {
     },
     code: ({ node }) => {
       return h(
-        'div',
-        {},
-        h(
-          'pre',
-          {
-            className:
-              'whitespace-pre-wrap my-6 mx-auto p-4 bg-gray-600 text-white rounded-sm',
-          },
-          h('code', { className: `language-${node.language}` }, node.code)
-        )
+        'pre',
+        {
+          className:
+            'whitespace-pre-wrap my-6 mx-auto p-4 bg-gray-600 text-white rounded-sm',
+        },
+        h('code', { className: `language-${node.language}` }, node.code)
       )
     },
     image: ({ node }) => {
