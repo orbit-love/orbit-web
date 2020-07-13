@@ -75,7 +75,7 @@ module.exports = {
             className:
               'whitespace-pre-wrap my-6 mx-auto p-4 bg-gray-600 text-white rounded-sm',
           },
-          h('code', {}, node.code)
+          h('code', { className: `language-${node.language}` }, node.code)
         )
       )
     },
