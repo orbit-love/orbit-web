@@ -1,12 +1,12 @@
 {
-  "name": "eleventy-starter",
+  "name": "orbit-web",
   "version": "1.0.0",
-  "description": "An 11ty starter project.",
-  "author": "Ryan Scherler",
+  "description": "The https://orbit.love website.",
+  "author": "Nicolas Goutay",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/eastslopestudio/eleventy-starter"
+    "url": "https://github.com/orbit-love/orbit-web"
   },
   "scripts": {
     "clean": "rimraf dist",
