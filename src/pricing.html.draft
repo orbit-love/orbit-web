@@ -5,6 +5,7 @@ eleventyNavigation:
   key: Pricing
 ---
 {% from "macros/typography.njk" import tagline, title %}
+{% from "macros/separator.njk" import separator %}
 
 <div class="slanted-top max-w-full bg-purple-400">
   <div class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto">
@@ -19,9 +20,9 @@ eleventyNavigation:
 
 <div class="max-w-screen-xl mx-auto pt-10 mb-20 text-center">
   <p class="text-2xl font-bold">Try Solo and Team for 30 days for free.</p>
-  <hr class="w-16 mt-4 mb-10 border-4 border-purple-400 mx-auto" />
+  {{ separator() }}
   <p class="text-2xl font-bold">Free for Open Source maintainers</p>
-  <hr class="w-16 mt-4 mb-10 border-4 border-purple-400 mx-auto" />
+  {{ separator() }}
   <p class="max-w-screen-sm mx-auto text-center text-gray-600">
     Do you maintain an open source project? Email
     <a href="mailto:maintainers@orbit.love" class="underline text-purple-500">

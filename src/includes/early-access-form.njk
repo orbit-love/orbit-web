@@ -1,3 +1,4 @@
+{% from "./macros/separator.njk" import separator %}
 <!--Overlay-->
 <div
   class="fixed z-10 w-full h-full top-0 left-0 flex items-center justify-center"
@@ -19,7 +20,7 @@
   >
     <p class="text-2xl font-bold">Join us in Orbit.</p>
 
-    <hr class="w-16 mt-4 mb-10 border-4 border-purple-400 mx-auto" />
+    {{ separator() }}
 
     <p class="text-sm">
       In early access, we’re working closely with our early users to setup their
