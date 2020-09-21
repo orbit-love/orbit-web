@@ -1,3 +1,21 @@
 {% macro tag(name, color) %}
-	<span class="px-2 py-1 mb-1 rounded whitespace-no-wrap bg-{{color | lower }}-100">{{name}}</span>
+	{% switch color | lower %}
+		{% case 'purple' %}
+			{% set bgClass = "bg-purple-100" %}
+		{% case 'gray' %}
+				{% set bgClass = "bg-gray-100" %}
+		{% case 'pink' %}
+			{% set bgClass = "bg-gray-100" %}
+		{% case 'red' %}
+				{% set bgClass = "bg-red-100" %}
+		{% case 'orange' %}
+				{% set bgClass = "bg-orange-100" %}
+		{% case 'green' %}
+				{% set bgClass = "bg-green-100" %}
+		{% case 'teal' %}
+				{% set bgClass = "bg-teal-100" %}
+		{% case 'blue' %}
+				{% set bgClass = "bg-blue-100" %}
+	{% endswitch %}
+	<span class="px-2 py-1 mb-1 rounded whitespace-no-wrap {{bgClass}}">{{name}}</span>
 {% endmacro %}
