@@ -143,6 +143,15 @@ module.exports = function (eleventyConfig) {
       )
     })
   })
+  
+  eleventyConfig.addCollection('jobListings', function (collectionApi) {
+    // get blog posts sorted by publication date
+    return collectionApi.getFilteredByTags('jobListing').sort(function (a, b) {
+      return (
+        new Date(b.data.jobListing.publishedAt) - new Date(a.data.jobListing.publishedAt)
+      )
+    })
+  })
 
   return {
     dir: {
