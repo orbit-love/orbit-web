@@ -62,7 +62,7 @@ eleventyNavigation:
     {% for jobListing in jobListings %}
       {% set currentJobListing = jobListing.data.jobListing %}
       <tr>
-        <td>{{currentJobListing.role}}</td>
+        <td><a href="{{ jobListing.url }}">{{ currentJobListing.role }}</a></td>
         <td>
           {% for type in currentJobListing.type %}
             {{ tag(type.name, type.color) }}
