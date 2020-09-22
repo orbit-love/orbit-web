@@ -7,15 +7,15 @@ module.exports = {
   list: ({ type, children }) => {
     switch (type) {
       case 'bullet':
-        return h('ul', { className: 'mb-4 ml-3 pl-6' }, children)
+        return h('ul', {}, children)
     }
   },
   listItem: ({ children }) => {
-    return h('li', { className: 'list-disc leading-7 text-lg' }, children)
+    return h('li', {}, children)
   },
   marks: {
     link: ({ mark, children }) =>
-      h('a', { href: mark.href, className: 'text-purple-600' }, children),
+      h('a', { href: mark.href,}, children),
     inlineimage: ({ mark, children }) => {
       switch (mark._type) {
         case 'inlineimage':
@@ -33,34 +33,31 @@ module.exports = {
         case 'h1':
           return h(
             'h1',
-            { className: 'mt-10 mb-5 text-3xl font-bold leading-9' },
+            {},
             children
           )
         case 'h2':
           return h(
             'h2',
-            { className: 'mt-10 mb-5 text-3xl font-bold leading-9' },
+            {},
             children
           )
         case 'h3':
           return h(
             'h3',
-            { className: 'mt-10 mb-5 text-2xl font-bold leading-8' },
+            {},
             children
           )
         case 'normal':
-          return h('p', { className: 'text-lg mb-5' }, children)
+          return h('p', {}, children)
         case 'blockquote':
           return h(
             'blockquote',
-            {
-              className:
-                'bg-gray-100 rounded border-l-4 border-purple-400 my-5 py-4 px-5',
-            },
+            {},
             h(
               'p',
-              { className: 'text-gray-600 italic' },
-              h('strong', {}, children)
+              {},
+              children
             )
           )
       }
@@ -68,10 +65,7 @@ module.exports = {
     code: ({ node }) => {
       return h(
         'pre',
-        {
-          className:
-            'whitespace-pre-wrap my-6 mx-auto p-4 bg-gray-600 text-white rounded-sm',
-        },
+        {},
         h('code', { className: `language-${node.language}` }, node.code)
       )
     },
@@ -82,15 +76,13 @@ module.exports = {
           .height(node.height)
           .url(),
         alt: node.alt,
-        className: 'w-full',
         title: node.title,
       })
       const link =
-        node.href && h('a', { href: node.href, className: 'block' }, image)
+        node.href && h('a', { href: node.href}, image)
       const content = h(
         'div',
         {
-          className: `p-2 my-6 max-w-full ${node.width ? 'mx-auto' : 'mx-0'}`,
           style: `width: ${node.width ? node.width + 'px' : '100%'}`,
         },
         link || image

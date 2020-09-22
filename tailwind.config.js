@@ -8,6 +8,40 @@ module.exports = {
         bottom: '0px 2px 0px rgba(0, 0, 0, 0.15)',
       },
     },
+    typography: (theme) => ({
+      default: {
+        css: {
+          color: theme('colors.gray.900'),
+          a: {
+            color: theme('colors.purple.600'),
+            '&:hover': {
+              color: theme('colors.purple.600'),
+            },
+            textDecoration: null
+          },
+          blockquote: {
+            background: theme('colors.gray.100'),
+            borderLeftColor: theme('colors.purple.400'),
+            padding: '1rem 1.25rem',
+            p: {
+              color: theme('colors.gray.600'),
+              '&:first-of-type': {
+                marginTop: 0,
+              },
+              '&:last-of-type': {
+                marginBottom: 0
+              },
+              '&:first-of-type::before': {
+                content: "'' !important"
+              },  
+              '&:last-of-type::after': {
+                content: "'' !important"
+              }
+            }
+          }
+        },
+      },
+    }),
     colors: {
       purple: {
         100: '#EBE7FE',
