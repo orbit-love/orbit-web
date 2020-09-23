@@ -274,3 +274,11 @@ h1 {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.break-out {
+  @media(min-width: 1280px) {
+    width: 60vw!important; /* !important here overrides the `.prose table` specificity */
+    margin: 0 calc(50% - min(30vw, 512px));
+    max-width: 1024px;  
+  }  
+}
