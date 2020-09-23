@@ -50,37 +50,39 @@ eleventyNavigation:
   
   {% set jobListings = collections.jobListings %}
   
-  <table class="break-out">
-    <thead>
-      <tr>
-        <th>Role</th>
-        <th>Type</th>
-        <th>Status</th>
-        <th>Skills</th>
-      </tr>
-    </thead>
-    {% for jobListing in jobListings %}
-      {% set currentJobListing = jobListing.data.jobListing %}
-      <tr>
-        <td><a href="{{ jobListing.url }}">{{ currentJobListing.role }}</a></td>
-        <td>
-          {% for type in currentJobListing.type %}
-            {{ tag(type.name, type.color) }}
-          {% endfor %}
-        </td>
-        <td>
-          {% for status in currentJobListing.status %}
-            {{ tag(status.name, status.color) }}
-          {% endfor %}
-        </td>
-        <td>
-          {% for skill in currentJobListing.skills %}
-            {{ tag(skill.name, skill.color) }}
-          {% endfor %}
-        </td>
-      </tr>
-    {% endfor %}
-  </table>
+  <div class="ob-break-out overflow-x-auto">
+    <table>
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Skills</th>
+        </tr>
+      </thead>
+      {% for jobListing in jobListings %}
+        {% set currentJobListing = jobListing.data.jobListing %}
+        <tr>
+          <td><a href="{{ jobListing.url }}">{{ currentJobListing.role }}</a></td>
+          <td>
+            {% for type in currentJobListing.type %}
+              {{ tag(type.name, type.color) }}
+            {% endfor %}
+          </td>
+          <td>
+            {% for status in currentJobListing.status %}
+              {{ tag(status.name, status.color) }}
+            {% endfor %}
+          </td>
+          <td>
+            {% for skill in currentJobListing.skills %}
+              {{ tag(skill.name, skill.color) }}
+            {% endfor %}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
   
   <p>
     If anything interests you, see the contact details in the post or send an email to <a href="mailto:founders@orbit.love">founders@orbit.love</a> and introduce yourself. We'd love to meet you.
