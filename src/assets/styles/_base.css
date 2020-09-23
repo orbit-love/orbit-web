@@ -274,3 +274,10 @@ h1 {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.ob-maintainers-metrics {
+  margin-top: 20px;
+  @media(min-width: 640px) {
+    margin-top: -250px
+  }
+}
