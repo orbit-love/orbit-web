@@ -53,6 +53,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@tailwindcss/ui": "^0.3.0",
     "airtable": "^0.7.1",
     "alpinejs": "^2.3.5",

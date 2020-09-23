@@ -8,6 +8,7 @@ const filters = require('./utils/filters')
 const transforms = require('./utils/transforms')
 const shortcodes = require('./utils/shortcodes')
 const svgsprite = require('./utils/svgsprite')
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventyConfig) {
   /**
@@ -17,6 +18,7 @@ module.exports = function (eleventyConfig) {
    */
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(pluginNavigation)
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   /**
    * Add filters
