@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/product(.*)", "destination": "/solutions$1" }
+  ]
+}
