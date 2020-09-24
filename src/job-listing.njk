@@ -1,0 +1,33 @@
+---
+layout: page
+tags:
+  - jobListing
+pagination:
+  alias: jobListing
+  data: jobListings
+  size: 1
+  addAllPagesToCollections: true
+eleventyNavigation:
+  key: Careers
+permalink: careers/{{ jobListing.slug.current }}/
+renderData:
+  title: Orbit Careers — {{ jobListing.role }}
+---
+{% from "macros/typography.njk" import tagline, title %}
+
+<div class="slanted-top max-w-full bg-purple-400">
+  <div
+    class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto items-center justify-center"
+  >
+    {{ title(jobListing.role) }}
+    {{ tagline(jobListing.description.toUpperCase()) }}
+  </div>
+</div>
+
+<div class="max-w-screen-sm prose prose-lg mx-auto my-10 pt-10 px-4 sm:px-0">
+  {{ jobListing.body | safe }}
+  
+  <div class="prose">
+    <a href="/careers/">🔙 See all open positions</a>
+  </div>
+</div>

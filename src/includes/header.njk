@@ -88,6 +88,7 @@
             </div>
             {% set isBlogPageRegExp = r/^\/blog\//g %}
             <a href="/blog/" class="header_link__desktop {% if isBlogPageRegExp.test(page.url) %}active border-white{% endif %}">Blog</a>
+            <a href="/careers/" class="header_link__desktop {% if page.url == '/careers/' %}active border-white{% endif %}">Careers</a>
             <a href="/about-us/" class="header_link__desktop {% if page.url == '/about-us/' %}active border-white{% endif %}">About Us</a>
             <a
               href="https://www.notion.so/orbitlove/Orbit-User-Guides-2ff38c037b764dc59cdf1ad128d312d5"
@@ -212,6 +213,7 @@
                 >Open Source Maintainers</a
               >
               <a href="/blog/" class="header_link__mobile" role="menuitem">Blog</a>
+              <a href="/careers/" class="header_link__mobile" role="menuitem">Careers</a>
               <a href="/about-us/" class="header_link__mobile" role="menuitem"
                 >About Us</a
               >
