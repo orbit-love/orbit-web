@@ -36,6 +36,14 @@
 
       gtag('config', 'UA-149604794-1');
     }
+    function deleteCookie(name) {
+        document.cookie = name + '=; Path=/; Domain=.orbit.love; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
+    function removeGoogleAnalyticsCookies() {
+      deleteCookie('_ga');
+      deleteCookie('_gid');
+      deleteCookie('_gat_gtag_UA_149604794_1');
+    }
     window.cookieconsent && window.cookieconsent.initialise({
       "palette": {
         "popup": {
@@ -56,6 +64,7 @@
       },
       "onStatusChange": function(status) {
         if (this.hasConsented()) initGoogleAnalytics();
+        if (!this.hasConsented()) removeGoogleAnalyticsCookies();
       }
     });
     </script>
