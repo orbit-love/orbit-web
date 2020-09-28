@@ -18,6 +18,27 @@ module.exports = {
     },
   },
   types: {
+    image: ({ node }) => {
+      const image = h('img', {
+        src: Sanity.urlFor(Sanity.client, node)
+          .width(node.width)
+          .height(node.height)
+          .url(),
+        alt: node.alt,
+        title: node.title,
+      })
+      const link =
+        node.href && h('a', { href: node.href}, image)
+      const content = h(
+        'div',
+        {
+          style: `width: ${node.width ? node.width + 'px' : '100%'}`,
+        },
+        link || image
+      )
+
+      return content
+    },
     code: ({ node }) => {
       return h(
         'pre',
