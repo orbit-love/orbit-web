@@ -5,16 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ renderData.title or title or meta.title }}</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149604794-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-149604794-1');
-    </script>
     <link rel="stylesheet" href="{{ '/assets/main.css' | url }}" />
     <link rel="stylesheet" href="{{ '/prism.css' | url }}" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
     {% include "meta.njk" %}
   </head>
   <body class="text-gray-900 leading-normal">
@@ -33,6 +28,38 @@
       {% include "early-access-form.njk" %}
     </div>
     <script src="{{ '/assets/main.js' | url }}"></script>
+    <script>
+    function initGoogleAnalytics() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-149604794-1');
+    }
+    window.cookieconsent && window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#3937a3"
+        },
+        "button": {
+          "background": "#e62576"
+        }
+      },
+      "theme": "classic",
+      "position": "bottom-right",
+      "type": "opt-in",
+      "content": {
+        "href": "https://orbit.love/privacy-policy/"
+      },
+      "onInitialise": function(status) {
+        if(status == cookieconsent.status.allow) initGoogleAnalytics();
+      },
+      "onStatusChange": function(status) {
+        if (this.hasConsented()) initGoogleAnalytics();
+      }
+    });
+    </script>
+    
     <!-- LAST BUILD: {{ build.env}} {{ build.timestamp | dateToISO }} -->
   </body>
 </html>
