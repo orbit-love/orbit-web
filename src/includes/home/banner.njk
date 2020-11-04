@@ -1,0 +1,78 @@
+<div x-data="{visible: true}">
+  <div class="fixed bottom-0 inset-x-0 pb-2 sm:pb-5 z-20" x-show="visible">
+    <div class="max-w-screen-md mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="p-2 rounded-lg bg-blue-700 shadow-lg sm:p-3">
+        <div class="flex items-center justify-between flex-wrap">
+          <div class="w-0 flex-1 flex items-center">
+            <span class="flex p-2 rounded-lg bg-blue-800">
+              <!-- Heroicon name: heart -->
+              <svg
+                class="h-6 w-6 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                />
+              </svg>
+            </span>
+            <p class="ml-3 font-medium text-white truncate">
+              <span class="md:hidden">
+                <a href="/podcast">
+                Listen to our podcast Developer Love.
+                </a>
+              </span>
+              <span class="hidden md:inline">
+                <a href="/podcast">
+                  Listen to Developer Love, the podcast for people who build
+                  developer communities.
+                </a>
+              </span>
+            </p>
+          </div>
+          <div
+            class="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto"
+          >
+            <div class="rounded-md shadow-sm">
+              <a
+                href="/podcast"
+                class="flex items-center justify-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-blue-600 bg-white hover:text-blue-500 focus:outline-none focus:shadow-outline transition ease-in-out duration-150"
+              >
+                Learn more
+              </a>
+            </div>
+          </div>
+          <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-2">
+            <button
+              type="button"
+              class="-mr-1 flex p-2 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500 transition ease-in-out duration-150"
+              aria-label="Dismiss"
+              @click="visible = false"
+            >
+              <!-- Heroicon name: x -->
+              <svg
+                class="h-6 w-6 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

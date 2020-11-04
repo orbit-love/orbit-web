@@ -20,3 +20,21 @@
     </a>
   </div>
 {% endmacro %}
+
+{% macro listen_on(platform, href, logo) %}
+  <div class="mb-6 shadow-bottom text-base leading-6 rounded text-purple-500 bg-white hover:text-purple-600 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+    <a
+      href={{ href }}
+      class="cursor-pointer"
+    >
+      <div class="flex flex-row items-center px-6 py-3">
+        <img src="{{ logo }}" alt="apple podcast icon" class="relative w-10 h-10">
+        <div class="ml-4">
+          <span>Listen on</span>
+          <br />
+          <span class="font-bold">{{ platform }}</span>
+        </div>
+      </div>
+    </a>
+  </div>
+{% endmacro %}
