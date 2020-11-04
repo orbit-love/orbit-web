@@ -12,16 +12,24 @@ eleventyNavigation:
   <div
     class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto items-center justify-center"
   >
-    {{ title("Developer Love") }} {{ tagline("The podcast for people who build
-    developer communities.") }}
+    {{ title("Developer Love") }}
+    {{ tagline("The podcast for people who build developer communities.") }}
     <div class="flex flex-col sm:flex-row">
-      {{ listen_on("Apple Podcasts",
-      "https://podcasts.apple.com/us/podcast/developer-love/id1524102185",
-      "/assets/images/podcast-apple.png") }}
+      {{
+        listen_on(
+          "Apple Podcasts",
+          "https://podcasts.apple.com/us/podcast/developer-love/id1524102185",
+          "/assets/images/podcast-apple.png"
+        )
+      }}
       <div class="ml-4"></div>
-      {{ listen_on("Heavybit Podcasts",
-      "https://www.heavybit.com/library/podcasts/developer-love/",
-      "/assets/images/podcast-heavybit.png") }}
+      {{
+        listen_on(
+          "Heavybit Podcasts",
+          "https://www.heavybit.com/library/podcasts/developer-love/",
+          "/assets/images/podcast-heavybit.png"
+        )
+      }}
     </div>
   </div>
 </div>
