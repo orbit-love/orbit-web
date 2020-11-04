@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ renderData.title or title or meta.title }}</title>
-    <script src="https://dog.orbit.love/script.js" data-site="XEYVCUXY" defer></script>
+    {% if build.env === 'production' %}
+      <script src="https://dog.orbit.love/script.js" data-site="XEYVCUXY" defer></script>
+    {% endif %}
     <link rel="stylesheet" href="{{ '/assets/main.css' | url }}" />
     <link rel="stylesheet" href="{{ '/prism.css' | url }}" />
     {% include "meta.njk" %}
