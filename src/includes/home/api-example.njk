@@ -1,17 +1,107 @@
-<div class="hidden sm:block sm:w-2/3 sm:px-8">
-    {% highlight "json" %}
+<div class="hidden sm:block sm:w-2/3 sm:px-8" x-data="{lang: 'json'}">
+    <div class="p-2 bg-denim-900 border-b border-denim-400 text-purple-100">
+        <button class="mr-2 px-2 py-1 rounded-md" :class= "lang === 'json' ? 'bg-denim-200 bg-opacity-25' : ''" @click="lang = 'json'">JSON</button>
+        <button class="mr-2 px-2 py-1 rounded-md" :class= "lang === 'curl' ? 'bg-denim-200 bg-opacity-25' : ''" @click="lang = 'curl'">cURL</button>
+        <button class="mr-2 px-2 py-1 rounded-md" :class= "lang === 'node' ? 'bg-denim-200 bg-opacity-25' : ''" @click="lang = 'node'">Node</button>
+        <button class="mr-2 px-2 py-1 rounded-md" :class= "lang === 'ruby' ? 'bg-denim-200 bg-opacity-25' : ''" @click="lang = 'ruby'">Ruby</button>
+        <button class="px-2 py-1 rounded-md" :class= "lang === 'python' ? 'bg-denim-200 bg-opacity-25' : ''" @click="lang = 'python'">Python</button>
+    </div>
+    <div x-show="lang === 'json'">
+        {% highlight "json" %}
 {
-  "description": "Getting Started with the Orbit Model",
-  "link": "https://orbit-event.eventbrite.com/",
-  "link_text": "See the event",
-  "title": "Orbit Meetup Registration",
-  "activity_type": "eventbrite:registration",
-  "key": "eventbrite_attendee_id",
-  "occurred_at": "2020-05-10",
-  "member": {
-    "github": "user-github",
-    "email": "user@email.com"
-  }
+    "description": "Getting Started with the Orbit Model",
+    "link": "https://orbit-event.eventbrite.com/",
+    "link_text": "See the event",
+    "title": "Orbit Meetup Registration",
+    "activity_type": "eventbrite:registration",
+    "key": "eventbrite_attendee_id",
+    "occurred_at": "2020-05-10",
+    "member": {
+        "github": "user-github",
+        "email": "user@email.com"
+    }
 }
-    {% endhighlight %}
+        {% endhighlight %}
+    </div>
+     <div x-show="lang === 'curl'">
+        {% highlight "bash" %}
+curl --request POST \
+  --url http://orbit-nico.eu.ngrok.io/api/v1/orbit/activities \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Bearer <orbit-api-key>' \
+  --header 'Content-Type: application/json' \
+  --data '{"activity":{"member":{"github":"user-github","email":"user@email"},"description":"Getting Started with the Orbit Model","link":"https://orbit-event.eventbrite.com/","link_text":"See the event","title":"Orbit Meetup Registration","activity_type":"eventbrite:registration","occurred_at":"2020-05-10"}}'        {% endhighlight %}
+    </div>
+    <div x-show="lang === 'node'">
+        {% highlight "javascript" %}
+const fetch = require('node-fetch');
+
+let url = 'http://orbit-nico.eu.ngrok.io/api/v1/orbit/activities';
+
+let options = {
+  method: 'POST',
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+    Authorization: 'Bearer <orbit-api-key>'
+  },
+  body: '{"activity":{"member":{"github":"user-github","email":"user@email"},"description":"Getting Started with the Orbit Model","link":"https://orbit-event.eventbrite.com/","link_text":"See the event","title":"Orbit Meetup Registration","activity_type":"eventbrite:registration","occurred_at":"2020-05-10"}}'
+};
+
+fetch(url, options)
+  .then(res => res.json())
+  .then(json => console.log(json))
+  .catch(err => console.error('error:' + err));
+        {% endhighlight %}
+    </div>
+
+    <div x-show="lang === 'ruby'">
+        {% highlight "ruby" %}
+require 'uri'
+require 'net/http'
+
+url = URI("http://orbit-nico.eu.ngrok.io/api/v1/orbit/activities")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Post.new(url)
+request["Accept"] = 'application/json'
+request["Content-Type"] = 'application/json'
+request["Authorization"] = 'Bearer <orbit-api-key>'
+request.body = "{\"activity\":{\"member\":{\"github\":\"user-github\",\"email\":\"user@email\"},\"description\":\"Getting Started with the Orbit Model\",\"link\":\"https://orbit-event.eventbrite.com/\",\"link_text\":\"See the event\",\"title\":\"Orbit Meetup Registration\",\"activity_type\":\"eventbrite:registration\",\"occurred_at\":\"2020-05-10\"}}"
+
+response = http.request(request)
+puts response.read_body
+        {% endhighlight %}
+    </div>
+
+    <div x-show="lang === 'python'">
+        {% highlight "python" %}
+import requests
+
+url = "http://orbit-nico.eu.ngrok.io/api/v1/orbit/activities"
+
+payload = {"activity": {
+        "member": {
+            "github": "user-github",
+            "email": "user@email"
+        },
+        "description": "Getting Started with the Orbit Model",
+        "link": "https://orbit-event.eventbrite.com/",
+        "link_text": "See the event",
+        "title": "Orbit Meetup Registration",
+        "activity_type": "eventbrite:registration",
+        "occurred_at": "2020-05-10"
+    }}
+headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "Authorization": "Bearer <orbit-api-key>"
+}
+
+response = requests.request("POST", url, json=payload, headers=headers)
+
+print(response.text)
+        {% endhighlight %}
+    </div>
 </div>
