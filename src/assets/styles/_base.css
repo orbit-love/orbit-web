@@ -105,14 +105,6 @@ h1 {
   @apply outline-none text-gray-900 bg-gray-100;
 }
 
-#newsletter_cta {
-  background-image: url('images/love-letter-emoji.png');
-  background-repeat: no-repeat;
-  background-position: 15px 14px;
-  background-size: 20px 20px;
-  padding-left: 45px;
-}
-
 #use_case_left {
   border-radius: 7px 7px 0px 0px;
   border-top: 1px solid #d3d6da;
@@ -277,27 +269,27 @@ h1 {
 
 .ob-maintainers-metrics {
   margin-top: 20px;
-  @media(min-width: 640px) {
-    margin-top: -250px
+  @media (min-width: 640px) {
+    margin-top: -250px;
   }
 }
 
 .ob-highlight {
   /* border-radius: 1em 0 1em 0; */
   text-shadow: 1px 1px 1px #fff;
-  background-image: 
-    linear-gradient(180deg, 
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0) 59%,
-      rgba(0,212,255,0.10) 60%,
-      rgba(56,96,255,0.10)
-  )
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 59%,
+    rgba(0, 212, 255, 0.1) 60%,
+    rgba(56, 96, 255, 0.1)
+  );
 }
 
 .ob-break-out {
-  @media(min-width: 1280px) {
-    width: 60vw!important; /* !important here overrides the `.prose table` specificity */
+  @media (min-width: 1280px) {
+    width: 60vw !important; /* !important here overrides the `.prose table` specificity */
     margin: 0 calc(50% - min(30vw, 512px));
-    max-width: 1024px;  
-  }  
+    max-width: 1024px;
+  }
 }
