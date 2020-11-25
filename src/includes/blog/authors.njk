@@ -16,11 +16,11 @@
           {{author.name}}
         {% else %}
           {% if loop.first %}
-            {{author.name}}<!--
+            {{author.name}}
           {% elif loop.last %}
-            --> and {{author.name}}.
+            and {{author.name}}.
           {% else %}
-            -->, {{author.name}}<!--
+            {{author.name}}
           {% endif %}
         {% endif %}
       {% endfor %}
