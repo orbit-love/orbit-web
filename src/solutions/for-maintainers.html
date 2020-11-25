@@ -5,21 +5,18 @@ description: Orbit helps connect with the people behind the PRs.
 eleventyNavigation:
   key: Open Source Maintainers
 ---
-{% from "macros/typography.njk" import tagline, title %}
-{% from "macros/buttons.njk" import request_access_button %}
-{% from "macros/separator.njk" import separator %}
+
+{% from "macros/typography.njk" import tagline, title %} {% from
+"macros/buttons.njk" import request_access_button %} {% from
+"macros/separator.njk" import separator %}
 
 <div class="slanted-top max-w-full bg-purple-400">
   <div
     class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto items-center justify-center"
   >
-    {{ title("Connect with the people behind the PRs.") }}
-    {{
-      tagline("
-        Orbit helps open source maintainers understand metrics and identify new contributors.
-      ")
-    }}
-    {{ request_access_button(inverted=true) }}
+    {{ title("Connect with the people behind the PRs.") }} {{ tagline("Orbit®
+    helps open source maintainers understand metrics and identify new
+    contributors. ") }} {{ request_access_button(inverted=true) }}
   </div>
 </div>
 
@@ -27,19 +24,20 @@ eleventyNavigation:
   <div class="mb-16 flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto">
     <p class="text-gray-600 text-4xl text-center leading-tight">
       <span class="ob-highlight">
-      Turn code into community.
+        Turn code into community.
       </span>
     </p>
   </div>
 </div>
 
-{% include "for-maintainers/profiles.njk" %}
-{% include "newsletter-cta.njk" %}
-{% include "for-maintainers/builders.njk" %}
-{% include "for-maintainers/metrics.njk" %}
+{% include "for-maintainers/profiles.njk" %} {% include "newsletter-cta.njk" %}
+{% include "for-maintainers/builders.njk" %} {% include
+"for-maintainers/metrics.njk" %}
 
 <div class="mt-10 max-w-screen-md mx-auto text-center">
-  <p class="text-2xl text-gray-600 font-bold">Celebrate your core contributors</p>
+  <p class="text-2xl text-gray-600 font-bold">
+    Celebrate your core contributors
+  </p>
   {{ separator() }}
   <img
     alt=""

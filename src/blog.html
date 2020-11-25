@@ -4,26 +4,30 @@ title: Orbit — Blog
 eleventyNavigation:
   key: Blog
 ---
+
 {% from "macros/typography.njk" import title %}
 
 <div class="slanted-top max-w-full bg-purple-400">
   <div class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto">
-    {{ title("Orbit Blog") }}
+    {{ title("Orbit® Blog") }}
   </div>
 </div>
 
 {% set postslist = collections.blogPosts %}
 
 <div class="max-w-screen-sm mx-auto pt-10 px-4 sm:px-0 mb-10">
-  {% for post in postslist %}
-    {% set currentPost = post.data.post %}
-      <div class="mb-6">
-        <a href="{{ post.url }}"><h2 class="mb-2 text-xl text-gray-600 font-bold">{{currentPost.title}}</h2></a>
-        <p class="text-gray-500 mb-2 text-xs">
-          {{currentPost.publishedAt | stringDateToFormat("MMMM d, y") }}
-        </p>
-        <p class="mb-2 text-gray-600">{{currentPost.description}}</p>
-        <a href="{{ post.url }}" class="text-purple-600">Read More ›</a>
-      </div>
+  {% for post in postslist %} {% set currentPost = post.data.post %}
+  <div class="mb-6">
+    <a href="{{ post.url }}"
+      ><h2 class="mb-2 text-xl text-gray-600 font-bold">
+        {{currentPost.title}}
+      </h2></a
+    >
+    <p class="text-gray-500 mb-2 text-xs">
+      {{currentPost.publishedAt | stringDateToFormat("MMMM d, y") }}
+    </p>
+    <p class="mb-2 text-gray-600">{{currentPost.description}}</p>
+    <a href="{{ post.url }}" class="text-purple-600">Read More ›</a>
+  </div>
   {% endfor %}
 </div>
