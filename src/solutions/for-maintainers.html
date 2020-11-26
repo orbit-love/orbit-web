@@ -15,7 +15,7 @@ eleventyNavigation:
     class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto items-center justify-center"
   >
     {{ title("Connect with the people behind the PRs.") }} {{ tagline("Orbit
-    helps open source maintainers understand metrics and identify new
+    helps open source maintainers understand metrics and triage new
     contributors. ") }} {{ request_access_button(inverted=true) }}
   </div>
 </div>
@@ -31,29 +31,6 @@ eleventyNavigation:
 </div>
 
 {% include "for-maintainers/profiles.njk" %} {% include
-"for-maintainers/builders.njk" %} {% include "newsletter-cta.njk" %}
-
-<div class="mb-8"></div>
-
-{% include "for-maintainers/metrics.njk" %}
-
-<div class="mt-10 max-w-screen-md mx-auto text-center">
-  <p class="text-2xl text-gray-600 font-bold">
-    Celebrate your core contributors
-  </p>
-  {{ separator() }}
-  <img
-    alt=""
-    class="px-4 sm:px-0 w-full"
-    src="/assets/images/core-contributors.png"
-  />
-</div>
-
-<div class="max-w-screen-md mx-auto mt-10 mb-20 text-center">
-  <p class="text-2xl font-bold">Ready to try it?</p>
-  <div class="mt-6">
-    {{ request_access_button() }}
-  </div>
-</div>
-
-<div class="mb-20"></div>
+"for-maintainers/builders.njk" %} {% include "newsletter-cta.njk" %} {% include
+"for-maintainers/contributors.njk" %} {% include "for-maintainers/metrics.njk"
+%} {% include "ready-to-try-it.njk" %}
