@@ -1,40 +1,33 @@
 {% from "../macros/separator.njk" import separator %}
+{% from "../macros/features.njk" import double_feature_with_images %}
 
-<div class="max-w-screen-md mx-auto text-center">
-  <p class="text-2xl text-gray-600 font-bold">Metrics that matter</p>
+{%
+  set feature_search_box = {
+    image_src: "/assets/images/devrel-metrics-1.png",
+    sections: [
+      {
+        title: "Report with confidence",
+        content: "Demonstrate the impact of your community investments with simple
+        and powerful reporting."
+      }
+    ]
+  }
+%}
+{%
+  set feature_identity_resolution = {
+    image_src: "/assets/images/devrel-metrics-2.png",
+    sections: [
+      {
+        title: "Share the success",
+        content: "Receive weekly reports about community engagement and top contributors.
+        Share and celebrate with your team."
+      }
+    ]
+  }
+%}
+
+<div class="max-w-screen-md mx-auto mb-10 sm:mb-20 text-center">
+  <p class="text-2xl text-gray-600 leading-tight font-bold">Metrics that matter</p>
   {{ separator() }}
-  <div class="sm:mt-10 flex flex-col-reverse sm:flex-row sm:items-center">
-    <div class="sm:w-2/3 sm:px-8">
-      <img
-        alt=""
-        class="px-4 sm:px-0 sm:float-right"
-        src="/assets/images/devrel-metrics-1.png"
-      />
-    </div>
-    <div class="mb-4 sm:mb-0 px-4 sm:px-8 sm:w-1/3 flex flex-col text-left">
-      <p class="text-2xl sm:text-4xl text-gray-600 font-bold mb-1 leading-tight">Report with confidence</p>
-      <p class="text-lg leading-snug text-gray-600">
-        Demonstrate the impact of your community investments with simple
-        and powerful reporting.
-      </p>
-    </div>
-  </div>
-  <div
-    class="sm:relative mt-4 sm:-mt-10 flex flex-col-reverse sm:flex-row-reverse sm:items-end md:items-center"
-  >
-    <div class="sm:w-2/3 sm:px-8">
-      <img
-        alt=""
-        class="px-4 sm:px-0 sm:float-right"
-        src="/assets/images/devrel-metrics-2.png"
-      />
-    </div>
-    <div class="mb-4 sm:mb-0 px-4 sm:px-8 sm:w-1/3 flex flex-col text-left">
-      <p class="text-2xl sm:text-4xl text-gray-600 font-bold mb-1 leading-tight">Share the success</p>
-      <p class="text-lg leading-snug text-gray-600">
-        Receive weekly reports about community engagement and top contributors.
-        Share and celebrate with your team.
-      </p>
-    </div>
-  </div>
+  {{ double_feature_with_images(feature_search_box, feature_identity_resolution, "sm:-mt-10") }}
 </div>

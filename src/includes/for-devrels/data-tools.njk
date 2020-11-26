@@ -1,42 +1,35 @@
 {% from "../macros/separator.njk" import separator %}
+{% from "../macros/features.njk" import double_feature_with_images %}
 
-<div class="max-w-screen-md mx-auto mb-8 text-center">
-  <p class="text-2xl text-gray-600 font-bold">Data tools that give you superpowers</p>
-  {{ separator() }}
-  <div class="sm:mt-10 flex flex-col-reverse sm:flex-row sm:items-center">
-    <div class="sm:w-2/3 sm:px-8">
-      <img
-        alt=""
-        class="px-4 sm:px-0 sm:float-right"
-        src="/assets/images/devrel-search-box.png"
-      />
-    </div>
-    <div class="mb-4 sm:mb-0 px-4 sm:px-8 sm:w-1/3 flex flex-col text-left">
-      <p class="text-2xl sm:text-4xl text-gray-600 font-bold mb-1 leading-tight">The unified search box for&nbsp;your community</p>
-      <p class="text-lg leading-snug text-gray-600">
-        Orbit search indexes and returns company names, locations, tags, notes,
+{%
+  set feature_search_box = {
+    image_src: "/assets/images/devrel-search-box.png",
+    sections: [
+      {
+        title: "The unified search box for&nbsp;your community",
+        content: "Orbit search indexes and returns company names, locations, tags, notes,
         and profile data like top languages, the names of repos contributed to,
-        and the content of relevant tweets. 
-      </p>
-    </div>
-  </div>
-  <div
-    class="sm:relative mt-4 flex flex-col-reverse sm:flex-row-reverse sm:items-center"
-  >
-    <div class="sm:w-2/3 sm:px-8">
-      <img
-        alt=""
-        class="px-4 sm:px-0 sm:float-right"
-        src="/assets/images/devrel-identity-resolution.png"
-      />
-    </div>
-    <div class="mb-4 sm:mb-0 px-4 sm:px-8 sm:w-1/3 flex flex-col text-left">
-      <p class="text-2xl sm:text-4xl text-gray-600 font-bold mb-1 leading-tight">Intelligent Identity Resolution</p>
-      <p class="text-lg leading-snug text-gray-600">
-        View side-by-side comparisons of potential duplicates, allowing you to quickly
+        and the content of relevant tweets."
+      }
+    ]
+  }
+%}
+{%
+  set feature_identity_resolution = {
+    image_src: "/assets/images/devrel-identity-resolution.png",
+    sections: [
+      {
+        title: "Intelligent Identity Resolution",
+        content: "View side-by-side comparisons of potential duplicates, allowing you to quickly
         clean your data. You’ll also see call-outs on individual profiles, alerting you
-        to potential conflicts as you navigate Orbit.
-      </p>
-    </div>
-  </div>
+        to potential conflicts as you navigate Orbit."
+      }
+    ]
+  }
+%}
+
+<div class="max-w-screen-md mx-auto mb-10 sm:mb-20 text-center">
+  <p class="text-2xl text-gray-600 leading-tight font-bold">Data tools that give you superpowers</p>
+  {{ separator() }}
+  {{ double_feature_with_images(feature_search_box, feature_identity_resolution) }}
 </div>

@@ -1,27 +1,17 @@
-{% from "../macros/separator.njk" import separator %}
+{% from "../macros/features.njk" import single_feature_with_image %}
 
-<div class="max-w-screen-md mx-auto mb-10 sm:mb-20 text-center">
-  <div class="mt-10 sm:flex sm:flex-row sm:items-center">
-    <div class="sm:w-3/5 md w:1/2 sm:px-8">
-      <img
-        alt=""
-        class="sm:max-w-md px-4 sm:px-0 sm:float-right"
-        src="/assets/images/activity-feed.png"
-      />
-    </div>
-    <div class="px-6 mt-4 sm:mt-0 sm:px-0 sm:w-2/5 md:w-1/2 flex flex-col text-left">
-      <div class="sm:w-2/3">
-        <p class="text-2xl sm:text-4xl text-gray-600 font-bold mb-1">Community feed</p>
-        <p class="text-lg leading-snug text-gray-600 mb-8">
-          Never miss an important mention, comment, pull request, or other
-          essential activity with Orbit's
-          <strong>Discourse, GitHub, and Twitter integrations</strong>.
-        </p>
-        <p class="text-2xl sm:text-4xl text-gray-600 font-bold mb-1">Automatic activity tracking</p>
-        <p class="text-lg leading-snug text-gray-600">
-          <strong>Connect directly to Discourse, GitHub, and Twitter</strong>, or use our API to automatically understand which developers are most active in your community. 
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
+{%
+  set sections = [
+    {
+      title: "Community feed",
+      content: "Never miss an important mention, comment, pull request, or other
+            essential activity with Orbit's
+            <strong>Discourse, GitHub, and Twitter integrations</strong>."
+    },
+    {
+      title: "Automatic activity tracking",
+      content: "<strong>Connect directly to Discourse, GitHub, and Twitter</strong>, or use our API to automatically understand which developers are most active in your community."
+    }
+  ]
+%}
+{{ single_feature_with_image("/assets/images/activity-feed.png", sections) }}
