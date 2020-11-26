@@ -39,7 +39,6 @@
             </div>
           </div>
           <div class="hidden md:block md:ml-10 md:pr-4">
-            <a href="/" class="header_link__desktop {% if page.url == '/' %}active border-white{% endif %}">Home</a>
             <div class="inline-flex flex-col" id="solutions_header_link">
               {% set isSolutionPageRegExp = r/^\/solutions\//g %}
               <a href="#" class="ml-8 font-medium text-white {% if isSolutionPageRegExp.test(page.url) %}active border-b-2 border-white{% endif %}">Solutions</a>
@@ -62,23 +61,41 @@
                 >
               </div>
             </div>
-            {% set isBlogPageRegExp = r/^\/blog\//g %}
-            <a href="/blog/" class="header_link__desktop {% if isBlogPageRegExp.test(page.url) %}active border-white{% endif %}">Blog</a>
-            <a href="/careers/" class="header_link__desktop {% if page.url == '/careers/' %}active border-white{% endif %}">Careers</a>
-            <a href="/about-us/" class="header_link__desktop {% if page.url == '/about-us/' %}active border-white{% endif %}">About Us</a>
-            <a
-              href="https://docs.orbit.love/docs"
-              rel="noopener noreferrer"
-              class="header_link__desktop"
-            >Help</a>
-            <a href="https://github.com/orbit-love/" rel="noopener noreferrer" class="header_link__desktop"
+            <span class="ml-8 font-medium text-gray-100 border-none pb-1">|</a>
+            <div class="inline-flex flex-col" id="solutions_header_link">
+              {% set isResourcesPageRegExp = r/^\/(blog|podcast)\//g %}
+              <a href="#" class="ml-8 font-medium text-gray-100 {% if isResourcesPageRegExp.test(page.url) %}active border-b-2 border-white{% endif %}">Resources</a>
+              <div class="hidden flex-col absolute rounded bg-purple-900">
+                <span class="mx-8 mb-3 text-white">Resources</span>
+                <a
+                  href="/blog/"
+                  class="mx-8 mb-3 text-purple-300 hover:text-white focus:text-white focus:outline-none focus:shadow-outline-purple"
+                  >Blog</a
+                >
+                <a
+                  href="/podcast/"
+                  class="mx-8 mb-3 text-purple-300 hover:text-white focus:text-white focus:outline-none focus:shadow-outline-purple"
+                  >Developer Love Podcast</a
+                >
+                <a
+                  href="https://docs.orbit.love/docs"
+                  target='_blank'
+                  rel="noopener noreferrer"
+                  class="mx-8 mb-3 text-purple-300 hover:text-white focus:text-white focus:outline-none focus:shadow-outline-purple"
+                  >Orbit Docs and Guides</a
+                >
+              </div>
+            </div>
+            <a href="/about-us/" class="header_link__desktop text-gray-100 {% if page.url == '/about-us/' %}active border-white{% endif %}">About Us</a>
+            <a href="/careers/" class="header_link__desktop text-gray-100 {% if page.url == '/careers/' %}active border-white{% endif %}">Careers</a>
+            <a href="https://github.com/orbit-love/" rel="noopener noreferrer" class="header_link__desktop opacity-75 hover:opacity-100"
               ><img
                 alt="GitHub"
                 style="width: 20px; display: inline;"
                 src="/assets/images/GitHub-Mark-Light-32px.png"
             /></a>
 
-            <a href="https://twitter.com/OrbitModel/" rel="noopener noreferrer" class="header_link__desktop ml-4"
+            <a href="https://twitter.com/OrbitModel/" rel="noopener noreferrer" class="header_link__desktop opacity-75 hover:opacity-100 ml-4"
               ><img
                 alt="Twitter"
                 style="width: 22px; display: inline;"
@@ -170,7 +187,6 @@
               </div>
             </div>
             <div class="px-2 pt-2 pb-3">
-              <a href="/" class="header_link__mobile" role="menuitem">Home</a>
               <span
                 class="header_link__mobile text-gray-400"
                 role="menuitem"

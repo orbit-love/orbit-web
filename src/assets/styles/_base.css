@@ -85,11 +85,13 @@ h1 {
 }
 
 .header_link__desktop:hover {
+  color: white;
   border-bottom: 2px solid white;
 }
 
 .header_link__desktop:focus {
   @apply outline-none;
+  color: white;
   border-bottom: 2px solid white;
 }
 
