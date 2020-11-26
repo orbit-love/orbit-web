@@ -6,8 +6,9 @@ eleventyNavigation:
   key: DevRel and Community Teams
 ---
 
-{% from "macros/typography.njk" import tagline, title %} {% from
+{% from "macros/typography.njk" import subhead, tagline, title %} {% from
 "macros/buttons.njk" import request_access_button %}
+{% from "macros/features.njk" import single_feature_with_image, double_feature_with_images %}
 
 <div class="slanted-top max-w-full bg-purple-400">
   <div
@@ -19,18 +20,105 @@ eleventyNavigation:
   </div>
 </div>
 
-<div class="pt-10">
-  <div class="mb-16 flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto">
-    <p class="text-gray-600 text-4xl text-center leading-tight">
-      <span class="ob-highlight">Never miss a moment.</span>
-    </p>
-  </div>
-</div>
+{{ subhead("Never miss a moment.") }}
 
-{% include "for-devrels/feed.njk" %} {% include "newsletter-cta.njk" %} {%
-include "for-devrels/view.njk" %}
+{%
+  set feature_community_feed = {
+    image_src: "/assets/images/activity-feed.png",
+    sections: [
+      {
+        title: "Community feed",
+        content: "Never miss an important mention, comment, pull request, or other
+              essential activity with Orbit's
+              <strong>Discourse, GitHub, and Twitter integrations</strong>."
+      },
+      {
+        title: "Automatic activity tracking",
+        content: "<strong>Connect directly to Discourse, GitHub, and Twitter</strong>, or use our API to automatically understand which developers are most active in your community."
+      }
+    ]
+  }
+%}
+
+{{ single_feature_with_image(feature_community_feed) }}
+
+{% include "newsletter-cta.njk" %}
+
+{% include "for-devrels/view.njk" %}
 <div class="clearfix"></div>
 
-{% include "for-devrels/core-contributors.njk" %}{% include
-"for-devrels/data-tools.njk" %} {% include "for-devrels/metrics.njk" %} {%
-include "ready-to-try-it.njk" %}
+{%
+  set feature_core_contributors = {
+    title: "Celebrate your core contributors",
+    image_src: "/assets/images/devrel-core-contributors.png",
+    sections: [
+      {
+        title: "We’ll keep an eye on things",
+        content: "Orbit will keep track of key moments across your community and
+            let you know when Members achieve important milestones. Never miss
+            a moment, and respond right from inside Orbit."
+      }
+    ]
+  }
+%}
+
+{{ single_feature_with_image(feature_core_contributors) }}
+
+{%
+  set feature_search_box = {
+    image_src: "/assets/images/devrel-search-box.png",
+    sections: [
+      {
+        title: "The unified search box for&nbsp;your community",
+        content: "Orbit search indexes and returns company names, locations, tags, notes,
+        and profile data like top languages, the names of repos contributed to,
+        and the content of relevant tweets."
+      }
+    ]
+  }
+%}
+{%
+  set feature_identity_resolution = {
+    image_src: "/assets/images/devrel-identity-resolution.png",
+    sections: [
+      {
+        title: "Intelligent Identity Resolution",
+        content: "View side-by-side comparisons of potential duplicates, allowing you to quickly
+        clean your data. You’ll also see call-outs on individual profiles, alerting you
+        to potential conflicts as you navigate Orbit."
+      }
+    ]
+  }
+%}
+
+{{ double_feature_with_images("Data tools that give you superpowers", feature_search_box, feature_identity_resolution) }}
+
+{%
+  set feature_metrics_report = {
+    image_src: "/assets/images/devrel-metrics-1.png",
+    sections: [
+      {
+        title: "Report with confidence",
+        content: "Demonstrate the impact of your community investments with simple
+        and powerful reporting."
+      }
+    ]
+  }
+%}
+{%
+  set feature_metrics_share = {
+    image_src: "/assets/images/devrel-metrics-2.png",
+    sections: [
+      {
+        title: "Share the success",
+        content: "Receive weekly reports about community engagement and top contributors.
+        Share and celebrate with your team."
+      }
+    ]
+  }
+%}
+
+<div class="mt-10"></div>
+{{ double_feature_with_images("Metrics that matter", feature_metrics_report, feature_metrics_share, "sm:-mt-10") }}
+ 
+{% include "ready-to-try-it.njk" %}

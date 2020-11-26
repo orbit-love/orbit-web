@@ -9,3 +9,13 @@
     {{ text | safe }}
   </p>
 {% endmacro %}
+
+{% macro subhead(text) %}
+  <div class="pt-10">
+    <div class="mb-16 flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto">
+      <p class="text-gray-600 text-4xl text-center leading-tight">
+        <span class="ob-highlight">{{ text | safe }}</span>
+      </p>
+    </div>
+  </div>
+{% endmacro %}
