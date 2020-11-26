@@ -2,18 +2,18 @@
 {% from "../macros/features.njk" import single_feature_with_image %}
 
 {%
-  set sections = [
-    {
-      title: "We’ll keep an eye on things",
-      content: "Orbit will keep track of key moments across your community and
-          let you know when Members achieve important milestones. Never miss
-          a moment, and respond right from inside Orbit."
-    }
-  ]
+  set feature = {
+    title: "Celebrate your core contributors",
+    image_src: "/assets/images/devrel-core-contributors.png",
+    sections: [
+      {
+        title: "We’ll keep an eye on things",
+        content: "Orbit will keep track of key moments across your community and
+            let you know when Members achieve important milestones. Never miss
+            a moment, and respond right from inside Orbit."
+      }
+    ]
+  }
 %}
 
-<div class="max-w-screen-md mx-auto mb-10 sm:mb-20 text-center">
-  <p class="text-2xl text-gray-600 leading-tight font-bold">Celebrate your core contributors</p>
-  {{ separator() }}
-  {{ single_feature_with_image("/assets/images/devrel-core-contributors.png", sections) }}
-</div>
+{{ single_feature_with_image(feature) }}

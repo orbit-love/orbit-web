@@ -1,17 +1,20 @@
 {% from "../macros/features.njk" import single_feature_with_image %}
 
 {%
-  set sections = [
-    {
-      title: "Community feed",
-      content: "Never miss an important mention, comment, pull request, or other
-            essential activity with Orbit's
-            <strong>Discourse, GitHub, and Twitter integrations</strong>."
-    },
-    {
-      title: "Automatic activity tracking",
-      content: "<strong>Connect directly to Discourse, GitHub, and Twitter</strong>, or use our API to automatically understand which developers are most active in your community."
-    }
-  ]
+  set feature = {
+    image_src: "/assets/images/activity-feed.png",
+    sections: [
+      {
+        title: "Community feed",
+        content: "Never miss an important mention, comment, pull request, or other
+              essential activity with Orbit's
+              <strong>Discourse, GitHub, and Twitter integrations</strong>."
+      },
+      {
+        title: "Automatic activity tracking",
+        content: "<strong>Connect directly to Discourse, GitHub, and Twitter</strong>, or use our API to automatically understand which developers are most active in your community."
+      }
+    ]
+  }
 %}
-{{ single_feature_with_image("/assets/images/activity-feed.png", sections) }}
+{{ single_feature_with_image(feature) }}
