@@ -21,7 +21,7 @@
     {% endif %}
     <div class="max-w-screen-md mx-auto mb-10 sm:mb-20 text-center">
       <div class="flex flex-col-reverse sm:flex-row sm:items-center">
-        <div class="sm:w-3/5 md w:1/2 sm:px-8">
+        <div class="sm:w-3/5 md:w:1/2 sm:px-8">
           <img
             alt=""
             class="sm:max-w-md px-4 sm:px-0 sm:float-right"
@@ -83,6 +83,40 @@
             {{ section.content | safe }}
           </p>
         {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro integration(integration) %}
+  <div class="max-w-screen-md mx-auto text-center">
+    {% if integration.title %}
+      <p class="text-2xl text-gray-600 leading-tight font-bold">{{ integration.title }}</p>
+      {{ separator() }}
+    {% endif %}
+    <div class="max-w-screen-md mx-auto mb-10 sm:mb-20 text-center">
+      <div class="flex flex-col-reverse sm:flex-row sm:items-center">
+        <div class="hidden sm:block sm:w-3/5 md:w:1/2 sm:px-8">
+          <img
+            alt=""
+            class="sm:max-w-xs px-4 sm:px-0 sm:block sm:mx-auto"
+            src="{{integration.image_src}}"
+          />
+        </div>
+        <div class="px-6 mt-4 sm:mt-0 sm:px-0 sm:w-2/5 md:w-1/2 flex flex-col text-left">
+          <div class="sm:w-2/3">
+            {% for section in integration.sections %}
+              <p class="text-2xl sm:text-4xl text-gray-600 font-bold mb-1 leading-tight">{{ section.title | safe }}</p>
+              {% if section.content %}
+                <p class="text-lg leading-snug text-gray-600 mb-8">
+                  {{ section.content | safe }}
+                </p>
+              {% else %}
+                {% include '../newsletter-cta-inline.njk' %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
       </div>
     </div>
   </div>

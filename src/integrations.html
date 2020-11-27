@@ -1,0 +1,211 @@
+---
+layout: page
+title: Orbit Integrations
+description: Integrate with the top community platforms.
+eleventyNavigation:
+  key: Integrations
+---
+
+{% from "macros/typography.njk" import subhead, tagline, title %}
+{% from "macros/buttons.njk" import request_access_button %}
+{% from "macros/features.njk" import single_feature_with_image, integration %}
+
+<div class="slanted-top max-w-full bg-purple-400">
+  <div
+    class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto items-center justify-center"
+  >
+    {{ title("Integrate with the top community platforms") }}
+    {{ tagline("Orbit provides a unified view into your community, no matter where it happens.") }}
+    {{ request_access_button(inverted=true) }}
+  </div>
+</div>
+
+{{ subhead("The single view of your comunity — in seconds.") }}
+
+{%
+  set feature_tab_hopping = {
+    image_src: "/assets/images/integrations-tab-hopping.png",
+    sections: [
+      {
+        title: "No more tab&nbsp;hopping",
+        content: "Integrate all of your community platforms for a unified view of community members,
+        and their activity across all of your platforms.<br /><br />
+        Orbit will import activities, associate them with the right person, and make sure all of your
+        data is discoverable via search. <br /><br />
+        Which means you can spend more time engaging with the community and less time switching
+        between a dozen different tabs."
+      }
+    ]
+  }
+%}
+
+{{ single_feature_with_image(feature_tab_hopping) }}
+
+{%
+  set feature_integration_discourse = {
+    title: "Orbit Integrations",
+    image_src: "/assets/images/integrations/discourse.png",
+    sections: [
+      {
+        title: "Discourse",
+        content: "Orbit’s Discourse integration syncs with your forum to import member information
+        along with a timeline of each member’s activities, including new topics and new replies.<br /><br />
+        We’ll also pull in user meta data like badges and trust levels.<br /><br />
+        <a
+          href='https://docs.orbit.love/docs/setup-the-orbit-discourse-integration'
+          target='_blank'
+          rel='noreferrer noopener'
+          class='text-purple-600 hover:text-purple-600 no-underline'
+        >
+          <strong>Read more in the docs ››</strong>
+        </a>"
+      }
+    ]
+  }
+%}
+{{ integration(feature_integration_discourse) }}
+
+{%
+  set feature_integration_twitter = {
+    image_src: "/assets/images/integrations/twitter.png",
+    sections: [
+      {
+        title: "Twitter",
+        content: "Orbit’s Twitter automatically imports mentions of your linked accounts,
+        as well as mentions of keywords you choose to track.<br /><br />
+        <a
+          href='https://docs.orbit.love/docs/setup-the-twitter-integration'
+          target='_blank'
+          rel='noreferrer noopener'
+          class='text-purple-600 hover:text-purple-600 no-underline'
+        >
+          <strong>Read more in the docs ››</strong>
+        </a>"
+      }
+    ]
+  }
+%}
+{{ integration(feature_integration_twitter) }}
+
+{%
+  set feature_integration_github = {
+    image_src: "/assets/images/integrations/github.png",
+    sections: [
+      {
+        title: "GitHub",
+        content: "Orbit’s GitHub integration syncs with all of your orgs and repos
+        (you can choose which ones), and import Members and Activities across each of them.<br /><br />
+         
+        We automatically generate a timeline of contribution for each member, and enrich member
+        profiles with GitHub data, like the names of their pinned repos, contribution frequency,
+        and their top languages and topics.<br /><br />
+        <a
+          href='https://docs.orbit.love/docs/how-to-setup-the-orbit-github-integration'
+          target='_blank'
+          rel='noreferrer noopener'
+          class='text-purple-600 hover:text-purple-600 no-underline'
+        >
+          <strong>Read more in the docs ››</strong>
+        </a>"
+      }
+    ]
+  }
+%}
+{{ integration(feature_integration_github) }}
+
+{%
+  set feature_integration_zapier = {
+    image_src: "/assets/images/integrations/zapier.png",
+    sections: [
+      {
+        title: "Zapier",
+        content: "Orbit’s Zapier app allows you to connect your Orbit workspace
+        to thousands of other services. Some of our favorite examples include sending
+        Typeform submissions into Orbit, and adding Eventbrite and Meetup
+        registrations as Activities.<br /><br />
+        <a
+          href='https://docs.orbit.love/docs/orbit-zapier-zap-examples'
+          target='_blank'
+          rel='noreferrer noopener'
+          class='text-purple-600 hover:text-purple-600 no-underline'
+        >
+          <strong>Read more in the docs ››</strong>
+        </a>"
+      }
+    ]
+  }
+%}
+{{ integration(feature_integration_zapier) }}
+
+{%
+  set feature_integration_api = {
+    image_src: "/assets/images/integrations/api.png",
+    sections: [
+      {
+        title: "The Orbit API",
+        content: "The Orbit REST API gives you the ability to integrate Orbit
+        with any service—giving you everything you need to create
+        powerful custom integrations<br /><br />
+        <a
+          href='https://docs.orbit.love/reference'
+          target='_blank'
+          rel='noreferrer noopener'
+          class='text-purple-600 hover:text-purple-600 no-underline'
+        >
+          <strong>Read the docs ››</strong>
+        </a>"
+      }
+    ]
+  }
+%}
+{{ integration(feature_integration_api) }}
+
+{%
+  set feature_integration_n8n = {
+    image_src: "/assets/images/integrations/n8n.png",
+    sections: [
+      {
+        title: "n8n",
+        content: "Orbit’s n8n node allows you to integrate your Orbit data
+        into customized complex workflows connected to hundreds of other services.<br /><br />
+        <a
+          href='https://docs.n8n.io/nodes/n8n-nodes-base.orbit/#orbit'
+          target='_blank'
+          rel='noreferrer noopener'
+          class='text-purple-600 hover:text-purple-600 no-underline'
+        >
+          <strong>Read more on the n8n website ››</strong>
+        </a>"
+      }
+    ]
+  }
+%}
+{{ integration(feature_integration_n8n) }}
+
+{%
+  set feature_integration_slack = {
+    image_src: "/assets/images/integrations/slack.png",
+    sections: [
+      {
+        title: "Slack"
+      }
+    ]
+  }
+%}
+{{ integration(feature_integration_slack) }}
+
+{%
+  set feature_integration_discord = {
+    image_src: "/assets/images/integrations/discord.png",
+    sections: [
+      {
+        title: "Discord"
+      }
+    ]
+  }
+%}
+{{ integration(feature_integration_discord) }}
+
+{% include "newsletter-cta.njk" %}
+ 
+{% include "ready-to-try-it.njk" %}
