@@ -63,16 +63,13 @@
             </div>
             <a href="/integrations/" class="header_link__desktop text-white {% if page.url == '/integrations/' %}active border-white{% endif %}">Integrations</a>
             <span class="ml-8 font-medium text-gray-100 border-none pb-1">|</a>
+            {% set isBlogRegExp = r/^\/(blog)\//g %}
+            <a href="/blog/" class="header_link__desktop text-gray-100 {% if isBlogRegExp.test(page.url) %}active border-white{% endif %}">Blog</a>
             <div class="inline-flex flex-col" id="solutions_header_link">
-              {% set isResourcesPageRegExp = r/^\/(blog|podcast)\//g %}
+              {% set isResourcesPageRegExp = r/^\/(podcast)\//g %}
               <a href="#" class="ml-8 font-medium text-gray-100 {% if isResourcesPageRegExp.test(page.url) %}active border-b-2 border-white{% endif %}">Resources</a>
               <div class="hidden flex-col absolute rounded bg-purple-900">
                 <span class="mx-8 mb-3 text-white">Resources</span>
-                <a
-                  href="/blog/"
-                  class="mx-8 mb-3 text-purple-300 hover:text-white focus:text-white focus:outline-none focus:shadow-outline-purple"
-                  >Blog</a
-                >
                 <a
                   href="/podcast/"
                   class="mx-8 mb-3 text-purple-300 hover:text-white focus:text-white focus:outline-none focus:shadow-outline-purple"
@@ -212,16 +209,16 @@
                 >Solo Builders and Creators</a
               >
               <a href="/integrations/" class="header_link__mobile" role="menuitem">Integrations</a>
+              <a
+                href="/blog/"
+                class="header_link__mobile"
+                role="menuitem"
+                >Blog</a
+              >
               <span
                 class="header_link__mobile text-gray-400"
                 role="menuitem"
                 >Resources</span
-              >
-              <a
-                href="/blog/"
-                class="header_link__mobile ml-4"
-                role="menuitem"
-                >Blog</a
               >
               <a
                 href="/podcast/"
