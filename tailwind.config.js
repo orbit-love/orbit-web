@@ -38,6 +38,9 @@ module.exports = {
                 content: "'' !important"
               }
             }
+          },
+          strong: {
+            color: 'inherit'
           }
         },
       },
