@@ -5,54 +5,86 @@ description: Orbit helps connect with the people behind the PRs.
 eleventyNavigation:
   key: Open Source Maintainers
 ---
-{% from "macros/typography.njk" import tagline, title %}
+
+{% from "macros/typography.njk" import subhead, tagline, title %}
 {% from "macros/buttons.njk" import request_access_button %}
 {% from "macros/separator.njk" import separator %}
+{% from "macros/features.njk" import single_feature_with_image, double_feature_with_images %}
 
 <div class="slanted-top max-w-full bg-purple-400">
   <div
     class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto items-center justify-center"
   >
-    {{ title("Connect with the people behind the PRs.") }}
-    {{
-      tagline("
-        Orbit helps open source maintainers understand metrics and identify new contributors.
-      ")
-    }}
-    {{ request_access_button(inverted=true) }}
+    {{ title("Connect with the people behind the PRs.") }} {{ tagline("Orbit
+    helps open source maintainers understand metrics and triage new
+    contributors. ") }} {{ request_access_button(inverted=true) }}
   </div>
 </div>
 
-<div class="pt-10">
-  <div class="mb-16 flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto">
-    <p class="text-gray-600 text-4xl text-center leading-tight">
-      <span class="ob-highlight">
-      Turn code into community.
-      </span>
-    </p>
-  </div>
-</div>
+{{ subhead("Turn code into community.") }} 
 
-{% include "for-maintainers/profiles.njk" %}
-{% include "newsletter-cta.njk" %}
+{%
+  set feature_profiles = {
+    image_src: "/assets/images/profiles.png",
+    sections: [
+      {
+        title: "View developer profiles",
+        content: "View a developer’s favorite languages, areas of interest, and recent
+            community activity at a glance.
+            <strong>All automatically imported from GitHub</strong>."
+      },
+      {
+        title: "Add activities via&nbsp;API",
+        content: "Record members and contributions outside of GitHub via the Orbit API. Works great for
+            contributions like documentation, events, and content."
+      }
+    ]
+  }
+%}
+{{ single_feature_with_image(feature_profiles) }}
+
 {% include "for-maintainers/builders.njk" %}
-{% include "for-maintainers/metrics.njk" %}
 
-<div class="mt-10 max-w-screen-md mx-auto text-center">
-  <p class="text-2xl text-gray-600 font-bold">Celebrate your core contributors</p>
-  {{ separator() }}
-  <img
-    alt=""
-    class="px-4 sm:px-0 w-full"
-    src="/assets/images/core-contributors.png"
-  />
-</div>
+{% include "newsletter-cta.njk" %}
 
-<div class="max-w-screen-md mx-auto mt-10 mb-20 text-center">
-  <p class="text-2xl font-bold">Ready to try it?</p>
-  <div class="mt-6">
-    {{ request_access_button() }}
-  </div>
-</div>
+{%
+  set feature_core_contributors = {
+    title: "Celebrate your core contributors",
+    image_src: "/assets/images/core-contributors.png",
+    sections: [
+      {
+        title: "We’ll keep an eye on things",
+        content: "Orbit will keep track of key moments across your community
+        and let you know when Members achieve important milestones.
+        Never miss a moment, and respond right from inside Orbit."
+      }
+    ]
+  }
+%}
+{{ single_feature_with_image(feature_core_contributors) }}
 
-<div class="mb-20"></div>
+{%
+  set feature_search_box = {
+    image_src: "/assets/images/maintainer-metrics-1.png",
+    sections: [
+      {
+        title: "See what’s working, and&nbsp;where",
+        content: "Understand the impact of your efforts across your community."
+      }
+    ]
+  }
+%}
+{%
+  set feature_identity_resolution = {
+    image_src: "/assets/images/maintainer-metrics-2.png",
+    sections: [
+      {
+        title: "Share the success",
+        content: "Orbit generates daily and weekly community impact updates to help you stay in the loop."
+      }
+    ]
+  }
+%}
+{{ double_feature_with_images("View activity across your community and repos", feature_search_box, feature_identity_resolution, "sm:-mt-8") }}
+
+{% include "ready-to-try-it.njk" %}

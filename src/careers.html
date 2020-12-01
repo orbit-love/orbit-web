@@ -4,52 +4,69 @@ title: Orbit — Careers
 eleventyNavigation:
   key: Careers
 ---
-{% from "macros/typography.njk" import tagline, title %}
-{% from "macros/buttons.njk" import view_open_opportunities %}
-{% from "macros/tag.njk" import tag %}
+
+{% from "macros/typography.njk" import tagline, title %} {% from
+"macros/buttons.njk" import view_open_opportunities %} {% from "macros/tag.njk"
+import tag %}
 
 <div class="slanted-top max-w-full bg-purple-400">
   <div
     class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto items-center justify-center"
   >
-    {{ title("Careers at Orbit") }}
-    {{ 
-      tagline("
-        Orbit's mission is to empower developer advocates and community teams to build thriving communities and prove the value of their work.
-      ")
-    }}
-    {{ view_open_opportunities(inverted=true) }}
+    {{ title("Careers at Orbit") }} {{ tagline(" Orbit’s mission is to empower
+    developer advocates and community teams to build thriving communities and
+    prove the value of their work. ") }} {{
+    view_open_opportunities(inverted=true) }}
   </div>
 </div>
 
 <div class="prose prose-lg max-w-screen-sm mx-auto my-10 pt-10 px-4 sm:px-0">
   <h2>About us</h2>
   <p>
-    👋 Hi! Here's a little bit about us. <a href="http://orbit.love">Orbit</a> is building tools for developer community builders. Our users include companies like Apollo, CircleCI, Buoyant, Nuxt.js, and Typeform. Our philosophy is based on the <a href="https://github.com/orbit-love/orbit-model">Orbit Model</a>, an open source framework for community building and measurement that we maintain.
+    👋 Hi! Here's a little bit about us.
+    <a href="http://orbit.love">Orbit</a> is building tools for developer
+    community builders. Our users include companies like Apollo, CircleCI,
+    Buoyant, Nuxt.js, and Typeform. Our philosophy is based on the
+    <a href="https://github.com/orbit-love/orbit-model">Orbit Model</a>, an open
+    source framework for community building and measurement that we maintain.
   </p>
   <p>
-    We're a thoughtful team with an action bias, and are backed by an amazing group of angels and investors including <a href="https://www.heavybit.com/">Heavybit</a>, <a href="https://www.harrisonmetal.com/">Harrison Metal</a>, <a href="https://twitter.com/JamesTamplin">James Tamplin</a>, <a href="https://twitter.com/sramji">Sam Ramji</a>, <a href="https://twitter.com/sonicaghi">Aghi Marietti</a>, and more. 
+    We're a thoughtful team with an action bias, and are backed by an amazing
+    group of angels and investors including
+    <a href="https://www.heavybit.com/">Heavybit</a>,
+    <a href="https://www.harrisonmetal.com/">Harrison Metal</a>,
+    <a href="https://twitter.com/JamesTamplin">James Tamplin</a>,
+    <a href="https://twitter.com/sramji">Sam Ramji</a>,
+    <a href="https://twitter.com/sonicaghi">Aghi Marietti</a>, and more.
   </p>
   <p>
-    Our company is distributed with team members in Paris and San Francisco. All roles are remote-friendly. We value thoughtfulness, kindness, diversity, persistence, and curiosity. We think space puns are out of this world.
+    Our company is distributed with team members in Paris and San Francisco. All
+    roles are remote-friendly. We value thoughtfulness, kindness, diversity,
+    persistence, and curiosity. We think space puns are out of this world.
   </p>
   <p>
-    The opportunities listed below include full-time positions, project work, and community contribution opportunities. Please view the page of each opportunity to learn more about it.
+    The opportunities listed below include full-time positions, project work,
+    and community contribution opportunities. Please view the page of each
+    opportunity to learn more about it.
   </p>
-  
+
   <h2>To our community members</h2>
   <p>
-    We highly encourage you to check out the projects and see if there's anything that you'd like to be involved in! Even if you're not the person doing the bulk of the work, there are still opportunities for community members to be help guide and give input to these projects.
+    We highly encourage you to check out the projects and see if there's
+    anything that you'd like to be involved in! Even if you're not the person
+    doing the bulk of the work, there are still opportunities for community
+    members to be help guide and give input to these projects.
   </p>
-  
+
   <p>
-    📧 Email <a href="mailto:founders@orbit.love">founders@orbit.love</a> if you'd like to chat, we'd love to learn more about you!
+    📧 Email <a href="mailto:founders@orbit.love">founders@orbit.love</a> if
+    you'd like to chat, we'd love to learn more about you!
   </p>
-  
+
   <h2 id="open-opportunities">Open opportunities</h2>
-  
+
   {% set jobListings = collections.jobListings %}
-  
+
   <div class="ob-break-out overflow-x-auto">
     <table>
       <thead>
@@ -60,37 +77,39 @@ eleventyNavigation:
           <th>Skills</th>
         </tr>
       </thead>
-      {% for jobListing in jobListings %}
-        {% set currentJobListing = jobListing.data.jobListing %}
-        <tr>
-          <td><a href="{{ jobListing.url }}">{{ currentJobListing.role }}</a></td>
-          <td>
-            {% for type in currentJobListing.type %}
-              {{ tag(type.name, type.color) }}
-            {% endfor %}
-          </td>
-          <td>
-            {% for status in currentJobListing.status %}
-              {{ tag(status.name, status.color) }}
-            {% endfor %}
-          </td>
-          <td>
-            {% for skill in currentJobListing.skills %}
-              {{ tag(skill.name, skill.color) }}
-            {% endfor %}
-          </td>
-        </tr>
+      {% for jobListing in jobListings %} {% set currentJobListing =
+      jobListing.data.jobListing %}
+      <tr>
+        <td><a href="{{ jobListing.url }}">{{ currentJobListing.role }}</a></td>
+        <td>
+          {% for type in currentJobListing.type %} {{ tag(type.name, type.color)
+          }} {% endfor %}
+        </td>
+        <td>
+          {% for status in currentJobListing.status %} {{ tag(status.name,
+          status.color) }} {% endfor %}
+        </td>
+        <td>
+          {% for skill in currentJobListing.skills %} {{ tag(skill.name,
+          skill.color) }} {% endfor %}
+        </td>
+      </tr>
       {% endfor %}
     </table>
   </div>
-  
+
   <p>
-    If anything interests you, see the contact details in the post or send an email to <a href="mailto:founders@orbit.love">founders@orbit.love</a> and introduce yourself. We'd love to meet you.
+    If anything interests you, see the contact details in the post or send an
+    email to <a href="mailto:founders@orbit.love">founders@orbit.love</a> and
+    introduce yourself. We'd love to meet you.
   </p>
-  
+
   <div class="p-4 bg-gray-100">
     <p style="margin: 0px;">
-      <strong>Oh, and one more thing.</strong> If you could really see yourself at Orbit but don't see a role that fits what you're looking for... please still let us know. Needs change fast. We're open minded. And sometimes the stars, they just align. 🌠
+      <strong>Oh, and one more thing.</strong> If you could really see yourself
+      at Orbit but don't see a role that fits what you're looking for... please
+      still let us know. Needs change fast. We're open minded. And sometimes the
+      stars, they just align. 🌠
     </p>
   </div>
 </div>

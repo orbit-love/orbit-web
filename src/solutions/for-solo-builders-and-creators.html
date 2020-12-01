@@ -1,0 +1,113 @@
+---
+layout: page
+title: Orbit for Solo Builders and Creators
+description: Maintainers and creators grow relationships and never drop the ball with Orbit.
+eleventyNavigation:
+  key: Solo Builders and Creators
+---
+
+{% from "macros/typography.njk" import subhead, tagline, title %}
+{% from "macros/buttons.njk" import request_access_button %}
+{% from "macros/separator.njk" import separator %}
+{% from "macros/features.njk" import single_feature_with_image, double_feature_with_images %}
+
+<div class="slanted-top max-w-full bg-purple-400">
+  <div
+    class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto items-center justify-center"
+  >
+    {{ title("From audience to community.") }}
+    {{ tagline("Maintainers and creators grow relationships and never drop the ball with Orbit") }}
+    {{ request_access_button(inverted=true) }}
+  </div>
+</div>
+
+{{ subhead("Like a CRM, but not for sales") }} 
+
+{%
+  set feature_stay_organized = {
+    image_src: "/assets/images/solo-stay-organized.png",
+    sections: [
+      {
+        title: "Everything you need to stay organized",
+        content: "Add tags via the UI or the API, then sort lists and filter reports based on your groupings. "
+      }
+    ]
+  }
+%}
+{{ single_feature_with_image(feature_stay_organized) }}
+
+{%
+  set feature_detail = {
+    image_src: "/assets/images/solo-detail.png",
+    sections: [
+      {
+        title: "Never forget that detail",
+        content: "Add time-stamped notes for meetings, product feedback, and anything else you want to keep keep up with."
+      }
+    ]
+  }
+%}
+{{ single_feature_with_image(feature_detail) }}
+
+
+{%
+  set feature_right_folks = {
+    image_src: "/assets/images/solo-folks.png",
+    sections: [
+      {
+        title: "Find the right folks",
+        content: "Orbit Search indexes tags, notes, location, company, tweet content, GH data, and more, so you’ll always know who’s in the community. "
+      }
+    ]
+  }
+%}
+{{ single_feature_with_image(feature_right_folks) }}
+
+{%
+  set feature_realtime = {
+    image_src: "/assets/images/solo-realtime.png",
+    sections: [
+      {
+        title: "Respond in realtime",
+        content: "Browse Activities for a feed of key interactions across all of your community platforms, and filter the feed back Activity Type, Tag, Respository, and more."
+      }
+    ]
+  }
+%}
+{{ single_feature_with_image(feature_realtime) }}
+
+{% include "newsletter-cta.njk" %}
+
+{% include "for-solo/automatic.njk" %}
+
+<div class="clearfix"></div>
+
+{%
+  set feature_metrics_report = {
+    image_src: "/assets/images/solo-metrics-1.png",
+    sections: [
+      {
+        title: "Report with confidence",
+        content: "Demonstrate the impact of your community investments with simple
+        and powerful reporting."
+      }
+    ]
+  }
+%}
+{%
+  set feature_metrics_share = {
+    image_src: "/assets/images/solo-metrics-2.png",
+    sections: [
+      {
+        title: "Share the success",
+        content: "Receive weekly reports about community engagement and top contributors.
+        Share and celebrate with your team."
+      }
+    ]
+  }
+%}
+
+<div class="mt-10"></div>
+{{ double_feature_with_images("Metrics that matter", feature_metrics_report, feature_metrics_share, "sm:-mt-10") }}
+
+{% include "ready-to-try-it.njk" %}

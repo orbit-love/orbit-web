@@ -1,23 +1,24 @@
-<div class="max-w-screen-sm mx-auto">
-  <form
-    x-data="newsletterCTA()"
-    class="my-6"
-    @submit.prevent="subscribe($event)"
-  >
-    <div class="px-4 sm:flex sm:justify-center">
-      <label class="sr-only" for="newsletter_cta">Join our mailing list</label>
+<form
+  x-data="newsletterCTA()"
+  class="py-10 my-10 sm:my-16 bg-gradient-to-tr from-blue-400 to-purple-600"
+  @submit.prevent="subscribe($event)"
+>
+  <div class="px-4 mx-auto max-w-screen-sm">
+    <p class="mb-4 text-2xl text-center font-bold text-white">Join our mailing list&nbsp;&nbsp;📩</p>
+    <div class="mb-4 sm:flex sm:justify-center">
+      <label class="sr-only" for="newsletter_cta">Your email address</label>
       <input
         id="newsletter_cta"
         x-model="email"
         type="email"
         required=""
-        placeholder="Join our mailing list"
+        placeholder="Your email address"
         class="block sm:max-w-xs w-full px-4 py-3 text-base leading-6 appearance-none border border-gray-100 bg-white rounded placeholder-gray-500 shadow-bottom focus:outline-none focus:shadow-outline-purple focus:border-purple-300"
       />
       <button
-        class="mt-4 relative sm:mt-0 sm:h-auto sm:ml-4 block w-full sm:w-auto px-6 py-3 text-base leading-6 font-semibold leading-snug bg-purple-500 text-white rounded shadow-bottom hover:bg-purple-600 focus:outline-none focus:shadow-outline-purple focus:border-purple-300 transition ease-in-out duration-150"
+        class="mt-4 relative sm:mt-0 sm:h-auto sm:ml-4 block w-full sm:w-auto px-6 py-3 text-base leading-6 font-semibold leading-snug bg-white text-gray-600 rounded shadow-bottom hover:bg-purple-100 hover:text-gray-700 focus:outline-none focus:shadow-outline-purple focus:border-purple-300 transition ease-in-out duration-150"
         aria-label="Subscribe to Orbit newsletter"
-        :class="{ 'opacity-50 pointer-events-none': submitting, 'hover:bg-gray-600': !submitting }"
+        :class="{ 'opacity-50 pointer-events-none': submitting, 'hover:bg-purple-100 hover:text-gray-700': !submitting }"
         :disabled="submitting"
       >
         <span :class="{ 'opacity-0': submitting }">Subscribe</span>
@@ -45,10 +46,11 @@
     <p
       x-show="message"
       x-text="message"
-      class="lg:absolute px-4 mt-4 sm:text-center text-purple-600 max-w-xl font-medium"
+      class="lg:absolute px-4 mb-4 sm:text-center text-white max-w-xl font-medium"
     ></p>
-  </form>
-</div>
+    <p class="text-center text-white">No spam, just insights, product and content updates, event invites, and the occasional space pun.</p>
+  </div>
+</form>
 
 <script>
   function newsletterCTA() {
