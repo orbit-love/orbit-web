@@ -1,5 +1,6 @@
 
-{% from "../macros/separator.njk" import separator %}
+{% from "./separator.njk" import separator %}
+{% from "./newsletter-cta-inline.njk" import newsletter_cta_inline %}
 
 {% macro single_feature(emoji, title, content) %}
   <div class="sm:w-1/3 mb-6 flex flex-row px-6">
@@ -78,8 +79,8 @@
       </div>
       <div class="mb-4 sm:mb-0 px-4 sm:px-8 sm:w-1/3 flex flex-col text-left">
         {% for section in feature2.sections %}
-          <p class="text-2xl sm:text-4xl text-gray-600 font-bold mb-1 leading-tight">{{ section.title | safe }}</p>
-          <p class="text-lg leading-snug text-gray-600">
+          <p class="text-2xl sm:text-4xl sm:text-right text-gray-600 font-bold mb-1 leading-tight">{{ section.title | safe }}</p>
+          <p class="text-lg leading-snug sm:text-right text-gray-600">
             {{ section.content | safe }}
           </p>
         {% endfor %}
@@ -112,7 +113,7 @@
                   {{ section.content | safe }}
                 </p>
               {% else %}
-                {% include '../newsletter-cta-inline.njk' %}
+                {{ newsletter_cta_inline(section.title | lower) }}
               {% endif %}
             {% endfor %}
           </div>
