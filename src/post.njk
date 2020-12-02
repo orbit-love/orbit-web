@@ -104,5 +104,14 @@ renderData:
   )
 </script>
 
+<script>
+  Array.from(document.getElementsByClassName('subscribe-form-placeholder')).forEach(
+    async (subscribeForm) => {
+      const html = `{% include 'newsletter-cta.njk' %}`
+      subscribeForm.innerHTML = html
+    }
+  )
+</script>
+
 <script async src="{{ '/prism.js' | url }}"></script>
 <link href="{{ '/prism.css' | url }}" rel="stylesheet"/>
