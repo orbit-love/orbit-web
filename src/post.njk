@@ -42,6 +42,27 @@ renderData:
 
 <div class="max-w-screen-sm prose prose-lg mx-auto my-10 pt-10 px-4 sm:px-0">
   {{ post.body | safe }}
+
+  <h3>You might also like:</h3>
+  <dl>
+    {% set isOrbitVsFunnelPageRegExp = r/^\/(blog)\/(why\-orbit\-is\-better\-than\-funnel\-for\-developer\-relations)/g %}
+    {% if not isOrbitVsFunnelPageRegExp.test(page.url) %}
+      <dt><a href="/blog/why-orbit-is-better-than-funnel-for-developer-relations/"><strong>Why Orbit is Better Than Funnel for Developer Relations</strong></a></dt>
+      <dd class="text-gray-600 mb-2">DevRel teams need tools and models created specifically for our discipline, and not just those adopted from other fields.</dd>
+    {% endif %}
+
+    {% set isSlackDiscordDiscoursePageRegExp = r/^\/(blog)\/(slack\-vs\-discord\-vs\-discourse)/g %}
+    {% if not isSlackDiscordDiscoursePageRegExp.test(page.url) %}
+      <dt><a href="/blog/slack-vs-discord-vs-discourse/"><strong>Slack vs Discord vs Discourse: The best tool for your community</strong></a></dt>
+      <dd class="text-gray-600 mb-2">An in-depth comparison of 3 top community platforms across dozens of factors.</dd>
+    {% endif %}
+
+    {% set isOrbitForOrbitPageRegExp = r/^\/(blog)\/(how\-we\-use\-orbit\-to\-build\-orbit)/g %}
+    {% if not isOrbitForOrbitPageRegExp.test(page.url) %}
+      <dt><a href="/blog/how-we-use-orbit-to-build-orbit/"><strong>How we use Orbit to build Orbit</strong></a></dt>
+      <dd class="text-gray-600 mb-2">A guide to how we use our product to build our community.</dd>
+    {% endif %}
+  </dl>
 </div>
 
 {% include "newsletter-cta.njk" %}
@@ -100,6 +121,15 @@ renderData:
       tag.src = '//www.instagram.com/embed.js'
       tag.setAttribute('async', true)
       document.getElementsByTagName('head')[0].appendChild(tag)
+    }
+  )
+</script>
+
+<script>
+  Array.from(document.getElementsByClassName('subscribe-form-placeholder')).forEach(
+    async (subscribeForm) => {
+      const html = `{% include 'newsletter-cta.njk' %}`
+      subscribeForm.innerHTML = html
     }
   )
 </script>

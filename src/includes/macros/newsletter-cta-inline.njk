@@ -1,6 +1,6 @@
 {% macro newsletter_cta_inline(feature_name) %}
   <form
-    x-data="newsletterCTAInline('{{feature_name}}')"
+    x-data="newsletterCTA('feature-{{feature_name}}')"
     class=""
     @submit.prevent="subscribe($event)"
   >
@@ -49,37 +49,4 @@
       class="lg:absolute sm:text-center text-gray-600 max-w-xl"
     ></p>
   </form>
-
-  <script>
-    function newsletterCTAInline(feature_name) {
-      return {
-        email: '',
-        message: '',
-        submitting: false,
-        async subscribe() {
-          this.message = ''
-          this.submitting = true
-          try {
-            await fetch("/api/subscribe", {
-              method: 'POST',
-              body: JSON.stringify({
-                email: this.email,
-                source: `feature-${feature_name}`,
-                sourceUrl: typeof document !== 'undefined' && document.location.href,
-                originalReferrer: "",
-                originalLandingPage: "",
-                referrer: document.referrer,
-              }),
-            })
-            this.submitting = false
-            this.message = "Thanks! We’ll let you know when it’s ready."
-          } catch (err) {
-            console.error(err);
-            this.submitting = false;
-            this.message = "There was an error while subscribing."
-          }
-        }
-      }
-    }
-  </script>
 {% endmacro %}

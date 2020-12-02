@@ -1,0 +1,33 @@
+<script>
+  newsletterCTA = function (source) {
+    return {
+      email: '',
+      message: '',
+      submitting: false,
+      async subscribe() {
+        this.message = ''
+        this.submitting = true
+        try {
+          await fetch('/api/subscribe', {
+            method: 'POST',
+            body: JSON.stringify({
+              email: this.email,
+              source: source,
+              sourceUrl:
+                typeof document !== 'undefined' && document.location.href,
+              originalReferrer: '',
+              originalLandingPage: '',
+              referrer: document.referrer,
+            }),
+          })
+          this.submitting = false
+          this.message = 'Thanks! You are now subscribed to the Orbit newsletter.'
+        } catch (err) {
+          console.error(err)
+          this.submitting = false
+          this.message = 'There was an error while subscribing.'
+        }
+      },
+    }
+  }
+</script>

@@ -1,10 +1,8 @@
 const blocksToHtml = require('@sanity/block-content-to-html')
-const fetch = require('node-fetch')
 const h = blocksToHtml.h
 const Sanity = require('./sanityClient')
 
 module.exports = {
-
   marks: {
     inlineimage: ({ mark, children }) => {
       switch (mark._type) {
@@ -27,8 +25,7 @@ module.exports = {
         alt: node.alt,
         title: node.title,
       })
-      const link =
-        node.href && h('a', { href: node.href}, image)
+      const link = node.href && h('a', { href: node.href }, image)
       const content = h(
         'div',
         {
@@ -49,5 +46,10 @@ module.exports = {
     instagram: ({ node }) =>
       h('div', { 'data-url': node.url, className: 'instagram my-6' }),
     twitter: ({ node }) => h('div', { id: node.id, className: 'tweet my-6' }),
+    subscribeForm: ({ node }) =>
+      h('div', {
+        id: node.id,
+        className: 'subscribe-form-placeholder',
+      }),
   },
 }
