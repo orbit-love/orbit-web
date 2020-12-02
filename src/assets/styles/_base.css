@@ -295,8 +295,3 @@ h1 {
     max-width: 1024px;
   }
 }
-
-.subscribe-form-placeholder {
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-}
