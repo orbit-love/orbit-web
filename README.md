@@ -1,4 +1,4 @@
-# Orbit Website
+# orbit.love Website
 
 Built with the following technologies (thanks to this wonderful [Eleventy Starter](https://github.com/eastslopestudio/eleventy-starter)):
 
