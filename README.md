@@ -1,4 +1,4 @@
-# orbit.love Website
+# Orbit Website
 
 Built with the following technologies (thanks to this wonderful [Eleventy Starter](https://github.com/eastslopestudio/eleventy-starter)):
 
@@ -30,7 +30,7 @@ vercel
 yarn
 
 # run the build and server locally
-vercel dev --listen 8080
+vercel start
 
 # run the production build
 yarn build
