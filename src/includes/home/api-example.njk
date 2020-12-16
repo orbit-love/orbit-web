@@ -26,7 +26,7 @@
      <div x-show="lang === 'curl'">
         {% highlight "bash" %}
 curl --request POST \
-  --url http://orbit-nico.eu.ngrok.io/api/v1/orbit/activities \
+  --url https://app.orbit.love/api/v1/orbit/activities \
   --header 'Accept: application/json' \
   --header 'Authorization: Bearer <orbit-api-key>' \
   --header 'Content-Type: application/json' \
@@ -36,7 +36,7 @@ curl --request POST \
         {% highlight "javascript" %}
 const fetch = require('node-fetch');
 
-let url = 'http://orbit-nico.eu.ngrok.io/api/v1/orbit/activities';
+let url = 'https://app.orbit.love/api/v1/orbit/activities';
 
 let options = {
   method: 'POST',
@@ -60,7 +60,7 @@ fetch(url, options)
 require 'uri'
 require 'net/http'
 
-url = URI("http://orbit-nico.eu.ngrok.io/api/v1/orbit/activities")
+url = URI("https://app.orbit.love/api/v1/orbit/activities")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -79,7 +79,7 @@ puts response.read_body
         {% highlight "python" %}
 import requests
 
-url = "http://orbit-nico.eu.ngrok.io/api/v1/orbit/activities"
+url = "https://app.orbit.love/api/v1/orbit/activities"
 
 payload = {"activity": {
         "member": {
