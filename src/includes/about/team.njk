@@ -1,3 +1,5 @@
+{% from "../macros/team.njk" import team_member %}
+
 <div class="pt-10">
   <div class="mb-16 flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto">
     <p class="mb-6 text-gray-600 text-2xl text-center leading-tight">
@@ -16,91 +18,61 @@
   <div
     class="mb-16 flex flex-row flex-wrap max-w-screen-sm px-4 md:px-0 mx-auto justify-center"
   >
-    <div class="w-2/3 sm:w-1/3 mb-8 px-4 flex flex-col items-center">
-      <img
-        alt=""
-        src="/assets/images/team/patrick-woods-avatar.png"
-        class="rounded-full w-3/4 block mb-4"
-      />
-      <span class="text-gray-800 font-bold text-lg">Patrick Woods</span>
-      <span class="mb-2 text-sm text-gray-600">Co-Founder & CEO</span>
-      <div class="w-full flex flex-row justify-around">
-        <a
-          href="https://www.linkedin.com/in/patrickjwoods/"
-          class="text-sm text-purple-600"
-          >LinkedIn</a
-        >
-        <a
-          href="https://twitter.com/patrickjwoods/"
-          class="text-sm text-purple-600"
-          >Twitter</a
-        >
-        <a href="https://dev.to/patrickjwoods" class="text-sm text-purple-600"
-          >DEV</a
-        >
-      </div>
-    </div>
-    <div class="w-2/3 sm:w-1/3 mb-8 px-4 flex flex-col items-center">
-      <img
-        alt=""
-        src="/assets/images/team/josh-dzielak-avatar.png"
-        class="rounded-full w-3/4 block mb-4"
-      />
-      <span class="text-gray-800 font-bold text-lg">Josh Dzielak</span>
-      <span class="mb-2 text-sm text-gray-600">Co-Founder & CTO</span>
-      <div class="w-full flex flex-row justify-around">
-        <a
-          href="https://www.linkedin.com/in/dzello/"
-          class="text-sm text-purple-600"
-          >LinkedIn</a
-        >
-        <a href="https://twitter.com/dzello/" class="text-sm text-purple-600"
-          >Twitter</a
-        >
-        <a href="https://dev.to/dzello" class="text-sm text-purple-600">DEV</a>
-      </div>
-    </div>
-    <div class="w-2/3 sm:w-1/3 mb-8 px-4 flex flex-col items-center">
-      <img
-        alt=""
-        src="/assets/images/team/nicolas-goutay-avatar.png"
-        class="rounded-full w-3/4 block mb-4"
-      />
-      <span class="text-gray-800 font-bold text-lg">Nicolas Goutay</span>
-      <span class="mb-2 text-sm text-gray-600">Software Engineer</span>
-      <div class="w-full flex flex-row justify-around">
-        <a
-          href="https://www.linkedin.com/in/nicolas-goutay-4b984258/"
-          class="text-sm text-purple-600"
-          >LinkedIn</a
-        >
-        <a href="https://twitter.com/phacks/" class="text-sm text-purple-600"
-          >Twitter</a
-        >
-        <a href="https://dev.to/phacks" class="text-sm text-purple-600">DEV</a>
-      </div>
-    </div>
 
-    <div class="w-2/3 sm:w-1/3 mb-8 px-4 flex flex-col items-center">
-      <img
-        alt=""
-        src="/assets/images/team/alex-morton-avatar.png"
-        class="rounded-full w-3/4 block mb-4"
-      />
-      <span class="text-gray-800 font-bold text-lg">Alex Morton</span>
-      <span class="mb-2 text-sm text-gray-600">Software Engineer</span>
-      <div class="w-full flex flex-row justify-around">
-        <a
-          href="https://www.linkedin.com/in/alex-morton-creative/"
-          class="text-sm text-purple-600"
-          >LinkedIn</a
-        >
-        <a href="https://twitter.com/alexlsaltt" class="text-sm text-purple-600"
-          >Twitter</a
-        >
-        <a href="https://dev.to/alexlsalt" class="text-sm text-purple-600">DEV</a>
-      </div>
-    </div>
+    {{
+      team_member(
+        "patrick-woods-avatar.png",
+        "Patrick Woods",
+        "Co-Founder & CEO",
+        "patrickjwoods",
+        "in/patrickjwoods/",
+        "patrickjwoods"
+      )
+    }}
+
+    {{
+      team_member(
+        "josh-dzielak-avatar.png",
+        "Josh Dzielak",
+        "Co-Founder & CTO",
+        "dzello",
+        "in/dzello/",
+        "dzello"
+      )
+    }}
+
+    {{
+      team_member(
+        "nicolas-goutay-avatar.png",
+        "Nicolas Goutay",
+        "Software Engineer",
+        "phacks",
+        "in/nicolas-goutay-4b984258/",
+        "phacks"
+      )
+    }}
+
+    {{
+      team_member(
+        "alex-morton-avatar.png",
+        "Alex Morton",
+        "Software Engineer",
+        "alexlsaltt",
+        "in/alex-morton-creative/",
+        "alexlsalt"
+      )
+    }}
+
+    {{
+      team_member(
+        "chance-feick-avatar.png",
+        "Chance Feick",
+        "Software Engineer",
+        "chance",
+        "in/chancefeick/",
+        ""
+      )
+    }}
+
   </div>
-  <div></div>
 </div>
