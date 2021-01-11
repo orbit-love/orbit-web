@@ -30,7 +30,7 @@ vercel
 yarn
 
 # run the build and server locally
-vercel dev --listen 8080
+vercel start
 
 # run the production build
 yarn build
