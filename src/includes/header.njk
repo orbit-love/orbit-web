@@ -59,9 +59,12 @@
                   class="mx-8 mb-3 text-purple-300 hover:text-white focus:text-white focus:outline-none focus:shadow-outline-purple"
                   >Solo Builders and Creators</a
                 >
+                <a href="/integrations/" 
+                   class="mx-8 mb-3 text-purple-300 hover:text-white focus:text-white focus:outline-none focus:shadow-outline-purple"
+                   >Integrations</a
+                >
               </div>
             </div>
-            <a href="/integrations/" class="header_link__desktop text-white {% if page.url == '/integrations/' %}active border-white{% endif %}">Integrations</a>
             <span class="ml-8 font-medium text-gray-100 border-none pb-1">|</a>
             {% set isBlogRegExp = r/^\/(blog)\//g %}
             <a href="/blog/" class="header_link__desktop text-gray-100 {% if isBlogRegExp.test(page.url) %}active border-white{% endif %}">Blog</a>
