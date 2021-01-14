@@ -59,33 +59,19 @@
                   class="mx-8 mb-3 text-purple-300 hover:text-white focus:text-white focus:outline-none focus:shadow-outline-purple"
                   >Solo Builders and Creators</a
                 >
+                <a href="/integrations/" 
+                   class="mx-8 mb-3 text-purple-300 hover:text-white focus:text-white focus:outline-none focus:shadow-outline-purple"
+                   >Integrations</a
+                >
               </div>
             </div>
-            <a href="/integrations/" class="header_link__desktop text-white {% if page.url == '/integrations/' %}active border-white{% endif %}">Integrations</a>
             <span class="ml-8 font-medium text-gray-100 border-none pb-1">|</a>
+            <a href="/about-us/" class="header_link__desktop text-gray-100 {% if page.url == '/about-us/' %}active border-white{% endif %}">About</a>
+            <a href="https://docs.orbit.love/docs" target='_blank' rel="noopener noreferrer" class="header_link__desktop text-gray-100">Docs</a>
             {% set isBlogRegExp = r/^\/(blog)\//g %}
             <a href="/blog/" class="header_link__desktop text-gray-100 {% if isBlogRegExp.test(page.url) %}active border-white{% endif %}">Blog</a>
-            <div class="inline-flex flex-col" id="solutions_header_link">
-              {% set isResourcesPageRegExp = r/^\/(podcast)\//g %}
-              <a href="#" class="ml-8 font-medium text-gray-100 {% if isResourcesPageRegExp.test(page.url) %}active border-b-2 border-white{% endif %}">Resources</a>
-              <div class="hidden flex-col absolute rounded bg-purple-900">
-                <span class="mx-8 mb-3 text-white">Resources</span>
-                <a
-                  href="/podcast/"
-                  class="mx-8 mb-3 text-purple-300 hover:text-white focus:text-white focus:outline-none focus:shadow-outline-purple"
-                  >Developer Love Podcast</a
-                >
-                <a
-                  href="https://docs.orbit.love/docs"
-                  target='_blank'
-                  rel="noopener noreferrer"
-                  class="mx-8 mb-3 text-purple-300 hover:text-white focus:text-white focus:outline-none focus:shadow-outline-purple"
-                  >Orbit Docs and Guides</a
-                >
-              </div>
-            </div>
-            <a href="/about-us/" class="header_link__desktop text-gray-100 {% if page.url == '/about-us/' %}active border-white{% endif %}">About Us</a>
-            <a href="/careers/" class="header_link__desktop text-gray-100 {% if page.url == '/careers/' %}active border-white{% endif %}">Careers</a>
+            <a href="/podcast/" class="header_link__desktop text-gray-100 {% if page.url == '/podcast/' %}active border-white{% endif %}">Podcast</a>
+            <a href="https://app.orbit.love/" class="header_link__desktop font-bold text-purple-600 bg-white p-3 rounded-md hover:text-purple-400{% if page.url == 'https://app.orbit.love/' %}active border-white{% endif %}">Login</a>
             <a href="https://github.com/orbit-love/" rel="noopener noreferrer" class="ml-8 pb-1 transition duration-150 ease-in-out opacity-75 hover:border-b-0 hover:opacity-100"
               ><img
                 alt="GitHub"
@@ -185,6 +171,12 @@
               </div>
             </div>
             <div class="px-2 pt-2 pb-3">
+              <a
+                href="https://app.orbit.love/"
+                class="header_link__mobile ml-4 text-white font-bold bg-purple-500 max-w-xs"
+                role="menuitem"
+                >Login</a
+              >
               <span
                 class="header_link__mobile text-gray-400"
                 role="menuitem"
@@ -208,17 +200,22 @@
                 role="menuitem"
                 >Solo Builders and Creators</a
               >
-              <a href="/integrations/" class="header_link__mobile" role="menuitem">Integrations</a>
-              <a
-                href="/blog/"
-                class="header_link__mobile"
+              <a href="/integrations/" 
+                class="header_link__mobile ml-4" 
                 role="menuitem"
-                >Blog</a
+                >Integrations</a
               >
+              
               <span
                 class="header_link__mobile text-gray-400"
                 role="menuitem"
                 >Resources</span
+              >
+              <a
+                href="/blog/"
+                class="header_link__mobile ml-4"
+                role="menuitem"
+                >Blog</a
               >
               <a
                 href="/podcast/"
@@ -235,9 +232,8 @@
                 >Orbit Docs and Guides</a
               >
               <a href="/about-us/" class="header_link__mobile" role="menuitem"
-                >About Us</a
+                >About</a
               >
-              <a href="/careers/" class="header_link__mobile" role="menuitem">Careers</a>
               <a href="https://github.com/orbit-love/" rel="noopener noreferrer" class="header_link__mobile" role="menuitem">GitHub</a>
               <a href="https://twitter.com/OrbitModel/" rel="noopener noreferrer" class="header_link__mobile" role="menuitem"
                 >Twitter</a
