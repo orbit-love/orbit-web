@@ -72,7 +72,7 @@ eleventyNavigation:
     sections: [
       {
         title: "Twitter",
-        content: "Orbit’s Twitter automatically imports mentions of your linked accounts,
+        content: "Orbit’s Twitter integration automatically imports mentions of your linked accounts,
         as well as mentions of keywords you choose to track.<br /><br />
         <a
           href='https://docs.orbit.love/docs/setup-the-twitter-integration'
@@ -113,6 +113,31 @@ eleventyNavigation:
   }
 %}
 {{ integration(feature_integration_github) }}
+
+
+{%
+  set feature_integration_slack = {
+    image_src: "/assets/images/integrations/slack.png",
+    sections: [
+      {
+        title: "Slack",
+        content: "Orbit’s Slack integration creates a profile for every participant in your community Slack
+        and an activity for each message, allowing you to see when they joined, the channels they are more
+        active on, and the messages they posted.
+        <br /><br />
+        <a
+          href='https://docs.orbit.love/docs/set-up-the-orbit-slack-integration'
+          target='_blank'
+          rel='noreferrer noopener'
+          class='text-purple-600 hover:text-purple-600 no-underline'
+        >
+          <strong>Read more in the docs ››</strong>
+        </a>"
+      }
+    ]
+  }
+%}
+{{ integration(feature_integration_slack) }}
 
 {%
   set feature_integration_zapier = {
@@ -182,18 +207,6 @@ eleventyNavigation:
   }
 %}
 {{ integration(feature_integration_n8n) }}
-
-{%
-  set feature_integration_slack = {
-    image_src: "/assets/images/integrations/slack.png",
-    sections: [
-      {
-        title: "Slack"
-      }
-    ]
-  }
-%}
-{{ integration(feature_integration_slack) }}
 
 {%
   set feature_integration_discord = {
