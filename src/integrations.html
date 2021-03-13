@@ -187,6 +187,29 @@ eleventyNavigation:
 {{ integration(feature_integration_api) }}
 
 {%
+  set feature_integration_webhooks = {
+    image_src: "/assets/images/integrations/webhooks.png",
+    sections: [
+      {
+        title: "Webhooks",
+        content: "Orbit’s Webhooks allow you to receive notifications whenever a new activity occurs in your community.
+        Customize webhook deliveries using filters and tags to support flexible workflows
+        and build tighter integrations with your Orbit data.<br /><br />
+        <a
+          href='https://docs.orbit.love/docs/webhooks'
+          target='_blank'
+          rel='noreferrer noopener'
+          class='text-purple-600 hover:text-purple-600 no-underline'
+        >
+          <strong>Read the docs ››</strong>
+        </a>"
+      }
+    ]
+  }
+%}
+{{ integration(feature_integration_webhooks) }}
+
+{%
   set feature_integration_n8n = {
     image_src: "/assets/images/integrations/n8n.png",
     sections: [
