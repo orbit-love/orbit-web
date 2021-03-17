@@ -72,7 +72,8 @@
             <a href="/blog/" class="header_link__desktop text-gray-100 {% if isBlogRegExp.test(page.url) %}active border-white{% endif %}">Blog</a>
             <a href="/podcast/" class="header_link__desktop text-gray-100 {% if page.url == '/podcast/' %}active border-white{% endif %}">Podcast</a>
             <a href="/careers/" class="header_link__desktop text-gray-100 {% if page.url == '/careers/' %}active border-white{% endif %}">Careers</a>
-            <a href="https://app.orbit.love/" class="header_link__desktop font-bold text-purple-600 bg-white p-3 rounded-md hover:text-purple-400{% if page.url == 'https://app.orbit.love/' %}active border-white{% endif %}">Login</a>
+            <a href="https://app.orbit.love/" class="header_link__desktop text-gray-100 {% if page.url == 'https://app.orbit.love/' %}active border-white{% endif %}">Login</a>
+            <a href="https://app.orbit.love/signup" class="header_link__desktop font-bold text-purple-600 bg-white p-3 rounded-md hover:text-purple-400{% if page.url == 'https://app.orbit.love/signup' %}active border-white{% endif %}">Sign up</a>
             <a href="https://github.com/orbit-love/" rel="noopener noreferrer" class="ml-8 pb-1 transition duration-150 ease-in-out opacity-75 hover:border-b-0 hover:opacity-100"
               ><img
                 alt="GitHub"
@@ -173,9 +174,12 @@
             </div>
             <div class="px-2 pt-2 pb-3">
               <a
-                href="https://app.orbit.love/"
+                href="https://app.orbit.love/signup"
                 class="header_link__mobile ml-4 text-white font-bold bg-purple-500 max-w-xs"
                 role="menuitem"
+                >Sign up</a
+              >
+              <a href="https://app.orbit.love/" class="header_link__mobile" role="menuitem"
                 >Login</a
               >
               <span
