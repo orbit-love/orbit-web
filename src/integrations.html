@@ -7,7 +7,7 @@ eleventyNavigation:
 ---
 
 {% from "macros/typography.njk" import subhead, tagline, title %}
-{% from "macros/buttons.njk" import request_access_button %}
+{% from "macros/buttons.njk" import get_started %}
 {% from "macros/features.njk" import single_feature_with_image, integration %}
 
 <div class="slanted-top max-w-full bg-purple-400">
@@ -17,7 +17,7 @@ eleventyNavigation:
     {{ title("Integrate with anywhere community happens") }}
     {{ tagline("Orbit provides a unified view of your community, so that you can clearly see 
     what's working and where you can improve.") }}
-    {{ request_access_button(inverted=true) }}
+    {{ get_started(inverted=true) }}
   </div>
 </div>
 

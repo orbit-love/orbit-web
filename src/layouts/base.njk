@@ -18,14 +18,10 @@
     <div
       role="document"
       class="min-h-screen flex flex-col"
-      x-data="{ showModal: false }"
-      @keydown.escape="showModal = false"
-      @togglemodal="showModal = $event.detail.value"
     >
       <main class="flex-grow w-full">
         {{ content | safe }}
       </main>
-      {% include "early-access-form.njk" %}
     </div>
     <script src="{{ '/assets/main.js' | url }}"></script>
     <!-- LAST BUILD: {{ build.env}} {{ build.timestamp | dateToISO }} -->
