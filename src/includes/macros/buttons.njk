@@ -1,7 +1,7 @@
 {% macro request_access_button(inverted=false, extra_classes="") %}
   <div class="mb-6 rounded">
     <button
-      class="cursor-pointer px-8 py-3 shadow-bottom text-base leading-6 font-bold rounded {{ 'text-purple-500 bg-white hover:text-purple-600' if inverted else 'text-white bg-purple-500 hover:text-gray-100' }} focus:outline-none focus:shadow-outline transition duration-150 ease-in-out {{ extra_classes }}"
+      class="cursor-pointer px-8 py-3 shadow-bottom text-base leading-6 font-bold rounded {{ 'text-purple-500 bg-white hover:text-purple-600' if inverted else 'text-white bg-purple-500 hover:text-gray-100' }} focus:outline-none focus:ring transition duration-150 ease-in-out {{ extra_classes }}"
       aria-label="Open early access form"
       @click="showModal = true"
     >
@@ -14,7 +14,7 @@
   <div class="mb-6 rounded">
     <a
       href="/careers/#open-opportunities"
-      class="cursor-pointer px-8 py-3 shadow-bottom text-base leading-6 font-bold rounded {{ 'text-purple-500 bg-white hover:text-purple-600' if inverted else 'text-white bg-purple-500 hover:text-gray-100' }} focus:outline-none focus:shadow-outline transition duration-150 ease-in-out {{ extra_classes }}"
+      class="cursor-pointer px-8 py-3 shadow-bottom text-base leading-6 font-bold rounded {{ 'text-purple-500 bg-white hover:text-purple-600' if inverted else 'text-white bg-purple-500 hover:text-gray-100' }} focus:outline-none focus:ring transition duration-150 ease-in-out {{ extra_classes }}"
     >
       View open opportunities
     </a>
@@ -22,7 +22,7 @@
 {% endmacro %}
 
 {% macro listen_on(platform, href, logo) %}
-  <div class="mb-6 shadow-bottom text-base leading-6 rounded text-purple-500 bg-white hover:text-purple-600 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+  <div class="mb-6 shadow-bottom text-base leading-6 rounded text-purple-500 bg-white hover:text-purple-600 focus:outline-none focus:ring transition duration-150 ease-in-out">
     <a
       href={{ href }}
       class="cursor-pointer"
