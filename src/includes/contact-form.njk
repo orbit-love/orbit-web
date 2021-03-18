@@ -1,0 +1,141 @@
+{% from "./macros/separator.njk" import separator %}
+<!--Overlay-->
+<div
+  class="fixed z-10 w-full h-full top-0 left-0 flex items-center justify-center"
+  style="background-color: rgba(0, 0, 0, 0.5);"
+  x-show="showModal"
+  :class="{ '': showModal }"
+  x-cloak
+>
+  <div
+    class="bg-white w-11/12 md:max-w-lg mx-auto rounded shadow-lg py-4 text-center px-6"
+    x-show="showModal"
+    @click.away="showModal = false"
+    x-transition:enter="ease-out duration-300"
+    x-transition:enter-start="opacity-0 scale-90"
+    x-transition:enter-end="opacity-100 scale-100"
+    x-transition:leave="ease-in duration-300"
+    x-transition:leave-start="opacity-100 scale-100"
+    x-transition:leave-end="opacity-0 scale-90"
+  >
+    <p class="text-2xl font-bold">Talk to Team Orbit.</p>
+
+    {{ separator() }}
+
+    <p class="text-sm">
+      We can't wait to learn more about your company and community. Just complete this form and we'll be in touch soon.
+    </p>
+
+    <form
+      x-data="contactForm()"
+      class="my-6"
+      @submit.prevent="requestContact($event)"
+    >
+      <div class="px-4 max-w-xs mx-auto flex flex-col items-start">
+        <label class="sr-only" for="contact_form_name">Name</label>
+        <input
+          id="contact_form_name"
+          x-model="name"
+          required=""
+          placeholder="Your name"
+          class="block w-full px-4 py-3 text-base text-sm leading-6 appearance-none border border-gray-100 bg-white rounded placeholder-gray-500 shadow-bottom focus:outline-none focus:ring focus:ring-purple-400 focus:border-purple-300"
+        />
+        <label class="sr-only" for="contact_form_company">Company</label>
+        <input
+          id="contact_form_company"
+          x-model="company"
+          required=""
+          placeholder="Company"
+          class="block w-full px-4 py-3 mt-2 text-base text-sm leading-6 appearance-none border border-gray-100 bg-white rounded placeholder-gray-500 shadow-bottom focus:outline-none focus:ring focus:ring-purple-400 focus:border-purple-300"
+        />
+        <label class="sr-only" for="contact_form_email">Email</label>
+        <input
+          id="contact_form_email"
+          x-model="email"
+          type="email"
+          required=""
+          placeholder="Email address"
+          class="block w-full px-4 py-3 mt-2 text-base text-sm leading-6 appearance-none border border-gray-100 bg-white rounded placeholder-gray-500 shadow-bottom focus:outline-none focus:ring focus:ring-purple-400 focus:border-purple-300"
+        />
+        <div class="mt-4 flex flex-row items-center">
+          <button
+            aria-label="Subscribe"
+            class="relative block border border-transparent px-6 py-3 text-base leading-6 font-semibold leading-snug bg-purple-500 text-white rounded-md shadow-md hover:bg-purple-600 focus:outline-none focus:ring focus:ring-purple-400 focus:border-purple-300 transition ease-in-out duration-150"
+            :class="{ 'opacity-50 pointer-events-none': submitting, 'hover:bg-gray-600': !submitting }"
+            :disabled="submitting"
+          >
+            <span :class="{ 'opacity-0': submitting }">Subscribe</span>
+            <span
+              x-show="true"
+              class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0"
+              :class="{ 'opacity-0': !submitting }"
+            >
+              <svg class="h-8 w-8 spin" viewBox="0 0 24 24">
+                <path
+                  class="text-gray-600"
+                  fill="currentColor"
+                  d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-2a7 7 0 110-14 7 7 0 010 14z"
+                ></path>
+                <path
+                  class="text-gray-400"
+                  fill="currentColor"
+                  d="M12 3a9 9 0 010 18v-2a7 7 0 000-14V3z"
+                ></path>
+              </svg>
+            </span>
+          </button>
+          <p
+            class="ml-4 text-gray-600 cursor-pointer"
+            @click="$dispatch('togglemodal', {value: false})"
+          >
+            nevermind
+          </p>
+        </div>
+      </div>
+      <p
+        x-show="message"
+        x-text="message"
+        class="mt-4 text-purple-600 max-w-xl font-medium"
+      ></p>
+    </form>
+  </div>
+</div>
+
+<script>
+  function contactForm() {
+    return {
+      name: '',
+      company: '',
+      email: '',
+      projectUrl: '',
+      message: '',
+      submitting: false,
+      async requestContact() {
+        this.message = ''
+        this.submitting = true
+        try {
+          await fetch("/api/subscribe", {
+            method: 'POST',
+            body: JSON.stringify({
+              name: this.name,
+              company: this.company,
+              email: this.email,
+              projectUrl: this.projectUrl,
+              source: "contact-form",
+              sourceUrl: typeof document !== 'undefined' && document.location.href,
+              originalReferrer: "",
+              originalLandingPage: "",
+              referrer: document.referrer,
+            }),
+          })
+          this.submitting = false
+          this.message = "Thanks! We’ll be in touch soon."
+        } catch (err) {
+          console.error(err);
+          this.submitting = false;
+          this.message = "There was an error while subscribing."
+        }
+      }
+    }
+  }
+</script>

@@ -1,0 +1,78 @@
+---
+layout: page
+title: Orbit — Pricing
+description: Deliver a stellar experience, no matter your community's size.
+eleventyNavigation:
+  key: Pricing
+---
+
+{% from "macros/typography.njk" import tagline, title %}
+
+<div class="slanted-top max-w-full bg-purple-400">
+  <div class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto">
+    {{ title("Pricing") }}
+    {{ tagline("Deliver a stellar experience, no matter your community's size.") }}
+  </div>
+</div>
+
+<div class="md:flex max-w-screen-md p-4 mx-auto mb-16 md:space-x-8">
+  <div class="flex-1 relative rounded-2xl my-8 border border-2">
+    <div class="text-center pt-8">
+      <h2 class="text-4xl font-semibold">Starter</h2>
+      <p class="text-xl font-medium">Understand and engage</p>
+    </div>
+    <div class="prose px-8 pt-4 pb-16 text-sm">
+      <p>
+        Drive outcomes from your community. Perfect for organizations just
+        getting started with community building.
+      </p>
+      <ul class="mx-8">
+        <li>5 workspaces</li>
+        <li>15 seats</li>
+        <li>4 integrations</li>
+        <li>Up to 10,000 monthly active members</li>
+        <li>Up to 5 webhooks and custom alerts</li>
+        <li>Up to 10 embeddable reports</li>
+      </ul>
+    </div>
+    <div class="w-full text-center absolute bottom-0 -mb-3">
+      <a
+        href="https://app.orbit.love/signup"
+        class="rounded px-8 py-2 bg-purple-400 text-white">
+        Get started
+      </a>
+    </div>
+  </div>
+
+  <div class="flex-1 relative rounded-2xl my-8 bg-purple-400">
+    <div class="text-center pt-8 text-white">
+      <h2 class="text-4xl font-semibold">Growth</h2>
+      <p class="text-xl font-medium">Scale your community</p>
+    </div>
+    <div class="prose px-8 pt-4 pb-16 text-sm text-white">
+      <p>
+        A fully-featured customer experience solution with advanced features,
+        customized onboarding training, and priority support to maximize
+        community ROI. Let's build a plan to fit your needs.
+      </p>
+      <ul class="mx-8">
+        <li>Unlimited workspaces</li>
+        <li>Unlimited seats</li>
+        <li>Up to 100,000 monthly active members</li>
+        <li>Custom onboarding and implementation support</li>
+        <li>Priority support and SLA</li>
+        <li>SSO</li>
+        <li>Increased API rate limits</li>
+        <li class="font-semibold">and more</li>
+      </ul>
+    </div>
+    <div class="w-full text-center absolute bottom-0 -mb-3">
+      <button
+        aria-label="Open contact form"
+        @click="showModal = true"
+        class="rounded px-8 py-2 text-purple-400 bg-white border border-purple-400">
+        Let's chat
+      </button>
+    </div>
+  </div>
+</div>
