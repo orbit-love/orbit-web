@@ -39,7 +39,7 @@
             </div>
           </div>
           <div class="hidden md:block md:ml-10 md:pr-4">
-            <div class="inline-flex flex-col" id="solutions_header_link">
+            <div class="inline-flex flex-col" id="menu_header_link">
               {% set isSolutionPageRegExp = r/^\/solutions\//g %}
               <a href="#" class="ml-8 font-medium text-white {% if isSolutionPageRegExp.test(page.url) %}active border-b-2 border-white{% endif %}">Solutions</a>
               <div class="hidden flex-col absolute rounded bg-purple-900">
@@ -65,13 +65,27 @@
                 >
               </div>
             </div>
-            <span class="ml-8 font-medium text-gray-100 border-none pb-1">|</a>
+            <a href="/pricing/" class="header_link__desktop text-gray-100 {% if page.url == '/pricing/' %}active border-white{% endif %}">Pricing</a>
+            <div class="inline-flex flex-col" id="menu_header_link">
+              {% set isResourcesPageRegExp = r/^\/blog|podcast\//g %}
+              <a href="#" class="ml-8 font-medium text-white {% if isResourcesPageRegExp.test(page.url) %}active border-b-2 border-white{% endif %}">Resources</a>
+              <div class="hidden flex-col absolute rounded bg-purple-900">
+                <span class="mx-8 mb-3 text-white">Resources</span>
+                <a
+                  href="/blog/"
+                  class="mx-8 mb-3 text-purple-300 hover:text-white focus:text-white focus:outline-none focus:shadow-outline-purple"
+                  >Blog</a
+                >
+                <a href="/podcast/" 
+                   class="mx-8 mb-3 text-purple-300 hover:text-white focus:text-white focus:outline-none focus:shadow-outline-purple"
+                   >Developer Love Podcast</a
+                >
+                <a href="https://docs.orbit.love/docs" target='_blank' rel="noopener noreferrer" class="mx-8 mb-3 text-purple-300 hover:text-white focus:text-white focus:outline-none focus:shadow-outline-purple">Orbit Docs and Guides</a>
+              </div>
+            </div>
             <a href="/about-us/" class="header_link__desktop text-gray-100 {% if page.url == '/about-us/' %}active border-white{% endif %}">About</a>
-            <a href="https://docs.orbit.love/docs" target='_blank' rel="noopener noreferrer" class="header_link__desktop text-gray-100">Docs</a>
-            {% set isBlogRegExp = r/^\/(blog)\//g %}
-            <a href="/blog/" class="header_link__desktop text-gray-100 {% if isBlogRegExp.test(page.url) %}active border-white{% endif %}">Blog</a>
-            <a href="/podcast/" class="header_link__desktop text-gray-100 {% if page.url == '/podcast/' %}active border-white{% endif %}">Podcast</a>
             <a href="/careers/" class="header_link__desktop text-gray-100 {% if page.url == '/careers/' %}active border-white{% endif %}">Careers</a>
+            <span class="ml-8 font-medium text-gray-100 border-none pb-1">|</a>
             <a href="https://app.orbit.love/" class="header_link__desktop text-gray-100 {% if page.url == 'https://app.orbit.love/' %}active border-white{% endif %}">Login</a>
             <a href="https://app.orbit.love/signup" class="header_link__desktop font-bold text-purple-600 bg-white p-3 rounded-md hover:text-purple-400{% if page.url == 'https://app.orbit.love/signup' %}active border-white{% endif %}">Sign up</a>
             <a href="https://github.com/orbit-love/" rel="noopener noreferrer" class="ml-8 pb-1 transition duration-150 ease-in-out opacity-75 hover:border-b-0 hover:opacity-100"
@@ -210,7 +224,9 @@
                 role="menuitem"
                 >Integrations</a
               >
-              
+              <a href="/pricing/" class="header_link__mobile" role="menuitem"
+                >Pricing</a
+              >
               <span
                 class="header_link__mobile text-gray-400"
                 role="menuitem"

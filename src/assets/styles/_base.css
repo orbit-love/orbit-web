@@ -128,20 +128,20 @@ h1 {
   }
 }
 
-#solutions_header_link > div {
+#menu_header_link > div {
   border-top: 10px solid #281d5c;
   top: -2px;
 }
 
-#solutions_header_link:focus-within > div {
+#menu_header_link:focus-within > div {
   display: flex;
 }
 
-#solutions_header_link:hover > div {
+#menu_header_link:hover > div {
   display: flex;
 }
 
-#solutions_header_link > a:focus + div {
+#menu_header_link > a:focus + div {
   display: flex;
 }
 
