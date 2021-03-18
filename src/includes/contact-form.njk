@@ -18,53 +18,43 @@
     x-transition:leave-start="opacity-100 scale-100"
     x-transition:leave-end="opacity-0 scale-90"
   >
-    <p class="text-2xl font-bold">Join us in Orbit.</p>
+    <p class="text-2xl font-bold">Talk to Team Orbit.</p>
 
     {{ separator() }}
 
     <p class="text-sm">
-      In early access, we’re working closely with our early users to setup their
-      implementation and get the most out of Orbit. Complete this form and we’ll
-      be in touch soon.
+      We can't wait to learn more about your company and community. Just complete this form and we'll be in touch soon.
     </p>
 
     <form
-      x-data="earlyAccessForm()"
+      x-data="contactForm()"
       class="my-6"
-      @submit.prevent="requestEarlyAccess($event)"
+      @submit.prevent="requestContact($event)"
     >
       <div class="px-4 max-w-xs mx-auto flex flex-col items-start">
-        <label class="sr-only" for="early_access_form_name">Name</label>
+        <label class="sr-only" for="contact_form_name">Name</label>
         <input
-          id="early_access_form_name"
+          id="contact_form_name"
           x-model="name"
           required=""
           placeholder="Your name"
           class="block w-full px-4 py-3 text-base text-sm leading-6 appearance-none border border-gray-100 bg-white rounded placeholder-gray-500 shadow-bottom focus:outline-none focus:ring focus:ring-purple-400 focus:border-purple-300"
         />
-        <label class="sr-only" for="early_access_form_company">Company</label>
+        <label class="sr-only" for="contact_form_company">Company</label>
         <input
-          id="early_access_form_company"
+          id="contact_form_company"
           x-model="company"
           required=""
           placeholder="Company"
           class="block w-full px-4 py-3 mt-2 text-base text-sm leading-6 appearance-none border border-gray-100 bg-white rounded placeholder-gray-500 shadow-bottom focus:outline-none focus:ring focus:ring-purple-400 focus:border-purple-300"
         />
-        <label class="sr-only" for="early_access_form_email">Email</label>
+        <label class="sr-only" for="contact_form_email">Email</label>
         <input
-          id="early_access_form_email"
+          id="contact_form_email"
           x-model="email"
           type="email"
           required=""
           placeholder="Email address"
-          class="block w-full px-4 py-3 mt-2 text-base text-sm leading-6 appearance-none border border-gray-100 bg-white rounded placeholder-gray-500 shadow-bottom focus:outline-none focus:ring focus:ring-purple-400 focus:border-purple-300"
-        />
-        <label class="sr-only" for="early_access_form_project_url">Project URL (if you’re a maintainer)</label>
-        <input
-          id="early_access_form_project_url"
-          x-model="projectUrl"
-          type="url"
-          placeholder="Project URL (if you’re a maintainer)"
           class="block w-full px-4 py-3 mt-2 text-base text-sm leading-6 appearance-none border border-gray-100 bg-white rounded placeholder-gray-500 shadow-bottom focus:outline-none focus:ring focus:ring-purple-400 focus:border-purple-300"
         />
         <div class="mt-4 flex flex-row items-center">
@@ -105,14 +95,14 @@
       <p
         x-show="message"
         x-text="message"
-        class="lg:absolute mt-4 text-purple-600 max-w-xl font-medium"
+        class="mt-4 text-purple-600 max-w-xl font-medium"
       ></p>
     </form>
   </div>
 </div>
 
 <script>
-  function earlyAccessForm() {
+  function contactForm() {
     return {
       name: '',
       company: '',
@@ -120,7 +110,7 @@
       projectUrl: '',
       message: '',
       submitting: false,
-      async requestEarlyAccess() {
+      async requestContact() {
         this.message = ''
         this.submitting = true
         try {
@@ -131,7 +121,7 @@
               company: this.company,
               email: this.email,
               projectUrl: this.projectUrl,
-              source: "early-access-form",
+              source: "contact-form",
               sourceUrl: typeof document !== 'undefined' && document.location.href,
               originalReferrer: "",
               originalLandingPage: "",

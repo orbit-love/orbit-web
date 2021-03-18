@@ -67,11 +67,12 @@ eleventyNavigation:
       </ul>
     </div>
     <div class="w-full text-center absolute bottom-0 -mb-3">
-      <a
-        href="mailto:team@orbit.love"
+      <button
+        aria-label="Open contact form"
+        @click="showModal = true"
         class="rounded px-8 py-2 text-purple-400 bg-white border border-purple-400">
         Let's chat
-      </a>
+      </button>
     </div>
   </div>
 </div>
