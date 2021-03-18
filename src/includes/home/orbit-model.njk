@@ -1,4 +1,4 @@
-{% from "../macros/buttons.njk" import request_access_button %}
+{% from "../macros/buttons.njk" import get_started %}
 
 <div
   class="clip-path orbit-background w-full mt-10 sm:mt-36 pb-36 bg-aubergine"
@@ -19,5 +19,5 @@
   </div>
 </div>
 <div class="w-full pt-10 pb-10 bg-aubergine flex flex-col items-center">
-  {{ request_access_button(inverted=true, extra_classes="text-aubergine") }}
+  {{ get_started(inverted=true, extra_classes="text-aubergine") }}
 </div>

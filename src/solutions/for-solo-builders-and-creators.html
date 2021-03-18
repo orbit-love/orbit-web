@@ -7,7 +7,7 @@ eleventyNavigation:
 ---
 
 {% from "macros/typography.njk" import subhead, tagline, title %}
-{% from "macros/buttons.njk" import request_access_button %}
+{% from "macros/buttons.njk" import get_started %}
 {% from "macros/separator.njk" import separator %}
 {% from "macros/features.njk" import single_feature_with_image, double_feature_with_images %}
 
@@ -17,7 +17,7 @@ eleventyNavigation:
   >
     {{ title("From audience to community.") }}
     {{ tagline("Maintainers and creators grow relationships and never drop the ball with Orbit") }}
-    {{ request_access_button(inverted=true) }}
+    {{ get_started(inverted=true) }}
   </div>
 </div>
 
