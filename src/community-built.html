@@ -1,0 +1,40 @@
+---
+layout: page
+title: Orbit — Community Built
+eleventyNavigation:
+  key: Community Built
+---
+
+{% from "macros/typography.njk" import tagline, title %} {% from
+"macros/buttons.njk" import listen_on %}
+
+<div class="slanted-top max-w-full bg-purple-400">
+  <div
+    class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto items-center justify-center"
+  >
+    {{ title("Developer Love") }} {{ tagline("Helping community builders take actionable steps towards building better communities.") }}
+    <div class="flex flex-col sm:flex-row">
+      {{ listen_on( "Discord",
+      "https://discord.orbit.love",
+      "/assets/images/cb-discord.png" ) }}
+  </div>
+</div>
+
+<div class="prose prose-lg max-w-screen-sm mx-auto my-10 pt-10 px-4 sm:px-0">
+  <p>
+    Hosted by Orbit CEO, Patrick Woods, and Community Advocate, Rosie Sherry, <strong>Community Built</strong> features discussions focused on helping community builders take actionable steps towards building better communities.
+  </p>
+  <p>
+    You’ll hear real stories of how people are crafting communities from folks who are forging community management best practices.
+  </p>
+  <p>
+    Our inaugural guest is <a href="https://twitter.com/charlierward">Charlie Ward</a>, founder of <a href="https://weekendclub.co/">Weekend Club</a>. What started as a casual meet-up in a pub in London has now evolved into an online co-working community that helps keep Indie Hackers accountable. We'll dive into:
+    <ul>
+     <li>the idea behind the community</li>
+     <li>how Charlie got his first members</li>
+     <li>how he went from $0 to $2k MRR</li>
+     <li>the challenges of running a paid community alongside a day job</li>
+   </ul>
+  <a href="https://discord.orbit.love">Join us live on Discord</a> on April 15 at 9am PST. We'll be taking questions on the day.
+  </p>
+</div>
