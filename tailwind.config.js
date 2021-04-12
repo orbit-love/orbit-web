@@ -17,6 +17,12 @@ module.exports = {
             },
           },
           color: theme('colors.gray.900'),
+          "code::before": {
+              content: '""'
+            },
+            "code::after": {
+              content: '""'
+            },
           a: {
             color: theme('colors.purple.600'),
             '&:hover': {
