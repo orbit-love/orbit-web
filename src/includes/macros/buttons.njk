@@ -10,6 +10,18 @@
   </div>
 {% endmacro %}
 
+{% macro learn_more(href, text, inverted=false, extra_classes="") %}
+  <div class="mb-6 rounded">
+    <a
+      href={{ href }}
+      class="cursor-pointer px-8 py-3 shadow-bottom text-base leading-6 font-bold rounded {{ 'text-purple-500 bg-white hover:text-purple-600' if inverted else 'text-white bg-purple-500 hover:text-gray-100' }} focus:outline-none focus:shadow-outline transition duration-150 ease-in-out {{ extra_classes }}"
+      aria-label="Get started"
+    >
+      {{ text }}
+    </a>
+  </div>
+{% endmacro %}
+
 {% macro view_open_opportunities(inverted=false, extra_classes="") %}
   <div class="mb-6 rounded">
     <a

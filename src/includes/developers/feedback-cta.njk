@@ -1,0 +1,53 @@
+<form
+  x-data="newsletterCTA('subscribe-form')"
+  class="py-10 my-10 sm:my-16 bg-gradient-to-tr from-blue-400 to-purple-600"
+  @submit.prevent="subscribe($event)"
+>
+  <div class="px-4 mx-auto max-w-screen-sm">
+    <p class="text-2xl text-center font-bold text-white">Join our mailing list&nbsp;&nbsp;📩</p>
+    <div class="my-4 sm:flex sm:justify-center">
+      <label class="sr-only" for="newsletter_cta">Your email address</label>
+      <input
+        id="newsletter_cta"
+        x-model="email"
+        type="email"
+        required=""
+        placeholder="Your email address"
+        class="block sm:max-w-xs w-full px-4 py-3 text-base leading-6 appearance-none border border-gray-100 bg-white rounded placeholder-gray-500 shadow-bottom focus:outline-none focus:ring focus:ring-purple-400 focus:border-purple-300"
+      />
+      <button
+        class="mt-4 relative sm:mt-0 sm:h-auto sm:ml-4 block w-full sm:w-auto px-6 py-3 text-base leading-6 font-semibold leading-snug bg-white text-gray-600 rounded shadow-bottom hover:bg-purple-100 hover:text-gray-700 focus:outline-none focus:ring focus:ring-purple-400 focus:border-purple-300 transition ease-in-out duration-150"
+        aria-label="Subscribe to Orbit newsletter"
+        :class="{ 'opacity-50 pointer-events-none': submitting, 'hover:bg-purple-100 hover:text-gray-700': !submitting }"
+        :disabled="submitting"
+      >
+        <span :class="{ 'opacity-0': submitting }">Subscribe</span>
+        <span
+          style=""
+          x-show="true"
+          class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0"
+          :class="{ 'opacity-0': !submitting }"
+        >
+          <svg class="h-8 w-8 spin" viewBox="0 0 24 24">
+            <path
+              class="text-gray-600"
+              fill="currentColor"
+              d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-2a7 7 0 110-14 7 7 0 010 14z"
+            ></path>
+            <path
+              class="text-gray-400"
+              fill="currentColor"
+              d="M12 3a9 9 0 010 18v-2a7 7 0 000-14V3z"
+            ></path>
+          </svg>
+        </span>
+      </button>
+    </div>
+    <p
+      x-show="message"
+      x-text="message"
+      class="px-4 mb-4 sm:text-center text-white max-w-xl font-medium text-base"
+    ></p>
+    <p class="text-center text-base text-white">No spam, just insights, product and content updates, event invites, and the occasional space pun.</p>
+  </div>
+</form>

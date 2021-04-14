@@ -267,6 +267,12 @@ h1 {
   background-repeat: no-repeat;
 }
 
+.feedback-background {
+  background-image: url('images/discord-server-banner.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .ob-maintainers-metrics {
   margin-top: 20px;
   @media (min-width: 640px) {

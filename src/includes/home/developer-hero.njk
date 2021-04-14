@@ -1,0 +1,18 @@
+{% from "../macros/typography.njk" import tagline, title %}
+{% from "../macros/buttons.njk" import get_started %}
+
+<div class="slanted-top maw-w-full bg-purple-400">
+  <div
+    class="flex flex-col max-w-screen-sm px-4 md:px-0 mx-auto items-center justify-center"
+  >
+    {{ title("Orbit 💜 Developers") }}
+    {{
+      tagline("
+        Libraries, integrations, and guides that are
+        <strong>community driven</strong>
+        from the <strong>community experience platform</strong>.
+      ")
+    }}
+  </div>
+</div>
+<div class="flow-root w-full"></div>
