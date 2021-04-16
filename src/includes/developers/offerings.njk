@@ -1,0 +1,204 @@
+{% from "../macros/buttons.njk" import learn_more %}
+{% from "../macros/developers/cards.njk" import card %}
+
+
+<div class="relative bg-white py-16 sm:py-24 lg:py-32">
+  <div class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
+    <h2 class="text-base font-semibold tracking-wider text-indigo-600 uppercase">Build Together</h2>
+    <p class="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+      Everything you need to build with Orbit
+    </p>
+    <div class="mt-12">
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+      {%
+        set getting_started = {
+          title: "Getting Started",
+          description: "Learn how to create your Orbit Workspace, and begin creating members and activities on the platform",
+          svg: "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z' />
+          <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 12a3 3 0 11-6 0 3 3 0 016 0z' />",
+          sections: [
+            {
+              title: "Accounts",
+              link: "https://docs.orbit.love/docs/getting-started#creating-a-new-orbit-account",
+              description: "Create your Orbit account and get your API key to start building"
+            },
+            {
+              title: "Members",
+              link: "https://docs.orbit.love/docs/the-member-profile-page",
+              description: "Read an overview of the attributes of a member in an Orbit workspace"
+            },
+            {
+              title: "Activities",
+              link: "https://docs.orbit.love/docs/adding-activities",
+              description: "Explore activity creation in an Orbit workspace"
+            },
+            {
+              title: "GitHub Integration",
+              link: "https://docs.orbit.love/docs/how-to-setup-the-orbit-github-integration",
+              description: "Instructions for integrating your GitHub community data into Orbit"
+            }
+          ]
+        }
+      %}
+      {{ card(getting_started) }}
+
+      {%
+        set orbit_api = {
+          title: "Orbit API",
+          description: "View the Orbit API reference guide, create custom snippets and discover key API concepts",
+          svg: "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' />",
+          sections: [
+            {
+              title: "API Reference",
+              link: "https://docs.orbit.love/reference#about-the-orbit-api",
+              description: "View and test all endpoints in your browser"
+            },
+            {
+              title: "Key Concepts",
+              link: "https://docs.orbit.love/reference#key-concepts",
+              description: "Learn about Orbit key concepts to guide you in building with the API"
+            },
+            {
+              title: "Common API Requests Code Snippets",
+              link: "https://docs.orbit.love/reference#guide-to-common-api-calls",
+              description: "Handy code snippets for the most common API request"
+            },
+            {
+              title: "Swagger/OpenAPI Definition",
+              link: "https://docs.orbit.love/docs/how-to-setup-the-orbit-github-integration",
+              description: "Import the OpenAPI reference into your favorite tool, like Postman, to test your API calls"
+            }
+          ]
+        }
+      %}
+      {{ card(orbit_api) }}
+
+      {%
+        set beta_program = {
+          title: "Join the Beta Program",
+          description: "Get early access to beta features and become a part of the community offering product feedback and improvements",
+          svg: "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z' />",
+          sections: [
+            {
+              title: "Sign Up",
+              link: "https://airtable.com/shrMais1HjToBzPpE",
+              description: "Register for the Orbit beta program"
+            },
+            {
+              title: "Discord Integration",
+              link: "https://docs.orbit.love/docs/set-up-the-orbit-discord-integration",
+              description: "Read the docs on using the Discord beta integration"
+            },
+            {
+              title: "Webhooks",
+              link: "https://docs.orbit.love/docs/webhooks",
+              description: "Learn how to set up webhook notifications with Orbit"
+            },
+            {
+              title: "Search Changes",
+              link: "https://docs.orbit.love/docs/search-changes-march-2021",
+              description: "Important changes to the search interface"
+            }
+          ]
+        }
+      %}
+      {{ card(beta_program) }}
+
+      {%
+        set community_built = {
+          title: "Community Built",
+          description: "Explore and utilize open-source tooling built by members of the Orbit developer community",
+          svg: "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4' />",
+          sections: [
+            {
+              title: "NodeOrbit",
+              link: "https://github.com/davidgs/NodeOrbit",
+              description: "<a href='https://nodered.org/' class='underline'>Node-RED</a> integrations by <a href='https://twitter.com/davidgsIoT' class='underline'>David G. Simmons</a>"
+            },
+            {
+              title: "OrbitParser",
+              link: "https://github.com/davidgs/OrbitParser",
+              description: "Parse your Orbit JSON into a CSV file in Golang by <a href='https://twitter.com/davidgsIoT' class='underline'>David G. Simmons</a>"
+            },
+            {
+              title: "Batch/Bulk Data Import",
+              link: "https://airtable.com/universe/expZVjdIZgZpw2dK2/orbit-batchbulk-data-import",
+              description: "Airtable template and script for bulk importing historical activities by <a href='https://twitter.com/_phzn' class='underline'>Kevin Lewis</a>"
+            },
+            {
+              title: "Custom Integrations Node.js App",
+              link: "https://github.com/nexmo/enter-our-orbit",
+              description: "Integrate Twitch, YouTube and Stack Overflow with this Node.js app by the <a href='https://twitter.com/vonagedev' class='underline'>Vonage Developer Relations Team</a>"
+            },
+            {
+              title: "DEV to Orbit Ruby Gem",
+              link: "https://github.com/bencgreenberg/dev_orbit",
+              description: "Integrate DEV Community interactions into your Orbit workspace in Ruby by <a href='https://twitter.com/rabbigreenberg' class='underline'>Ben Greenberg</a>"
+            }            
+          ]
+        }
+      %}
+      {{ card(community_built) }}
+
+      {%
+        set join_community = {
+          title: "Join the Community",
+          description: "Connect with the Orbit developer community for collaboration, support, ideas and inspiration",
+          svg: "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' />",
+          sections: [
+            {
+              title: "Discord",
+              link: "https://discord.orbit.love/",
+              description: "Join us on the Orbit Discord server"
+            },
+            {
+              title: "Developer Love Podcast",
+              link: "https://orbit.love/podcast/",
+              description: "Listen to our podcast made for people who build developer communities"
+            },
+            {
+              title: "Orbit Blog",
+              link: "https://orbit.love/blog/",
+              description: "Read the latest from the engineering, product and devrel teams"
+            },
+            {
+              title: "Community Built Resources",
+              link: "https://docs.orbit.love/docs/community-built-resources",
+              description: "Showcasing open-source tooling and guides from the Orbit developer community"
+            }
+          ]
+        }
+      %}
+      {{ card(join_community) }}
+
+      {%
+        set orbit_github = {
+          title: "Orbit on GitHub",
+          description: "Explore Orbit's open-source resources on GitHub",
+          svg: "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z' />",
+          sections: [
+            {
+              title: "Orbit Model",
+              link: "https://github.com/orbit-love/orbit-model",
+              description: "The conceptual framework that powers the Orbit platform"
+            },
+            {
+              title: "Orbit Chrome Extension",
+              link: "https://github.com/orbit-love/orbit-browser-extension",
+              description: "See Orbit member information right on GitHub with this extension"
+            },
+            {
+              title: "Orbit Website",
+              link: "https://github.com/orbit-love/orbit-web",
+              description: "This website is open source, and you can view and contribute to the code on GitHub"
+            }
+          ]
+        }
+      %}
+      {{ card(orbit_github) }}
+     
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+{% macro card(content) %}
+<div class="pt-6">
+    <div class="flow-root bg-gray-100 rounded-lg px-6 pb-8">
+    <div class="-mt-6">
+        <span class="inline-flex items-center justify-center p-3 bg-purple-400 rounded-md shadow-lg">
+            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                {{ content.svg | safe }}
+            </svg>
+        </span>
+        <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">{{ content.title }}</h3>
+        <p class="mt-5 text-base text-gray-600">
+        {{ content.description }}
+        </p>
+
+        <hr class="mt-4 mb-4 mx-auto" />
+
+        <ul class="text-left">
+        {% for section in content.sections %}
+            <li class="mb-2">
+                <dl class="font-medium text-purple-400"><a href={{ section.link }} class="focus:outline-none">{{ section.title }}</a></dl>
+                <dt class="text-gray-600 pl-4 mt-1">{{ section.description | safe }}</dt>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    </div>
+</div>
+{% endmacro %}
