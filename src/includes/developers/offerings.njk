@@ -1,4 +1,6 @@
 {% from "../macros/buttons.njk" import learn_more %}
+{% from "../macros/developers/cards.njk" import card %}
+
 
 <div class="relative bg-white py-16 sm:py-24 lg:py-32">
   <div class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
@@ -8,253 +10,204 @@
     </p>
     <div class="mt-12">
       <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="pt-6">
-          <div class="flow-root bg-gray-100 rounded-lg px-6 pb-8">
-            <div class="-mt-6">
-              <div>
-                <span class="inline-flex items-center justify-center p-3 bg-purple-400 rounded-md shadow-lg">
-                  <!-- Heroicon name: outline/cloud-upload -->
-                 <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />                  </svg>
-                </span>
-              </div>
-              <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Getting Started</h3>
-              <p class="mt-5 text-base text-gray-500">
-                Learn how to create your Orbit Workspace, and begin creating members and activities on the platform.
-              </p>
 
-              <hr class="mt-4 mb-4 mx-auto" />
+      {%
+        set getting_started = {
+          title: "Getting Started",
+          description: "Learn how to create your Orbit Workspace, and begin creating members and activities on the platform.",
+          svg: "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z' />
+          <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 12a3 3 0 11-6 0 3 3 0 016 0z' />",
+          sections: [
+            {
+              title: "Accounts",
+              link: "https://docs.orbit.love/docs/getting-started#creating-a-new-orbit-account",
+              description: "Create your Orbit account and get your API key to start building"
+            },
+            {
+              title: "Members",
+              link: "https://docs.orbit.love/docs/the-member-profile-page",
+              description: "Read an overview of the attributes of a member in an Orbit workspace"
+            },
+            {
+              title: "Activities",
+              link: "https://docs.orbit.love/docs/adding-activities",
+              description: "Explore activity creation in an Orbit workspace"
+            },
+            {
+              title: "GitHub Integration",
+              link: "https://docs.orbit.love/docs/how-to-setup-the-orbit-github-integration",
+              description: "Instructions for integrating your GitHub community data into Orbit"
+            }
+          ]
+        }
+      %}
+      {{ card(getting_started) }}
 
-              <ul class="text-left">
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://docs.orbit.love/docs/getting-started#creating-a-new-orbit-account" class="focus:outline-none">Accounts</a></dl>
-                  <dt class="text-gray-500 pl-4 mt-1">Create your Orbit account and get your API key to start building</dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://docs.orbit.love/docs/the-member-profile-page" class="focus:outline-none">Members</a></dl>
-                  <dt class="text-gray-500 pl-4 mt-1">Read an overview of the attributes of a member in an Orbit workspace</dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://docs.orbit.love/docs/adding-activities" class="focus:outline-none">Activities</a></dl>
-                  <dt class="text-gray-500 pl-4 mt-1">Explore activity creation in an Orbit workspace</dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://docs.orbit.love/docs/how-to-setup-the-orbit-github-integration" class="focus:outline-none">GitHub Integration</dl>
-                  <dt class="text-gray-500 pl-4 mt-1">Instructions for integrating your GitHub community data into Orbit</dt>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      {%
+        set orbit_api = {
+          title: "Orbit API",
+          description: "View the Orbit API reference guide, create custom snippets and discover key API concepts.",
+          svg: "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' />",
+          sections: [
+            {
+              title: "API Reference",
+              link: "https://docs.orbit.love/reference#about-the-orbit-api",
+              description: "View and test all endpoints in your browser"
+            },
+            {
+              title: "Key Concepts",
+              link: "https://docs.orbit.love/reference#key-concepts",
+              description: "Learn about Orbit key concepts to guide you in building with the API"
+            },
+            {
+              title: "Common API Requests Code Snippets",
+              link: "https://docs.orbit.love/reference#guide-to-common-api-calls",
+              description: "Handy code snippets for the most common API request"
+            },
+            {
+              title: "Swagger/OpenAPI Definition",
+              link: "https://docs.orbit.love/docs/how-to-setup-the-orbit-github-integration",
+              description: "Import the OpenAPI reference into your favorite tool, like Postman, to test your API calls"
+            }
+          ]
+        }
+      %}
+      {{ card(orbit_api) }}
 
-        <div class="pt-6">
-          <div class="flow-root bg-gray-100 rounded-lg px-6 pb-8">
-            <div class="-mt-6">
-              <div>
-                <span class="inline-flex items-center justify-center p-3 bg-purple-400 rounded-md shadow-lg">
-                  <!-- Heroicon name: outline/refresh -->
-                  <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </span>
-              </div>
-              <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Orbit API</h3>
-              <p class="mt-5 text-base text-gray-500">
-                View the Orbit API reference guide, create custom snippets and discover key API concepts.
-              </p>
+      {%
+        set beta_program = {
+          title: "Join the Beta Program",
+          description: "Get early access to beta features in development and become a part of the community offering product feedback and improvements.",
+          svg: "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z' />",
+          sections: [
+            {
+              title: "Sign Up",
+              link: "https://airtable.com/shrMais1HjToBzPpE",
+              description: "Register for the Orbit beta program"
+            },
+            {
+              title: "Discord Integration",
+              link: "https://docs.orbit.love/docs/set-up-the-orbit-discord-integration",
+              description: "Read the docs on using the Discord beta integration"
+            },
+            {
+              title: "Webhooks",
+              link: "https://docs.orbit.love/docs/webhooks",
+              description: "Learn how to set up webhook notifications with Orbit"
+            },
+            {
+              title: "Search Changes",
+              link: "https://docs.orbit.love/docs/search-changes-march-2021",
+              description: "Important changes to the search interface"
+            }
+          ]
+        }
+      %}
+      {{ card(beta_program) }}
 
-              <hr class="mt-4 mb-4 mx-auto" />
+      {%
+        set community_built = {
+          title: "Community Built",
+          description: "Explore and utilize open-source tooling built by members of the Orbit developer community.",
+          svg: "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4' />",
+          sections: [
+            {
+              title: "NodeOrbit",
+              link: "https://github.com/davidgs/NodeOrbit",
+              description: "<a href='https://nodered.org/' class='underline'>Node-RED</a> integrations by <a href='https://twitter.com/davidgsIoT' class='underline'>David G. Simmons</a>"
+            },
+            {
+              title: "OrbitParser",
+              link: "https://github.com/davidgs/OrbitParser",
+              description: "Parse your Orbit JSON into a CSV file in Golang by <a href='https://twitter.com/davidgsIoT' class='underline'>David G. Simmons</a>"
+            },
+            {
+              title: "Slack to Orbit Zapier Template #1",
+              link: "https://zapier.com/shared/abe6fd30302965cdaba5ac3d60c8bc19ea1ae791",
+              description: "Format Slack messages and send them to Orbit on Zapier with this template by <a href='https://twitter.com/mikermcneil' class='underline'>Mike NcNeil</a>"
+            },
+            {
+              title: "Slack to Orbit Zapier Template #2",
+              link: "https://zapier.com/shared/e3bd8574eceb8a7f53608394e5926d6952107a1e",
+              description: "Capture Slack anywhere messages and send them to Orbit as a new activity by <a href='https://twitter.com/fharper' class='underline'>Frédéric Harper</a>"
+            },
+            {
+              title: "Batch/Bulk Data Import",
+              link: "https://airtable.com/universe/expZVjdIZgZpw2dK2/orbit-batchbulk-data-import",
+              description: "Airtable template and script for bulk importing historical activities by <a href='https://twitter.com/_phzn' class='underline'>Kevin Lewis</a>"
+            },
+            {
+              title: "Custom Integrations Node.js App",
+              link: "https://github.com/nexmo/enter-our-orbit",
+              description: "Integrate Twitch, YouTube and Stack Overflow interacts with this Node.js app by the <a href='https://twitter.com/vonagedev' class='underline'>Vonage Developer Relations Team</a>"
+            },
+            {
+              title: "DEV to Orbit Ruby Gem",
+              link: "https://github.com/bencgreenberg/dev_orbit",
+              description: "ntegrate DEV Community interactions into your Orbit workspace in Ruby by <a href='https://twitter.com/rabbigreenberg' class='underline'>Ben Greenberg</a>"
+            }            
+          ]
+        }
+      %}
+      {{ card(community_built) }}
 
-              <ul class="text-left">
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://docs.orbit.love/reference#about-the-orbit-api" class="focus:outline-none">API Reference</a></dl>
-                  <dt class="text-gray-500 pl-4 mt-1">View and test all endpoints in your browser</dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://docs.orbit.love/reference#key-concepts" class="focus:outline-none">Key Concepts</a></dl>
-                  <dt class="text-gray-500 pl-4 mt-1">Learn about Orbit key concepts to guide you in building with the API</dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://docs.orbit.love/reference#guide-to-common-api-calls" class="focus:outline-none">Common API Requests Code Snippets</a></dl>
-                  <dt class="text-gray-500 pl-4 mt-1">Handy code snippets for the most common API requests</dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://docs.orbit.love/docs/how-to-setup-the-orbit-github-integration" class="focus:outline-none">Swagger/OpenAPI Definition</dl>
-                  <dt class="text-gray-500 pl-4 mt-1">Import the OpenAPI reference into your favorite tool, like Postman, to test your API calls</dt>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      {%
+        set join_community = {
+          title: "Join the Community",
+          description: "Connect with the Orbit developer community for collaboration, support, ideas and inspiration.",
+          svg: "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' />",
+          sections: [
+            {
+              title: "Discord",
+              link: "https://discord.orbit.love/",
+              description: "Join us on the Orbit Discord server"
+            },
+            {
+              title: "Developer Love Podcast",
+              link: "https://orbit.love/podcast/",
+              description: "Listen to our podcast made for people who build developer communities"
+            },
+            {
+              title: "Orbit Blog",
+              link: "https://orbit.love/blog/",
+              description: "Read the latest from the engineering, product and devrel teams"
+            },
+            {
+              title: "Community Built Resources",
+              link: "https://docs.orbit.love/docs/community-built-resources",
+              description: "Showcasing open-source tooling and guides from the Orbit developer community"
+            }
+          ]
+        }
+      %}
+      {{ card(join_community) }}
 
-        <div class="pt-6">
-          <div class="flow-root bg-gray-100 rounded-lg px-6 pb-8">
-            <div class="-mt-6">
-              <div>
-                <span class="inline-flex items-center justify-center p-3 bg-purple-400 rounded-md shadow-lg">
-                  <!-- Heroicon name: outline/lock-closed -->
-                  <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                  </svg>
-                </span>
-              </div>
-              <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Community Built</h3>
-              <p class="mt-5 text-base text-gray-600">
-                Explore and utilize open-source tooling built by members of the Orbit developer community.
-              </p>
-
-              <hr class="mt-4 mb-4 mx-auto" />
-
-              <ul class="text-left">
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://github.com/davidgs/NodeOrbit" class="focus:outline-none">NodeOrbit</a></dl>
-                  <dt class="text-gray-600 pl-4 mt-1"><a href="https://nodered.org/" class="underline">Node-RED</a> integrations by <a href="https://twitter.com/davidgsIoT" class="underline">David G. Simmons</a></dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://github.com/davidgs/OrbitParser" class="focus:outline-none">OrbitParser</a></dl>
-                  <dt class="text-gray-600 pl-4 mt-1">Parse your Orbit JSON into a CSV file in Golang by <a href="https://twitter.com/davidgsIoT" class="underline">David G. Simmons</a></dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://zapier.com/shared/abe6fd30302965cdaba5ac3d60c8bc19ea1ae791" class="focus:outline-none">Slack to Orbit Zapier Template #1</a></dl>
-                  <dt class="text-gray-600 pl-4 mt-1">Format Slack messages and send them to Orbit on Zapier with this template by <a href="https://twitter.com/mikermcneil" class="underline">Mike NcNeil</a></dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://docs.orbit.love/docs/how-to-setup-the-orbit-github-integration" class="focus:outline-none">Slack to Orbit Zapier Template #2</dl>
-                  <dt class="text-gray-600 pl-4 mt-1">Capture Slack anywhere messages and send them to Orbit as a new activity by <a href="https://twitter.com/fharper" class="underline">Frédéric Harper</a></dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://airtable.com/universe/expZVjdIZgZpw2dK2/orbit-batchbulk-data-import" class="focus:outline-none">Batch/Bulk Data Import</dl>
-                  <dt class="text-gray-600 pl-4 mt-1">An Airtable template and script for bulk importing historical activities by <a href="https://twitter.com/_phzn" class="underline">Kevin Lewis</a></dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://github.com/nexmo/enter-our-orbit" class="focus:outline-none">Custom Integrations Node.js App</dl>
-                  <dt class="text-gray-600 pl-4 mt-1">Integrate Twitch, YouTube and Stack Overflow interacts with this Node.js app by the <a href="https://twitter.com/vonagedev" class="underline">Vonage Developer Relations Team</a></dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://github.com/bencgreenberg/dev_orbit" class="focus:outline-none">DEV to Orbit Ruby Gem</dl>
-                  <dt class="text-gray-600 pl-4 mt-1">Integrate DEV Community interactions into your Orbit workspace in Ruby by <a href="https://twitter.com/rabbigreenberg" class="underline">Ben Greenberg</a></dt>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="pt-6">
-          <div class="flow-root bg-gray-100 rounded-lg px-6 pb-8">
-            <div class="-mt-6">
-              <div>
-                <span class="inline-flex items-center justify-center p-3 bg-purple-400 rounded-md shadow-lg">
-                  <!-- Heroicon name: outline/shield-check -->
-                  <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                  </svg>
-                </span>
-              </div>
-              <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Join the Beta Program</h3>
-              <p class="mt-5 text-base text-gray-500">
-                Get early access to beta features in development and become a part of the community offering product feedback and improvements.
-              </p>
-
-              <hr class="mt-4 mb-4 mx-auto" />
-
-              <ul class="text-left">
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://airtable.com/shrMais1HjToBzPpE" class="focus:outline-none">Sign Up</a></dl>
-                  <dt class="text-gray-500 pl-4 mt-1">Register for the Orbit beta program</dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://docs.orbit.love/docs/set-up-the-orbit-discord-integration" class="focus:outline-none">Discord Integration</a></dl>
-                  <dt class="text-gray-500 pl-4 mt-1">Read the docs on using the Discord beta integration</dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://docs.orbit.love/docs/webhooks" class="focus:outline-none">Webhooks</a></dl>
-                  <dt class="text-gray-500 pl-4 mt-1">Learn how to set up webhook notifications with Orbit</dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://docs.orbit.love/docs/search-changes-march-2021" class="focus:outline-none">Search Changes</dl>
-                  <dt class="text-gray-500 pl-4 mt-1">Important changes to the search interface</dt>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="pt-6">
-          <div class="flow-root bg-gray-100 rounded-lg px-6 pb-8">
-            <div class="-mt-6">
-              <div>
-                <span class="inline-flex items-center justify-center p-3 bg-purple-400 rounded-md shadow-lg">
-                  <!-- Heroicon name: outline/cog -->
-                  <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                </span>
-              </div>
-              <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Join the Community</h3>
-              <p class="mt-5 text-base text-gray-500">
-                Connect with the Orbit developer community for collaboration, support, ideas and inspiration.
-              </p>
-
-              <hr class="mt-4 mb-4 mx-auto" />
-
-              <ul class="text-left">
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://discord.orbit.love/" class="focus:outline-none">Discord</a></dl>
-                  <dt class="text-gray-500 pl-4 mt-1">Join us on the Orbit Discord server</dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://orbit.love/podcast/" class="focus:outline-none">Developer Love Podcast</a></dl>
-                  <dt class="text-gray-500 pl-4 mt-1">Listen to our podcast made for people who build developer communities</dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://orbit.love/blog/" class="focus:outline-none">Orbit Blog</a></dl>
-                  <dt class="text-gray-500 pl-4 mt-1">Read the latest from the engineering, product and devrel teams</dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://docs.orbit.love/docs/community-built-resources" class="focus:outline-none">Community Built Resources</a></dl>
-                  <dt class="text-gray-500 pl-4 mt-1">Showcasing open-source tooling and guides from the Orbit developer community</dt>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="pt-6">
-          <div class="flow-root bg-gray-100 rounded-lg px-6 pb-8">
-            <div class="-mt-6">
-              <div>
-                <span class="inline-flex items-center justify-center p-3 bg-purple-400 rounded-md shadow-lg">
-                  <!-- Heroicon name: outline/cog -->
-                  <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z" />
-                  </svg>
-                </span>
-              </div>
-              <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Orbit on GitHub</h3>
-              <p class="mt-5 text-base text-gray-500">
-                Explore Orbit's open-source resources on GitHub
-              </p>
-
-              <hr class="mt-4 mb-4 mx-auto" />
-
-              <ul class="text-left">
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://github.com/orbit-love/orbit-model" class="focus:outline-none">Orbit Model</a></dl>
-                  <dt class="text-gray-500 pl-4 mt-1">The conceptual framework that powers the Orbit platform</dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://github.com/orbit-love/orbit-browser-extension" class="focus:outline-none">Orbit Chrome Extension</a></dl>
-                  <dt class="text-gray-500 pl-4 mt-1">See Orbit member information right on GitHub with this extension</dt>
-                </li>
-                <li class="mb-2">
-                  <dl class="font-medium text-purple-400"><a href="https://github.com/orbit-love/orbit-web" class="focus:outline-none">Orbit Website</a></dl>
-                  <dt class="text-gray-500 pl-4 mt-1">This website is open source, and you can view and contribute to the code on GitHub</dt>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>        
+      {%
+        set orbit_github = {
+          title: "Orbit on GitHub",
+          description: "Explore Orbit's open-source resources on GitHub",
+          svg: "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z' />",
+          sections: [
+            {
+              title: "Orbit Model",
+              link: "https://github.com/orbit-love/orbit-model",
+              description: "The conceptual framework that powers the Orbit platform"
+            },
+            {
+              title: "Orbit Chrome Extension",
+              link: "https://github.com/orbit-love/orbit-browser-extension",
+              description: "See Orbit member information right on GitHub with this extension"
+            },
+            {
+              title: "Orbit Website",
+              link: "https://github.com/orbit-love/orbit-web",
+              description: "This website is open source, and you can view and contribute to the code on GitHub"
+            }
+          ]
+        }
+      %}
+      {{ card(orbit_github) }}
+     
       </div>
     </div>
   </div>
