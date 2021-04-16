@@ -8,7 +8,7 @@
             </svg>
         </span>
         <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">{{ content.title }}</h3>
-        <p class="mt-5 text-base text-gray-500">
+        <p class="mt-5 text-base text-gray-600">
         {{ content.description }}
         </p>
 
@@ -18,7 +18,7 @@
         {% for section in content.sections %}
             <li class="mb-2">
                 <dl class="font-medium text-purple-400"><a href={{ section.link }} class="focus:outline-none">{{ section.title }}</a></dl>
-                <dt class="text-gray-500 pl-4 mt-1">{{ section.description | safe }}</dt>
+                <dt class="text-gray-600 pl-4 mt-1">{{ section.description | safe }}</dt>
             </li>
         {% endfor %}
         </ul>
