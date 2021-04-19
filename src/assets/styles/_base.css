@@ -80,7 +80,7 @@ h1 {
 }
 
 .header_link__desktop {
-  @apply ml-8 font-medium text-white border-none pb-1 transition duration-150 ease-in-out;
+  @apply ml-4 font-medium text-white border-none pb-1 transition duration-150 ease-in-out;
   border-bottom: 2px solid transparent;
 }
 
