@@ -236,13 +236,24 @@ eleventyNavigation:
     image_src: "/assets/images/integrations/discord.png",
     sections: [
       {
-        title: "Discord"
+        title: "Discord",
+        content: "Orbit’s Discord integration automatically ingests messages in your Discord server 
+        to create a member profile for every participant and an activity for every message, which allow you to see when a member joined your server,
+        which categories and channels they are active in,
+        and the specific messages sent.
+        <br /><br />
+        <a
+          href='https://docs.orbit.love/docs/set-up-the-orbit-discord-integration'
+          target='_blank'
+          rel='noreferrer noopener'
+          class='text-purple-600 hover:text-purple-600 no-underline'
+        >
+          <strong>Read more in the docs ››</strong>
+        </a>"
       }
     ]
   }
 %}
 {{ integration(feature_integration_discord) }}
 
-{% include "newsletter-cta.njk" %}
- 
 {% include "ready-to-try-it.njk" %}
