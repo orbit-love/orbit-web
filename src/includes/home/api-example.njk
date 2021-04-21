@@ -43,9 +43,22 @@ let options = {
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
-    Authorization: 'Bearer <orbit-api-key>'
+    'Authorization: 'Bearer <orbit-api-key>'
   },
-  body: '{"activity":{"member":{"github":"user-github","email":"user@email"},"description":"Getting Started with the Orbit Model","link":"https://orbit-event.eventbrite.com/","link_text":"See the event","title":"Orbit Meetup Registration","activity_type":"eventbrite:registration","occurred_at":"2020-05-10"}}'
+  body: JSON.stringify({
+    activity: {
+        description: 'Getting Started with the Orbit Model',
+        link: 'https://orbit-event.eventbrite.com/',
+        link_text: 'See the event',
+        title: 'Orbit Meetup Registration',
+        activity_type: 'eventbrite:registration',
+        occurred_at: '2020-05-10',
+        member: {
+            github: 'user-github',
+            email: 'user@email.com'
+        }
+    }
+  })
 };
 
 fetch(url, options)
@@ -68,7 +81,20 @@ request = Net::HTTP::Post.new(url)
 request["Accept"] = 'application/json'
 request["Content-Type"] = 'application/json'
 request["Authorization"] = 'Bearer <orbit-api-key>'
-request.body = "{\"activity\":{\"member\":{\"github\":\"user-github\",\"email\":\"user@email\"},\"description\":\"Getting Started with the Orbit Model\",\"link\":\"https://orbit-event.eventbrite.com/\",\"link_text\":\"See the event\",\"title\":\"Orbit Meetup Registration\",\"activity_type\":\"eventbrite:registration\",\"occurred_at\":\"2020-05-10\"}}"
+request.body = {
+    activity: {
+        description: 'Getting Started with the Orbit Model',
+        link: 'https://orbit-event.eventbrite.com/',
+        link_text: 'See the event',
+        title: 'Orbit Meetup Registration',
+        activity_type: 'eventbrite:registration',
+        occurred_at: '2020-05-10',
+        member: {
+            github: 'user-github',
+            email: 'user@email.com'
+        }
+    }
+}.to_json
 
 response = http.request(request)
 puts response.read_body
