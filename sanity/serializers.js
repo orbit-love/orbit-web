@@ -29,7 +29,7 @@ module.exports = {
       const content = h(
         'div',
         {
-          style: `width: ${node.width ? node.width + 'px' : '100%'}`,
+          style: `width: ${node.width ? node.width + 'px' : '100%'}, max-width: 100%`,
         },
         link || image
       )
@@ -37,15 +37,10 @@ module.exports = {
       return content
     },
     code: ({ node }) => {
-      /**
-       * The Sanity code block plugin only supports a handful of languages, and can’t be extended to add new ones.
-       * In order to support Ruby (which we use a lot), we override the PHP language (which we don’t use).
-       */
-      const language = node.language === 'php' ? 'ruby' : node.language;
       return h(
         'pre',
         {},
-        h('code', { className: `language-${language}` }, node.code)
+        h('code', { className: `language-${node.language}` }, node.code)
       )
     },
     instagram: ({ node }) =>
