@@ -11,7 +11,7 @@ eleventyNavigation:
   key: Blog
 permalink: blog/{{ post.slug.current }}/
 renderData:
-  title: {{ post.title }} — Orbit Blog
+  title: "{{ post.title }} — Orbit Blog"
   description: "{{ post.description }}"
   mainImage: "{{ post.mainImage | sanityUrlFor(640) }}"
   socialImage: "{{ post.socialImage | sanityUrlFor }}"
