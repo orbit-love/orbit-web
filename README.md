@@ -1,5 +1,7 @@
 # Orbit Website
 
+_Note: this codebase does not power the current https://orbit.love website anymore._ 
+
 Built with the following technologies (thanks to this wonderful [Eleventy Starter](https://github.com/eastslopestudio/eleventy-starter)):
 
 - [Eleventy](https://11ty.dev) for templates and site generation
