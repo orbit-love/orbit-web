@@ -39,7 +39,7 @@
     "groq": "^1.149.16",
     "html-minifier": "^4.0.0",
     "luxon": "^1.24.1",
-    "markdown-it": "^11.0.0",
+    "markdown-it": "^12.3.2",
     "node-fetch": "^2.6.1",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.2.8",
