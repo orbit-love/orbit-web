@@ -38,7 +38,7 @@
     "dotenv": "^8.2.0",
     "groq": "^1.149.16",
     "html-minifier": "^4.0.0",
-    "luxon": "^1.24.1",
+    "luxon": "^2.5.2",
     "markdown-it": "^11.0.0",
     "node-fetch": "^2.6.1",
     "npm-run-all": "^4.1.5",
